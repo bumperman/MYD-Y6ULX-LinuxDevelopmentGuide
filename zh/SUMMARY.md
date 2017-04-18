@@ -16,7 +16,7 @@
     * [4.4 GPIO-LED测试](Chapter4-7.md)
     * [4.5 GPIO-KEY测试](Chapter4-8.md)
     * [4.6 USB Host测试](Chapter4-10.md)
-    * [4.7 USB HOST/DEVICE测试](Chapter4-11.md)
+    * [4.7 USB OTG测试](Chapter4-11.md)
 * [5 QT应用开发](Chapter5.md)
     * [5.1 安装QtCreator](Chapter5-1.md)
     * [5.2 配置QtCreator](Chapter5-2.md)

@@ -1,7 +1,7 @@
 # 5.2 配置QtCreator
 
-第一步，运行 QtCreator 后，依次点击"Tool"->"Options"，出现选项对话框，在左边点击"Build & Run"，右边选择"Compilers"标签。
-点击右侧"Add"按钮，弹出下拉列表后，选择"GCC"，在下侧填写"Name"为"MYS6ULx-GCC"，"Compiler path"点击旁边的"Browse.."按钮选 择到arm-poky-linux-gnueabi-g++的路径，例子中的路径是"/opt/myir-imx6ulx-fb/4.1.15-2.0.1/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-g++"。填写完成后，点击"Apply"。
+第一步，运行 QtCreator 后，依次点击"Tool"->"Options"，出现选项对话框，在左侧点击"Build & Run"，右边选择"Compilers"标签。
+点击右侧"Add"按钮，弹出下拉列表后，选择"GCC"，在下面填写"Name"为"MYS6ULx-GCC"，"Compiler path"点击旁边的"Browse.."按钮选 择到arm-poky-linux-gnueabi-g++的路径，例子中的路径是"/opt/myir-imx6ulx-fb/4.1.15-2.0.1/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-g++"。填写完成后，点击"Apply"。
 
 ![](image/5-2-1.png)
 图5-1 配置编译器

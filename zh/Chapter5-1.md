@@ -1,6 +1,7 @@
 # 5.1 安装QtCreator
 
 QtCreator安装包是一个二进制程序，直接执行就可以完成安装。
+
 ```
 $ cd $DEV_ROOT/04-Sources
 $ cp /media/cdrom/03-Tools/Qt/qt-creator-opensource-linux-x86_64-4.1.0.run .

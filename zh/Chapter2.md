@@ -16,7 +16,7 @@
 * 流控：Disable
 
 ![](image/2-1.png)
-图2-1 MYS-6UL接口定义
+图2-1 MYS-6ULx接口定义
 
 ## 安装必备软件包
 

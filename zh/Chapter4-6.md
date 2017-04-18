@@ -1,6 +1,6 @@
 # 4.6 Ethernet 测试
 
-本例使用 TCP/IP sokect API，实现一个简单的C/S结构的程序。将可执行程序arm_client拷贝至开发板，pc_server拷贝至PC，将开发板和PC接入网络。
+本例使用Linux sokect API，实现简单的C/S结构的程序，两个程序通过TCP/IP协议栈通信。将可执行程序arm_client拷贝至开发板，pc_server拷贝至PC，将开发板和PC接入网络。
 
 在 PC 上配置IP并运行服务程序:
 
