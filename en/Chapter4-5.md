@@ -1,0 +1,30 @@
+# 4.5 Test CAN Bus
+
+This example demonstrates the use of the Linux API, which uses the CAN bus interface on the development board to send and receive data. Copy can_send and can_receive to the development board. Perform the following steps
+
+MYD-JA5D2X board has one CAN bus interface(J20), which can communicate with other CAN node device.
+
+Configure the CAN0 bitrate is 50kbps and enable it:
+
+```
+canconfig can0 bitrate 50000 ctrlmode triple-sampling on
+canconfig can0 start
+```
+
+- Board as sender：
+
+```
+./can_send -d can0 -i 0x01 0x11 0x22 0x33 0x44 0x55 0x66 &
+```
+
+- Board as receiver:
+
+```
+./can_receive -d can0
+can1 0x1 [6] 0x11 0x22 0x33 0x44 0x55 0x66
+can1 0x1 [6] 0x11 0x22 0x33 0x44 0x55 0x66
+can1 0x1 [6] 0x11 0x22 0x33 0x44 0x55 0x66
+can1 0x1 [6] 0x11 0x22 0x33 0x44 0x55 0x66
+can1 0x1 [6] 0x11 0x22 0x33 0x44 0x55 0x66
+```
+
