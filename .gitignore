@@ -19,3 +19,6 @@ _book
 *.epub
 *.mobi
 *.pdf
+
+# Markdown and Latex build
+build

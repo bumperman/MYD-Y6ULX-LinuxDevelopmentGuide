@@ -28,7 +28,6 @@ Linux内核 |	Linux 4.1.15 | 基于官方imx_4.1.15_2.0.0_ga版本 | YES
 应用程序 | RS232 | RS232例程 | YES
 应用程序 | Audio | Audio例程 | YES
 应用程序 | LCD | 显示屏例程 | YES
-应用程序 | Amazon AVS demo | 基于Amazon AVS的语音互动demo | YES
 编译工具链 | Cross compiler | Linaro GCC 4.9 Hardfloat | BINARY
 编译工具链 | Cross compiler | Yocto GCC 5.3 Hardfloat | BINARY
 
