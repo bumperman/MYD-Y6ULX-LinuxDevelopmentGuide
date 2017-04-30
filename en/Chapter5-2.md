@@ -1,17 +1,23 @@
 # 5.2 Configure QtCreator
 
 The first step. Run QtCreator, followed by "Tool" -> "Options", the Options dialog box appears, click "Build & Run" on the left, right select "Compilers" label.
-Click on the right "Add" button, pop-up drop-down list, select "custom", fill the following input boxes, Name, Compiler path, Make path and ABI. When you are done, click "Apply".
+Click on the right "Add" button, pop-up drop-down list, select "GCC", fill the following input boxes, "Name" is "MYS6ULx-GCC", click "Compiler path" beside "Browse.." button to choose "arm-poky-linux-gnueabi-g++" file path. In this case, the path is "/opt/myir-imx6ulx-fb/4.1.15-2.0.1/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-g++".When you are done, click "Apply".
 
-![](image/5-1.png)
+![](image/5-2-1.png)
 Figure5-1 Configure Compiler
 
-The second step. and then select the "Qt Version" tab, click the right side of the "Add ...", will pop up qmake path selection dialog box, switch the directory to the previous buildroot compiled directory "output / host / usr / bin" directory , Select "qmake" file, click the "Open" button and then click "Apply" button.
+The second step. and then select the "Qt Version" tab, click the right side of the "Add ...", will pop up qmake path selection dialog box.In this case, qmake file path is "/opt/myir-imx6ulx-fb/4.1.15-2.0.1/sysroots/x86_64-pokysdk-linux/usr/bin/qt5", and choose "qmake" file. click the "Open" button then change "Version name" is "Qt %{Qt:Version} (mys6ulx-qt5)".After that click "Apply" button.
 
-![](image/5-2.png)
+![](image/5-2-2.png)
 Figure5-2 Configure Qt version
 
-The third step. select the top of the "Kits" label, click the "Add" button, fill in the corresponding content. The "Sysroot" input box selects the directory of the compilation tool chain, and the "compiler" selects the name that was previously filled in. The "debugger" selects "None", "Qt version", and the name "CMake Tool" is selected by default.
+The third step, click the "Device" menu on left panel, and click "Add..." button on right panel.Fill those input box, "Name" is "MYS6ULx Board", "Host name" is IP address of target board(alsa fill any one), "Username" is "root".Then clock "Apply" button.
 
-![](image/5-3.png)
+![](image/5-2-3.png)
 Figure5-3 Configure Qt version
+
+The fourth step, click "Build & Run" menu on left panel will back to "Kit" tab in right panel.The content fill with "Name" is "MYS6ULx-dev-kit", "Device" choose "MYS6ULx Board" option."Sysroot" choose the sysroot of target board.In this case , use "/opt/myir-imx6ulx-fb/4.1.15-2.0.1/sysroots/cortexa7hf-neon-poky-linux-gnueabi"."Compiler" choose "MYS6ULx-GCC" before we configured."Qt version" choose "Qt 5.6.2 (mys6ulx-qt5)" before configured, "Qt mkspec" is "linux-oe-g++".Other use default option, then click"Apply" and "OK" button.
+
+
+![](image/5-2-4.png)
+图5-4 Configure Kit

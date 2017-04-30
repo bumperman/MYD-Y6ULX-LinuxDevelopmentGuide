@@ -1,8 +1,7 @@
 # 3 Build Linux System
 
-This chapter introduces how to build componments of Linux system. The MYD-JA5D2X includes some parts:
+This chapter introduces how to build componments of Linux system. The MYS6ULx includes some parts:
 
-* AT91Bootstrap: First level bootloader.
-* U-Boot: Second level bootloader.
-* Linux Kernel: Linux kernel 4.1 and drivers suit for MYD-JA5D2X board.
-* Buildroot: A tool which can be build and package rootfs more quickly and easily.
+* U-Boot: First level bootloader.
+* Linux Kernel: Linux kernel 4.1.15 and drivers suit for MYS6ULx board.
+* Yocto: an open source collaboration project that provides templates, tools and methods to help you create custom Linux-based system for embedded products regardless of the hardware architecture.

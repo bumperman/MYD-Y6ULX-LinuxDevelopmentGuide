@@ -1,84 +1,40 @@
-# 3.3.2 Customize filesystem
+# 3.3.2 Yocto build SDK pakcage
 
-The file system image rootfs.ubi can be customized. Modifications can be impletmented based on the project needs. A example proram 'hellmyir' is involved to illustrate the detailed steps to customize a file system.
+Yocto support generate SDK feature. It used for low-level or application level to compile source code.You doesn't need to manual handle depend softwares or libraries.The SDK package has two difference way, one is suite low-level deveop toolchain, used for compile u-boot and linux.Another used for application develop, it contains header files and libraries on target sysroot. The developer will be more
+convient to develop program to target device. The two kinds SDK package use shell self-extra file, it will be install under "/opt" directory.
 
-## Write an example program 'hellomyir'
-
-- Create and edit the file hellomyir.c
-
-```
-vi hellomyir.c
-```
-
-- Copy below code to file, save and quit:
+## Build low-level toolchain
 
 ```
-#include <stdio.h>
-int main(int argc, char *argv[])
-{
-        int i;
-        printf("========== Hello Myir==========\n");
-        printf("argc: %d\n", argc);
-         for(i = 0; i < argc; i++)
-         {
-                printf("argv[%d]: %s\n", i, argv[i]);
-         }
-        return 0;
-}
+bitbake meta-toolchain
 ```
 
-## Compile hellomyir.c
-
-- Add cross compiler toolchain to PATH environment:
+The directory "tmp/deploy/sdk" has three files after build finish:
 
 ```
-export PATH=$PATH: /opt/ gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux/bin/arm-linux-gnueabihf-
+kevinchen@debian:~/mys-imx6ul/fsl-release-yocto/build$ ls tmp/deploy/sdk/ -lh
+-rw-r--r-- 1 kevinchen kevinchen 9.5K Apr 17 00:00 myir-imx6ulx-fb-glibc-x86_64-meta-toolchain-cortexa7hf-neon-toolchain-4.1.15-2.0.1.host.manifest
+-rwxr-xr-x 1 kevinchen kevinchen  76M Apr 17 00:01 myir-imx6ulx-fb-glibc-x86_64-meta-toolchain-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh
+-rw-r--r-- 1 kevinchen kevinchen 1.6K Apr 17 00:00 myir-imx6ulx-fb-glibc-x86_64-meta-toolchain-cortexa7hf-neon-toolchain-4.1.15-2.0.1.target.manifest
 ```
-
-- Compiling it:
-
-```
-sudo arm-linux-gnueabihf-gcc -static -o hellomyir hellomyir.c
-```
-
-Now, we have the binary file 'hellomyir' for target board.
+Here has two kinds manifest file, "host.manifest" is a list of host software packages, "target.manifest" is a list of target device packages.
 
 
-#### Modify and package filesystem
+## Build application-level toolchain
 
-We have to provide the original file system compression tarball, you can modify contents, such as adding and deleting, modifing files and etc. Here we  need to add the file to root directory.
+The application-level toolchain use same name with Image.This case you can use "fsl-image-qt5" or "core-iamge-base" as image name argument.
 
 ```
-mkdir root-tmp
-sudo tar xvf myd-ja5d2x-256mb-rootfs.tar.bz2 -C root-tmp
-sudo cp hellomyir root-tmp/
-sudo sync
-ls root-tmp
-bin boot dev etc hellomyir home lib media  mnt  proc  sbin  sys  tmp  usr  var
-```
-When the compilation is donw, use the scripting tool that we provided to automatically repackage the file system.
-
-```
-sudo ./create-256mb-rootfs.sh root-tmp
-```
-#### Run the custom program
-After successfully programmed to reset the development board, login with root user, you will find the new hellomyir file in root directory.
-
-```
-buildroot login: root
-cd /
-ls
-bin        etc        lib        proc       tmp
-boot       hellomyir  media      sbin       usr
-dev        home       mnt        sys        var
+bitbake -c populate_sdk <image name>
 ```
 
-Running hellomyir:
+The directory "tmp/deploy/sdk/" has three files after build finish:
 
 ```
-./hellomyir
-========== Hello Myir==========
-argc: 1
-argv[0]: ./hellomyir
+kevinchen@debian:~/mys-imx6ul/fsl-release-yocto/build$ ls tmp/deploy/sdk/ -lh
+-rw-r--r-- 1 kevinchen kevinchen 9.5K Apr 17 07:54 myir-imx6ulx-fb-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.host.manifest
+-rwxr-xr-x 1 kevinchen kevinchen 587M Apr 17 07:59 myir-imx6ulx-fb-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh
+-rw-r--r-- 1 kevinchen kevinchen  70K Apr 17 07:54 myir-imx6ulx-fb-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.target.manifest
 ```
 
+The "*.host.manifest" is a list of host install packages. The "*.target.manifest" is a list of target device install packages.The file "myir-imx6ulx-fb-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh" is SDK toolchain. It can be distrubute and install to other Linux system and compile program to target device.

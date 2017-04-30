@@ -1,44 +1,81 @@
 # 6 System update
 
-## Installing tool
+MYS-6ULx series board use two method to update system to NAND flash on board, MfgTool and SD card.
 
-The programming tool is provided by Atmel Corporation SAM-BA 3.1.4 version, CD-ROM path '03-Tools\SAM-BA' directory, supports Windows and Linux operating system, Linux version has 32bit and 64bit version.
+## MfgTool update method
 
-When decompression is done, can be exported to the PATH variable.Set up after pass -v parameter, if the version of information output, that is successfully. If fails, please check the path.
+### Install tool
+
+The NXP has support an manufacture tool called MfgTool, we use MfgTool 2.7.0 version.The MfgTool suppors Windows and Linux system.It is locate in directory "03-Tools\MfgTool" of resource package.You can copy and extract it to your work directory.
+
+### Update steps(follow the sequence):
+
+* Chnage third bit as ON, four bit as OFF on toggle switch(SW1).
+* Connect power adapter to power jack(J1) on board.
+* Use Micro USB cable connect to board and PC USB port.
+* Double client file "mfgtool2-yocto-mx6ul-evk-nand.vbs" under MfgTool directory, then the MfgTool will show the HID device on reconigz.
+* Click the "Start" button on MfgTool GUI, it will auto download system image to storage of board.
+
+The progress bar will show as green when update finish. While it will show as red if failed.In this case you can view "MfgTool.log" file to get more information.Another way is use USB to TTL cable connect to Debug port(JP1), you can view the serial port output to analysis failed reason after update again.
+
+## Micro SD card update method
+
+Because i.MX6ULL/i.MX6UL chip need kobs-ng to add some header data to bootloader, so it needs read or write under system.
+In this case, we support two suffix as sdcard image files, correspond to each board.Theee sdcard image file contains partition table info and data.It has two partitions, one is format as FAT and contain minimal system bootloader,kernel and be programming files.Another partition is a minimal file system, includes programming tool and update script.
+
+The sdcard image file needs special tool to write Micro SD storage card.The linux user can directly use dd command.The windows user need "Win32ImageWriter" tool.
+
+### Make update system on Micro SD
+
+Recommend insert Micro SD card to Card Reader, and plug into PC USB port.
+
+* Linux system
+
+Generally, linux use "sd[x][n]" format to naming a storage device.The x means which storage device, represent use a ~ z character.The n means partition that storage device, use digit start from 1. You can use "dmesg | tail" command to view device name when you plugin Card Reader.In this case, we use "/dev/sdb" as example.
+
+Attention: the "/dev/sdb" do not append any digit
 
 ```
-tar xvf sam-ba_3.1.4-linux_x86_64.tar.gz
-export PATH=$PATH:~/sam-ba_3.1.4
-sam-ba -v
-SAM-BA Command Line Tool v3.1.4
-Copyright 2015-2016 ATMEL Corporation
+sudo dd if=mys6ull-update.sdcard of=/dev/sdb conv=fsync
 ```
 
-## Programming Steps
+The write speed is relative with USB host version and Micro SD card write speed. We recommend use higher speed class Micro SD storage card.
 
-### Connect the development board
+* Windows system
 
-Connect the development board. Specific steps are as follows (order can not be reversed):
+The Windows user can use Win32DiskImager tool to write sdcard image file to Micro SD storage card.The tool is locate in "03-Tools" directory.Extract it and double click "Win32DiskImager.exe" program.After Win32DiskImager window shows up, the right "Device" list is to choose which device needs to operation.The left "Image File" input box is to show which file needs to be operation through the folder icon to browse and choose file.(Attention: the file choose dialog default use "*.img" to filter
+files, you need change it to "*.*" type)
 
-* Set the power switch (J2) to the USB side.
-* Use a mini-USB cable to connect the PC to the USB device port(J18).
-* Press the BOOT_DIS(K4) button, click the RESET(K1) button at the same time, keep BOOT_DIS pressed for 2 ~ 5 seconds, the CPU enters SAM-BA Monitor mode, then release the BOOT_DIS button. The first time to connect the development board when the PC prompts to install the usb driver, then select the SAM-BA installation directory under the relevant location can be installed as shown.
-* Check the ttyACM0 device, indicating that the chip is in SAM-BA Monitor mode, next you can programming system
+You need confirm the device and file before write operation.The wrong device will damage your system partition or other storage device.
 
-View the SAM-BA mode serial port under Linux:
-```
-ls /dev/ttyACM0
-/dev/ttyACM0
-```
+In this case, "D:" is the Card Reader device.
 
-View the SAM-BA mode serial port under Windows:
-Open the computer management window within the Device Manager item, the new recognized serial device in right panel.
+![Win32DiskImage write sdcard image file](image/6-1.png)
 
-### Auto programming system
+You can plug out Card Reader after progress bard finish.
 
-Note: If you have inserted SD card, please remove the SD card before downloading, otherwise there may be programming error.
+Take the Micro SD card insert into card slot(J5) on MYS6ULx board.Then change boot toggle switch as SDCARD type: 
 
-NAND Flash boot mode: AT91Bootstrap + U-Boot + zImage + dtb + rootfs in NAND Flash
-```
-sam-ba -x demo_linux_nand.qml
-```
+Boot bit | Status
+--- | ----
+Bit1 | OFF
+Bit2 | ON
+Bit3 | OFF
+Bit4 | ON
+
+Use USB to TTL cable connect to Debug port(JP1), configure your serial terminal software.Use USB Micro B cable as power plug into USB OTG port(J7) on board.You can view update progress in serial terminal software.
+
+Alsa, you can through LED(D12) to view the current update status, the updating is flash, the update success is light on, the update fail is light off.
+
+## Boot from NAND
+
+You need power down and change the toggle switch(SW1) to NAND boot type when you follow each way from two ways.
+
+Boot bit | Status
+--- | ----
+Bit1 | ON
+Bit2 | OFF
+Bit3 | OFF
+Bit4 | ON
+
+Reconnect the power adapter, the board will boot into linux on NAND flash。

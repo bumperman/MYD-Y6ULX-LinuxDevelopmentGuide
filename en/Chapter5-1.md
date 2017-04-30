@@ -10,3 +10,20 @@ $ sudo ./qt-creator-opensource-linux-x86_64-4.1.0.run
 ```
 When the installation process is done, click on the next step to complete. The default installation directory is in the "/opt/qtcreator-4.1.0".
 
+Inorder to QtCreator use Yocto SDK, we need add environment to QtCreator, modify the file "/opt/qtcreator-4.1.0/bin/qtcreator.sh". Add below command before the line "#! /bin/sh":
+
+```
+vi /opt/qtcreator-4.1.0/bin/qtcreator.sh
+source /opt/myir-imx6ulx-fb/4.1.15-2.0.1/environment-setup-cortexa7hf-neon-poky-linux-gnueabi
+#! /bin/sh
+
+# Use this script if you add paths to LD_LIBRARY_PATH
+# that contain libraries that conflict with the
+# libraries that Qt Creator depends on.
+```
+
+When you use QtCreator, you need start it from terminal to execute "qtcreator.sh".
+
+```
+/opt/qtcreator-4.1.0/bin/qtcreator.sh &
+```
