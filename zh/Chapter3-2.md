@@ -21,4 +21,4 @@ mys-imx6ul-14x14-evk-gpmi-weim.dtb | MYS-6UL NAND
 mys-imx6ull-14x14-evk-emmc.dtb | MYS-6ULL eMMC
 mys-imx6ull-14x14-evk-gpmi-weim.dtb | MYS-6ULL NAND
 
-MYS6ULx板上的Micro SD卡槽是连接mmc0控制器，所有的dtb文件都是开启mmc0设备。当板载的存储器是NAND或eMMC时，需要从Micro SD卡启动，可以使用同类的dtb文件。
+MYS6ULx板上的Micro SD卡槽是连接mmc0控制器，所有的dtb文件都是开启mmc0设备。

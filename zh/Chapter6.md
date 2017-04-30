@@ -45,7 +45,7 @@ Windows用户可以使用Win32DiskImager工具把sdcard镜像写入Micro SD里�
 
 写入前请再次确认目标磁盘和文件是否正确，避免写入到系统磁盘，损坏Windows系统分区。
 
-![Win32DiskImage写入镜像](images/6-1.png)
+![Win32DiskImage写入镜像](image/6-1.png)
 
 等待进度条结末后，就可以拔出USB读卡器。
 

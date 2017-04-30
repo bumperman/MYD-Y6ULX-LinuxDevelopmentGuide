@@ -24,7 +24,6 @@ Linux内核 |	Linux 4.1.15 | 基于官方imx_4.1.15_2.0.0_ga版本 | YES
 应用程序 | GPIO LED | 按键指示灯例程 | YES
 应用程序 | NET | TCP/IP Sokect C/S例程 | YES
 应用程序 | RTC | 实时时钟例程 | YES
-应用程序 | RS485 | RS485例程 | YES
 应用程序 | RS232 | RS232例程 | YES
 应用程序 | Audio | Audio例程 | YES
 应用程序 | LCD | 显示屏例程 | YES
