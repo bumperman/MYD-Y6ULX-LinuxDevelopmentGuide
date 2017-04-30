@@ -20,4 +20,4 @@ The fourth step, click "Build & Run" menu on left panel will back to "Kit" tab i
 
 
 ![](image/5-2-4.png)
-图5-4 Configure Kit
+Figure5-4 Configure Kit
