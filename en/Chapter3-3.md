@@ -2,7 +2,7 @@
 
 The Linux platform has many open source tool to build filesystem.These tools has some features to imporve developer build filesystem more easier in system build or customize it.Recently, some are more populator Buildroot, Yocto, OpenEmbedded etc.The Yocto project support more powerful and system method to build a linux system to suite your product.
 
-Yocto not only a build tool for file system, it also has full workflow to build and maintaince under Liinux. It makes platform developer and application developer working tother under same framework. And resolve non-united and non-manage on the legacy develope way.
+Yocto not only a build tool for file system, it also has full workflow to build and maintaince under Linux. It makes platform developer and application developer working tother under same framework. And resolve non-united and non-manage on the legacy develope way.
 
 Yocto is a open source "umbrella" project.It means has more sub-projects.Yocto just containe all other projects  and support an reference build system "Poky". The Poky project will guid developer how to use, build, embedded Linux system.It has Bitbake, OpenEmbedded-Core, BSP package and more kinds of software packages and config files.Through Poky to build difference requirment system, eg: the minimal system core-image-minimal, include GUI system fsl-image-gui, include Qt5 graphics system fsl-image-qt5.
 

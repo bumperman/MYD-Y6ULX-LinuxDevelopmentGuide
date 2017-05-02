@@ -65,7 +65,7 @@ Bit4 | ON
 
 Use USB to TTL cable connect to Debug port(JP1), configure your serial terminal software.Use USB Micro B cable as power plug into USB OTG port(J7) on board.You can view update progress in serial terminal software.
 
-Alsa, you can through LED(D12) to view the current update status, the updating is flash, the update success is light on, the update fail is light off.
+Also, you can through LED(D12) to view the current update status, the updating is flash, the update success is light on, the update fail is light off.
 
 ## Boot from NAND
 

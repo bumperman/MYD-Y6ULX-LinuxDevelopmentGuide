@@ -7,7 +7,7 @@ The first step, in the menu bar, select "File" -> "Open File or Project", in the
 The scond step, choose "Projects" icon in left panel.The right panel will switch to "Build & Run" tab of "helloworld" project, click "Add kit" pop-down list, and choose "MYS6ULx-dev-kit" option.Then the "helloworld" project will use "MYS6ULx-dev-kit" option to build it. 
 
 ![](image/5-3-1.png)
-图5-3-1 config build option
+Figure5-3-1 config build option
 
 Step 3, click the menu bar "Build" -> "Build Project hellowrld" button, you can complete the project compilation, while the next side will compile the process output.
 

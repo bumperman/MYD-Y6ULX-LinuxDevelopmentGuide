@@ -1,2 +1,2 @@
-# MYS-6UL Linux开发手册
+# MYS-6ULX Linux开发手册
 

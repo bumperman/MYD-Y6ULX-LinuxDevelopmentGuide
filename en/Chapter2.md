@@ -18,7 +18,7 @@ PC serial port configure parameters:
 ![](image/2-1.png)
 Figure2-1 MYS-6UL-IND connection diagram
 ![](image/2-2.png)
-Figure2-1 MYS-6ULL-IoT connection diagram
+Figure2-2 MYS-6ULL-IoT connection diagram
 
 ## Install Necessary Software Packages
 
@@ -72,7 +72,7 @@ gcc version 4.9.3 20141031 (prerelease) (Linaro GCC 2014.11)
 
 ### Yocto Toolchain
 
-Yocto toolchain distrubute with SDK package type. You need install the toolchain SDK package, then use it. Below is install method:
+Yocto toolchain distribute SDK package type. You need install the toolchain SDK package, then use it. Below is install method:
 
 Run shell script as normal user.It will tips you to input install path, default is under "/opt" directory.After time will tips you to input user password to write permission to directory. You can use "source" or "." to load toolchain environment to current shell when your installation finish.
 
