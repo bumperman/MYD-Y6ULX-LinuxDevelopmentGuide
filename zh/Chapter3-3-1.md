@@ -41,7 +41,7 @@ bitbake core-image-base
 
 Image名称 | 描述 | 用途
 ---------- | ------ | -----------------
-core-image-minimal | minimal版本的文件系统 | 用于MYS6ULx的升级或更新系统
+core-image-minimal | minimal版本的文件系统 | 用于MYS-6ULX的升级或更新系统
 core-image-base | base版本的终端更多功能的镜像 | 通用的文件系统
 fsl-image-qt5 | 构建基于Qt5的镜像 | 带Qt5的通用文件系统
 

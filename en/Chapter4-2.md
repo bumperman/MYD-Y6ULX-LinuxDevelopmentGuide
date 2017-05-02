@@ -1,18 +1,14 @@
-# 4.2 Test RTC
+# 4.2 Test TouchPanel
 
-This example demonstrates the use of the Linux API to set and read the RTC on the development board. Copy the executable program rtc_test to the development board.
+This example show you how to test the touch panel on LCD screen module. The MYS-6ULX supports capacitive and resistive type.We also have two LCD with touch panel module, MY-TFT070CV2 and MY-TFT043RV2.
 
-Setup current time to system:
-
-```
-# ./rtc_test -s 11 03 40 2014 08 14
-date/time is updated to: 14-8-2014, 11:03:40.
-```
-
-Read time from system:
+You can use ts_calibrate and ts_test command to test your LCD and touch panel are working.The "TSLIB_TSDEVICE" point the touch device node, capacitive and resistive has difference device node.
 
 ```
-# ./rtc_test
-Current RTC date/time is 14-8-2014, 11:03:50.
+export TSLIB_TSDEVICE=/dev/input/event1
+# ts_calibrate
+
+# ts_test
+
 ```
 

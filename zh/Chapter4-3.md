@@ -1,29 +1,19 @@
-# 4.3 RS485 测试
+# 4.6 Ethernet 测试
 
-本例程演示如何使用 Linux API 配置开发板上的 RS485 并使其发送和接收数据,详情请参考源码。
-将开发板上RS485(J13)对应的接口A、B分别与另一个开发板的A、B相连。
+本例使用Linux sokect API，实现简单的C/S结构的程序，两个程序通过TCP/IP协议栈通信。将可执行程序arm_client拷贝至开发板，pc_server拷贝至PC，将开发板和PC接入网络。
 
-分别将编译出来的可执行程序拷贝至两块开发板，在发送端执行以下命令：
-
-```
-./rs485_write -d /dev/ttyS2 -b 115200 -e 1
-SEND:0123456789
-SEND:0123456789
-SEND:0123456789
-SEND:0123456789
-SEND:0123456789
-SEND:0123456789
-```
-
-接收端执行：
+在 PC 上配置IP并运行服务程序:
 
 ```
-./rs485_read -d /dev/ttyS2 -b 115200 -e 1
-RECV:0123456789, total:10
-RECV:0123456789, total:10
-RECV:0123456789, total:10
-RECV:0123456789, total:10
-RECV:0123456789, total:10
-RECV:0123456789, total:10
-RECV:0123456789, total:10
+sudo ifconfig eth0 192.168.1.111
+./pc_server
+REC FROM: 192.168.1.222
+```
+
+在开发板上运行客户程序，将看到所发送的信息:
+
+```
+ifconfig eth0 192.168.1.222
+./arm_client 192.168.1.111
+form server: Make Your idea Real!
 ```

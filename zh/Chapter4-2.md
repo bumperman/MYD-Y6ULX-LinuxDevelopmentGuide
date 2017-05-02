@@ -1,18 +1,14 @@
-# 4.2 RTC 测试
+# 4.2 触摸测试
 
-本例程演示使用Linux RTC API对开发板上的RTC时钟进行时间设置与读取。将可执行程序rtc_test拷贝至开发板。
+MYS-6ULX支持两种触摸方式，电容和电阻。米尔科技可提供两种带触摸的液晶，7寸电容MY-TFT070CV2和4.3寸电阻MY-TFT043RV2。
 
-执行程序设置当前时间:
+触摸测试可以使用ts_calibrate和ts_test命令，ts_calibrate用于触摸校验，ts_test用于测试。其中，命令需要变量"TSLIB_TSDEVICE"来找到触摸设备，不同触摸方式的设备节点不一定相同，请对应设备填写。
 
-```
-# ./rtc_test -s 11 03 40 2014 08 14
-date/time is updated to: 14-8-2014, 11:03:40.
-```
-
-然后读取时间:
 
 ```
-# ./rtc_test
-Current RTC date/time is 14-8-2014, 11:03:50.
-```
+export TSLIB_TSDEVICE=/dev/input/event1
+# ts_calibrate
 
+# ts_test
+
+```

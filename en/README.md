@@ -1,6 +1,6 @@
-# MYD-JA5D2X Linux Development Guide
+# MYS-6ULX Linux Development Guide
 
-This document introduce the MYD-JA5D2X development board about Linux compile and deploy, interface usage on baseboard, Qt application development etc.
+This document introduce the MYS-6ULX development board about Linux compile and deploy, interface usage on baseboard, Qt application development etc.
 
 ## History Version
 
@@ -10,4 +10,4 @@ V1.0 | Init version | 2017.02.22
 
 ## Hardware Version
 
-This document suit for MYD-JA5D26 and MYD-JA5D27 board.
+This document suit for MYS-6UL-IND and MYS-6ULL-IoT board.

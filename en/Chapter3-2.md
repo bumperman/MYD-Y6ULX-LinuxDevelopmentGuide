@@ -18,9 +18,9 @@ When the compilation is donw, the kernel image file zImage is generated in the '
 
 DTB File | Description
 ------- | ----
-mys-imx6ul-14x14-evk-emmc.dtb | MYS-6UL eMMC
-mys-imx6ul-14x14-evk-gpmi-weim.dtb | MYS-6UL NAND
-mys-imx6ull-14x14-evk-emmc.dtb | MYS-6ULL eMMC
-mys-imx6ull-14x14-evk-gpmi-weim.dtb | MYS-6ULL NAND
+mys-imx6ul-14x14-evk-emmc.dtb | MYS-6UL-IND eMMC
+mys-imx6ul-14x14-evk-gpmi-weim.dtb | MYS-6UL-IND NAND
+mys-imx6ull-14x14-evk-emmc.dtb | MYS-6ULL-IoT eMMC
+mys-imx6ull-14x14-evk-gpmi-weim.dtb | MYS-6ULL-IoT NAND
 
-The MYS6ULx Micro SD slot is connect to mmc0 controller.So, all dtb file is enabled mmc0 controller.
+The MYS-6ULX Micro SD slot is connect to mmc0 controller.So, all dtb file is enabled mmc0 controller.

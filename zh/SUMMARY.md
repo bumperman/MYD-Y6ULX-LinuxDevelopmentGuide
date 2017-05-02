@@ -11,7 +11,7 @@
         * [3.3.2 Yocto构建SDK工具](Chapter3-3-2.md)
 * [4 Linux应用开发](Chapter4.md)
     * [4.1 LCD测试](Chapter4-1.md)
-    * [4.2 RTC测试](Chapter4-2.md)
+    * [4.2 触摸测试](Chapter4-2.md)
     * [4.3 Ethernet测试](Chapter4-6.md)
     * [4.4 GPIO-LED测试](Chapter4-7.md)
     * [4.5 GPIO-KEY测试](Chapter4-8.md)

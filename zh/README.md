@@ -1,6 +1,6 @@
-# MYS-6ULx Linux开发手册
+# MYS-6ULX Linux开发手册
 
-本文档介绍基于MYS-6ULx系列开发板下，进行Linux系统的编译和安装，硬件接口的使用，Qt应用开发等。
+本文档介绍基于MYS-6ULX系列开发板下，进行Linux系统的编译和安装，硬件接口的使用，Qt应用开发等。
 
 ## 版本历史
 
@@ -10,4 +10,4 @@ V1.0 | 初始版本 |
 
 ## 硬件版本
 
-本手册适合于MYS-6ULx系列开发板，MYS-6UL和MYS-6ULL开发板。
+本手册适合于MYS-6ULX系列开发板，MYS-6UL-IND和MYS-6ULL-IoT开发板。

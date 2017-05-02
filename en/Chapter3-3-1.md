@@ -41,7 +41,7 @@ bitbake core-image-base
 
 Image Name | Description | Used for
 ---------- | ------ | -----------------
-core-image-minimal | minimal file system | used for MYS6ULx to update system
+core-image-minimal | minimal file system | used for MYS-6ULX to update system
 core-image-base | base file system has more command line feature | full commnand line system, no GUI
 fsl-image-qt5 | system use Qt5 as GUI | used for graphics requirment
 

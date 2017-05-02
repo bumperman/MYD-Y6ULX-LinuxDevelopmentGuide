@@ -1,6 +1,6 @@
 # 6 系统更新
 
-MYS-6ULx系列板的系统更新使用两种方法，MfgTool更新和SD卡更新。
+MYS-6ULX系列板的系统更新使用两种方法，MfgTool更新和SD卡更新。
 
 ## MfgTool更新系统
 
@@ -21,7 +21,7 @@ MYS-6ULx系列板的系统更新使用两种方法，MfgTool更新和SD卡更新
 ## Micro SD卡更新系统
 
 由于i.MX6ULL/i.MX6UL烧写bootloaer时需要使用kobs-ng工具添加头部信息，需要在操作系统上才可以烧写。
-这里提供了两个sdcard后缀的镜像文件，分别对应MYS6ULL和MYS6UL开发板。sdcard文件是包含分区结构的镜像文件，有两个分区，第一分区为FAT格式，里面有一个最小化Linux系统和更新的目标镜像文件。第二个分区是EXT4格式，作为最小化Linux的文件系统，包含更新脚本。
+这里提供了两个sdcard后缀的镜像文件，分别对应MYS-6ULL-IoT和MYS-6UL-IND开发板。sdcard文件是包含分区结构的镜像文件，有两个分区，第一分区为FAT格式，里面有一个最小化Linux系统和更新的目标镜像文件。第二个分区是EXT4格式，作为最小化Linux的文件系统，包含更新脚本。
 
 sdcard镜像文件需要使用特殊的磁盘操作工具才可以写入Micro SD卡内，Linux系统用户可以直接使用dd命令，Windows系统用户使用Win32ImageWriter工具。
 

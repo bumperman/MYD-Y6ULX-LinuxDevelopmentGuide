@@ -1,6 +1,6 @@
 # 6 System update
 
-MYS-6ULx series board use two method to update system to NAND flash on board, MfgTool and SD card.
+MYS-6ULX series board use two method to update system to NAND flash on board, MfgTool and SD card.
 
 ## MfgTool update method
 
@@ -54,7 +54,7 @@ In this case, "D:" is the Card Reader device.
 
 You can plug out Card Reader after progress bard finish.
 
-Take the Micro SD card insert into card slot(J5) on MYS6ULx board.Then change boot toggle switch as SDCARD type: 
+Take the Micro SD card insert into card slot(J5) on MYS-6ULX board.Then change boot toggle switch as SDCARD type: 
 
 Boot bit | Status
 --- | ----

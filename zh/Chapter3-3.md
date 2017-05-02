@@ -6,7 +6,7 @@ Yocto不仅仅是一个制做文件系统工具，同时提供整套的基于Lin
 
 Yocto是一个开源的“umbrella”项目，意指它下面有很多个子项目，Yocto只是把所有的项目整合在一起，同时提供一个参考构建项目Poky，来指导开发人员如何应用这些项目，构建出嵌入式Linux系统。它包含Bitbake, OpenEmbedded-Core, 板级支持包，各种软件包的配置文件。通过Poky，可以构建出不同类需求的系统，如最小的系统core-image-minimal、带GUI的图形系统fsl-image-gui、带Qt5图形库的fsl-image-qt5。
 
-NXP i.MX6UL/i.MX6ULL芯片提供符合Yocto的构建配置文件，通过这些文件可以构建出NXP定制的镜像文件。我们提供了符合MYS6ULx的配置文件，帮助开发者构建出可烧写在MYS6ULx板上的Linux系统镜像。
+NXP i.MX6UL/i.MX6ULL芯片提供符合Yocto的构建配置文件，通过这些文件可以构建出NXP定制的镜像文件。我们提供了符合MYS-6ULX的配置文件，帮助开发者构建出可烧写在MYS-6ULX板上的Linux系统镜像。
 
 Yocto还提供了丰富的开发文档资源，让开发者学习并定制自己的系统。由于篇幅有限，不能完整介绍Yocto的使用方法，建议开发者先阅读以下文档后，再开始动手构建。
 

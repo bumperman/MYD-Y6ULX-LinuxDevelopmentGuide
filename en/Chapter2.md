@@ -16,7 +16,9 @@ PC serial port configure parameters:
 * Flow control: Disable
 
 ![](image/2-1.png)
-Figure2-1 MYS6ULx connection diagram
+Figure2-1 MYS-6UL-IND connection diagram
+![](image/2-2.png)
+Figure2-1 MYS-6ULL-IoT connection diagram
 
 ## Install Necessary Software Packages
 

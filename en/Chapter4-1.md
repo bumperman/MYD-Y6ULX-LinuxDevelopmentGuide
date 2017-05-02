@@ -1,6 +1,8 @@
 # 4.1 Test LCD
 
-This example demonstrates the operation of the FrameBuffer of Linux, enabling color and color grid testing.The LCD screen will display the corresponding color, the following is the terminal output information:
+This example demonstrates the operation of the FrameBuffer of Linux, enabling color and color grid testing.You need connect the LCD to MYS6ULX board LCD interface(J8).We have two kinds LCD with touch panel, 7-inch capacitive screen is MY-TFT070CV2 and 4.3inch resistive screen is MY-TFT043RV2.
+
+The LCD screen will display the corresponding color, the following is the terminal output information:
 
 ```
 ./framebuffer_test

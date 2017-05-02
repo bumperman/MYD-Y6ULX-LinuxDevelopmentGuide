@@ -1,15 +1,15 @@
-# 4.4 RS232 测试
+# 4.7 GPIO-LED 测试
 
-本例程演示使用Linux API配置开发板上的RS232串口(J11)并使其发送和接收数据。将开发板RS232(J11)与PC机的DB9串口连接，并将PC串口的波特率设为 115200，数据位为8，停止位为1，无奇偶校验。将可执行程序uart_test拷贝至开发板并执行以下命令，PC串口终端打印如下信息:
+本例演示如何在Linux用户空间读取按键状态和键值。运行gpio_key程序后，按下或释放S2按键，串口会输出相应按键的状态信息。按下"Ctrl-C"可退出程序。
+
+在开发板的控制终端上执行程序:
 
 ```
-./uart_test -d /dev/ttyS1 -b 115200 
-/dev/ttyS1 RECV 10 total
-/dev/ttyS1 RECV: 1234567890
-/dev/ttyS1 RECV 10 total
-/dev/ttyS1 RECV: 1234567890
-/dev/ttyS1 RECV 10 total
-/dev/ttyS1 RECV: 1234567890
-/dev/ttyS1 RECV 10 total
-/dev/ttyS1 RECV: 1234567890
+# ./gpio_key /dev/input/event0
+Hit any key on board ......
+key 260 Pressed
+key 260 Released
+key 260 Pressed
+key 260 Released
 ```
+

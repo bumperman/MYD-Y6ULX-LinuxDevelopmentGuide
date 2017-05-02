@@ -1,6 +1,6 @@
 # 4.1 LCD测试
 
-本例程演示对Linux的FrameBuffer设备操作，实现液晶输出显示RGB颜色和颜色合成测试。例程基于Linux FrameBuffer API接口开发。
+本例程演示对Linux的FrameBuffer设备操作，实现液晶输出显示RGB颜色和颜色合成测试。例程基于Linux FrameBuffer API接口开发。测试前需要把LCD连接至J8接口上。米尔科技提供两种LCD模块，分别是7寸的MY-TFT070CV2和4.3寸的MY-TFT043RV2。提供的prebuilt镜像是默认为4.3寸液晶的。
 
 执行程序后，LCD液晶屏会出现相应颜色,以下是终端输出信息:
 
