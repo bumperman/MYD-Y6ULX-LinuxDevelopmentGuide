@@ -1,12 +1,12 @@
 # 5.2 Configure QtCreator
 
-The first step. Run QtCreator, followed by "Tool" -> "Options", the Options dialog box appears, click "Build & Run" on the left, right select "Compilers" label.
-Click on the right "Add" button, pop-up drop-down list, select "GCC", fill the following input boxes, "Name" is "MYS6ULx-GCC", click "Compiler path" beside "Browse.." button to choose "arm-poky-linux-gnueabi-g++" file path. In this case, the path is "/opt/myir-imx6ulx-fb/4.1.15-2.0.1/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-g++".When you are done, click "Apply".
+The first step, run QtCreator, followed by "Tool" -> "Options", the Options dialog box appears, click "Build & Run" on the left, right select "Compilers" label.
+Click on the right "Add" button, pop-up drop-down list, select "GCC", fill the following input boxes, "Name" is "MYS6ULx-GCC", click "Compiler path" beside "Browse.." button to choose "arm-poky-linux-gnueabi-g++" file path. In this case, the path is "/opt/myir-imx6ulx-fb/4.1.15-2.0.1/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-g++".When fill are complete, click "Apply".
 
 ![](image/5-2-1.png)
-Figure5-1 Configure Compiler
+Figure5-1 Config Compiler
 
-The second step. and then select the "Qt Version" tab, click the right side of the "Add ...", will pop up qmake path selection dialog box.In this case, qmake file path is "/opt/myir-imx6ulx-fb/4.1.15-2.0.1/sysroots/x86_64-pokysdk-linux/usr/bin/qt5", and choose "qmake" file. click the "Open" button then change "Version name" is "Qt %{Qt:Version} (mys6ulx-qt5)".After that click "Apply" button.
+The second step, and then select the "Qt Version" tab, click the right side of the "Add ...", will pop up qmake path selection dialog box.In this case, qmake file path is "/opt/myir-imx6ulx-fb/4.1.15-2.0.1/sysroots/x86_64-pokysdk-linux/usr/bin/qt5", and choose "qmake" file. click the "Open" button then change "Version name" is "Qt %{Qt:Version} (mys6ulx-qt5)".After that click "Apply" button.
 
 ![](image/5-2-2.png)
 Figure5-2 Configure Qt version

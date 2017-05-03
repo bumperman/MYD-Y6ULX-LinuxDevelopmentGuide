@@ -1,6 +1,6 @@
 # 4.11 Test USB OTG
 
-This example demonstrates use of the USB OTG(J7) interface of the development board to simulate a specified file or device as a Gadget device. It provided as a storage device to the HOST device.
+This example demonstrates use of the USB OTG(J7) interface of the development board to simulate a specified file or device as a Gadget device. It works as a storage device to the HOST device.
 
 - Operation steps on board:
 

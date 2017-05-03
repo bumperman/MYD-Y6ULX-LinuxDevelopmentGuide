@@ -16,9 +16,9 @@
 
 DTB文件 | 备注
 ------- | ----
-mys-imx6ul-14x14-evk-emmc.dtb | MYS-6UL-IND eMMC
-mys-imx6ul-14x14-evk-gpmi-weim.dtb | MYS-6UL-IND NAND
-mys-imx6ull-14x14-evk-emmc.dtb | MYS-6ULL-IoT eMMC
-mys-imx6ull-14x14-evk-gpmi-weim.dtb | MYS-6ULL-IoT NAND
+mys-imx6ul-14x14-evk-emmc.dtb | MYS-6ULX-IND eMMC
+mys-imx6ul-14x14-evk-gpmi-weim.dtb | MYS-6ULX-IND NAND
+mys-imx6ull-14x14-evk-emmc.dtb | MYS-6ULX-IoT eMMC
+mys-imx6ull-14x14-evk-gpmi-weim.dtb | MYS-6ULX-IoT NAND
 
 MYS-6ULX板上的Micro SD卡槽是连接mmc0控制器，所有的dtb文件都是开启mmc0设备。

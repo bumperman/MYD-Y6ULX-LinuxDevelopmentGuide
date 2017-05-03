@@ -1,6 +1,6 @@
 # 3 Build Linux System
 
-This chapter introduces how to build componments of Linux system. The MYS-6ULX includes some parts:
+This chapter introduces how to build componments of Linux system. The MYS-6ULX includes below parts:
 
 * U-Boot: First level bootloader.
 * Linux Kernel: Linux kernel 4.1.15 and drivers suit for MYS-6ULX board.

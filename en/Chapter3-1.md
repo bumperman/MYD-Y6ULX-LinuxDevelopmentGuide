@@ -20,12 +20,12 @@ The <config> option value is different boot mode. The MYS-6ULX supports four boo
 
 Boot Mode | Config file
 -------- | --------
-MYS-6UL-IND NAND Flash | mys_imx6ul_14x14_nand_defconfig
-MYS-6UL-IND eMMC Flash | mys_imx6ul_14x14_emmc_defconfig
-MYS-6ULL-IoT NAND Flash | mys_imx6ull_14x14_nand_defconfig
-MYS-6ULL-IoT eMMC Flash | mys_imx6ull_14x14_emmc_defconfig
+MYS-6ULX-IND NAND Flash | mys_imx6ul_14x14_nand_defconfig
+MYS-6ULX-IND eMMC Flash | mys_imx6ul_14x14_emmc_defconfig
+MYS-6ULX-IoT NAND Flash | mys_imx6ull_14x14_nand_defconfig
+MYS-6ULX-IoT eMMC Flash | mys_imx6ull_14x14_emmc_defconfig
 
-U-Boot will search and execute a script file "boot.scr" when U-Boot booting up. It used to change boot type in temporary.Next is use "mys-imx6ul-boot-sdcard.txt" to generate the "boot.scr" file as example. The mkimage tool source code is locate in "U-Boot/tools" directory. It will be compile after U-Boot compiled.
+U-Boot will search and execute a script file "boot.scr" when U-Boot booting up. It used to change boot type in temporary.Next is use "mys-imx6ul-boot-sdcard.txt" to generate the "boot.scr" file as example. The mkimage tool source code is locate in "U-Boot/tools" directory. It will be compiled after U-Boot compiled.
 
 ```
 cat mys-imx6ul-boot-sdcard.txt

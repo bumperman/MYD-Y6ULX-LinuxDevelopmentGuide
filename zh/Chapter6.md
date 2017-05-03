@@ -21,7 +21,7 @@ MYS-6ULX系列板的系统更新使用两种方法，MfgTool更新和SD卡更新
 ## Micro SD卡更新系统
 
 由于i.MX6ULL/i.MX6UL烧写bootloaer时需要使用kobs-ng工具添加头部信息，需要在操作系统上才可以烧写。
-这里提供了两个sdcard后缀的镜像文件，分别对应MYS-6ULL-IoT和MYS-6UL-IND开发板。sdcard文件是包含分区结构的镜像文件，有两个分区，第一分区为FAT格式，里面有一个最小化Linux系统和更新的目标镜像文件。第二个分区是EXT4格式，作为最小化Linux的文件系统，包含更新脚本。
+这里提供了两个sdcard后缀的镜像文件，分别对应MYS-6ULX-IoT和MYS-6ULX-IND开发板。sdcard文件是包含分区结构的镜像文件，有两个分区，第一分区为FAT格式，里面有一个最小化Linux系统和更新的目标镜像文件。第二个分区是EXT4格式，作为最小化Linux的文件系统，包含更新脚本。
 
 sdcard镜像文件需要使用特殊的磁盘操作工具才可以写入Micro SD卡内，Linux系统用户可以直接使用dd命令，Windows系统用户使用Win32ImageWriter工具。
 
@@ -41,13 +41,13 @@ sudo dd if=mys6ull-update.sdcard of=/dev/sdb conv=fsync
 
 * Windows系统
 
-Windows用户可以使用Win32DiskImager工具把sdcard镜像写入Micro SD里。工具在"03-Tools"目录下，解压后，双击"Win32DskImager.exe"应用程序。启动后的界面中，右侧的"Device"是选择要写入的设备盘符。左侧的"Image File"是选择将要写的镜像文件，点击旁边的文件夹图标，选中要写入的文件即可(注意，文件选择对话框中默认是过滤"*.img"文件，切找成"*.*"，就可以显示到sdcard后缀的文件)。
+Windows用户可以使用Win32DiskImager工具把sdcard镜像写入Micro SD里。工具在"03-Tools"目录下，解压后，双击"Win32DskImager.exe"应用程序。启动后的界面中，右侧的"Device"是选择要写入的设备盘符。左侧的"Image File"是选择将要写的镜像文件，点击旁边的文件夹图标，选中要写入的文件即可(注意：文件选择对话框中默认是过滤"*.img"文件，切换成"*.*"，就可以显示到sdcard后缀的文件)。
 
 写入前请再次确认目标磁盘和文件是否正确，避免写入到系统磁盘，损坏Windows系统分区。
 
 ![Win32DiskImage写入镜像](image/6-1.png)
 
-等待进度条结末后，就可以拔出USB读卡器。
+等待进度条结束后，就可以拔出USB读卡器。
 
 把制做好的Micro SD卡插入开发板的卡槽(J5)，启动位拨码开关(SW1)配置为SDCARD启动方式，如下：
 

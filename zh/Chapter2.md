@@ -16,9 +16,9 @@
 * 流控：Disable
 
 ![](image/2-1.png)
-图2-1 MYS-6UL-IND接口定义
+图2-1 MYS-6ULX-IND接口定义
 ![](image/2-2.png)
-图2-2 MYS-6ULL-IoT接口定义
+图2-2 MYS-6ULX-IoT接口定义
 
 ## 安装必备软件包
 

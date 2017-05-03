@@ -1,6 +1,6 @@
 # 1 Software Resource
 
-MYS-6ULX serie board supports the Linux kernel version 4.1.15, and provides a rich hardware resource and software resource. 
+MYS-6ULX series boards support the Linux kernel version 4.1.15, and provided with rich hardware resource and software resource. 
 
 Below is MYS-6ULX software resource table:
 

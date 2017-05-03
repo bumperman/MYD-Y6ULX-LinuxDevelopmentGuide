@@ -1,19 +1,19 @@
 # 6 System update
 
-MYS-6ULX series board use two method to update system to NAND flash on board, MfgTool and SD card.
+MYS-6ULX series board use two methods to update system to NAND flash on board, MfgTool and SD card.
 
 ## MfgTool update method
 
 ### Install tool
 
-The NXP has support an manufacture tool called MfgTool, we use MfgTool 2.7.0 version.The MfgTool suppors Windows and Linux system.It is locate in directory "03-Tools\MfgTool" of resource package.You can copy and extract it to your work directory.
+The NXP supports a manufacture tool called MfgTool, we use MfgTool 2.7.0 version.The MfgTool suppors Windows and Linux system.It is located in directory "03-Tools\MfgTool" of resource package.You can copy and extract it to your work directory.
 
 ### Update steps(follow the sequence):
 
-* Chnage third bit as ON, four bit as OFF on toggle switch(SW1).
+* Change third bit as ON, four bit as OFF on toggle switch(SW1).
 * Connect power adapter to power jack(J1) on board.
-* Use Micro USB cable connect to board and PC USB port.
-* Double client file "mfgtool2-yocto-mx6ul-evk-nand.vbs" under MfgTool directory, then the MfgTool will show the HID device on reconigz.
+* Use Micro USB cable connect to board with PC USB port.
+* Double click file "mfgtool2-yocto-mx6ul-evk-nand.vbs" under MfgTool directory, then the MfgTool will show the HID device on reconigz.
 * Click the "Start" button on MfgTool GUI, it will auto download system image to storage of board.
 
 The progress bar will show as green when update finish. While it will show as red if failed.In this case you can view "MfgTool.log" file to get more information.Another way is use USB to TTL cable connect to Debug port(JP1), you can view the serial port output to analysis failed reason after update again.
@@ -43,7 +43,7 @@ The write speed is relative with USB host version and Micro SD card write speed.
 
 * Windows system
 
-The Windows user can use Win32DiskImager tool to write sdcard image file to Micro SD storage card.The tool is locate in "03-Tools" directory.Extract it and double click "Win32DiskImager.exe" program.After Win32DiskImager window shows up, the right "Device" list is to choose which device needs to operation.The left "Image File" input box is to show which file needs to be operation through the folder icon to browse and choose file.(Attention: the file choose dialog default use "*.img" to filter
+The Windows user can use Win32DiskImager tool to write sdcard image file to Micro SD storage card.The tool is located in "03-Tools" directory.Extract it and double click "Win32DiskImager.exe" program.After Win32DiskImager window shows up, the right "Device" list is to choose which device needs to operation.The left "Image File" input box is to show which file needs to be operation through the folder icon to browse and choose file.(Attention: the file choose dialog default use "*.img" to filter
 files, you need change it to "*.*" type)
 
 You need confirm the device and file before write operation.The wrong device will damage your system partition or other storage device.
@@ -54,7 +54,7 @@ In this case, "D:" is the Card Reader device.
 
 You can plug out Card Reader after progress bard finish.
 
-Take the Micro SD card insert into card slot(J5) on MYS-6ULX board.Then change boot toggle switch as SDCARD type: 
+Take the Micro SD card insert into card slot(J5) on MYS-6ULX series boards.Then change boot toggle switch as SDCARD type: 
 
 Boot bit | Status
 --- | ----

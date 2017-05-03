@@ -1,13 +1,13 @@
 # 4 Linux Application Development
 
-This chapter introduces the use of the MYS6ULx development board peripheral hardware device application examples.
+The hardware peripherals and application examples of MYS-6ULX development board.
 
 Before use, you need use Yocto SDK toolchain to compile all the example code, and copy to the development board directory.
 
 
 ## Compile example program
 
-Load the toolchain environment to current shell, and check the gcc version to verify environment corrently.
+Load the toolchain environment to current shell, and check the gcc version to verify environment correct.
 
 ```
 . /opt/myir-imx6ulx-fb-sdk/4.1.15-2.0.1/environment-setup-cortexa7hf-neon-poky-linux-gnueabi

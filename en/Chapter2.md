@@ -16,9 +16,9 @@ PC serial port configure parameters:
 * Flow control: Disable
 
 ![](image/2-1.png)
-Figure2-1 MYS-6UL-IND connection diagram
+Figure2-1 MYS-6ULX-IND connection diagram
 ![](image/2-2.png)
-Figure2-2 MYS-6ULL-IoT connection diagram
+Figure2-2 MYS-6ULX-IoT connection diagram
 
 ## Install Necessary Software Packages
 
@@ -29,7 +29,7 @@ gawk diffstat gcc-multilib
 ```
 
 ## Build work directory
-Create a working directory to facilitate the creation of an unified environment variable path. Copy the product CD-ROM source code to the working directory, while setting the DEV_ROOT variable to convenience the follow-up step path accessed.
+Create a working directory to facilitate the creation of an unified environment variable path. Copy the product CD-ROM source code to the working directory, while setting the DEV_ROOT variable to enable the follow-up step path accessed.
 
 ```
 mkdir -p ~/MYS6ULx-devel
@@ -42,7 +42,7 @@ cp -r <DVDROM>/04-Source/* $DEV_ROOT
 - Linaro toolchain : gcc version 4.9.3 20141031 (prerelease) (Linaro GCC 2014.11)
 - Yocto toolchain: gcc version 5.3.0 (GCC)
 
-Here has two cross compile toolchinas, one is support by Linaro.Another built by Yocto.Recommend you use Yocto version to build all source code.
+There are two cross compile toolchinas, one is support by Linaro.Another built by Yocto.Recommend you use Yocto version to build all source code.
 
 ### Linaro Toolchain
 
@@ -54,7 +54,7 @@ export CROSS_COMPILE=arm-linux-gnueabihf-
 export ARCH=arm
 ```
 
-Check the toolchain is correct use below command.You have setup correct environment on current SHELL when you get version infomation.If you want it always available, you need to modify your shell config file.
+Check the toolchain is correct using below command.You have setup correct environment on current SHELL when you get version infomation.If you want it always available, you need to modify your shell config file.
 
 ```
 $ arm-linux-gnueabihf-gcc -v
@@ -74,7 +74,7 @@ gcc version 4.9.3 20141031 (prerelease) (Linaro GCC 2014.11)
 
 Yocto toolchain distribute SDK package type. You need install the toolchain SDK package, then use it. Below is install method:
 
-Run shell script as normal user.It will tips you to input install path, default is under "/opt" directory.After time will tips you to input user password to write permission to directory. You can use "source" or "." to load toolchain environment to current shell when your installation finish.
+Run shell script as normal user.It will request you to input install path, default is under "/opt" directory.Then you will reuquest to set permission to directory. You can use "source" or "." to load toolchain environment to current shell when your installation finish.
 
 ```
  $ ./myir-imx6ulx-fb-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh 

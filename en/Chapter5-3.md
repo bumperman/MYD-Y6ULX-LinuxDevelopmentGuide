@@ -1,15 +1,15 @@
 # 5.3 Test Qt application
 
-Inorder to test last steps configure is correct, we support a Qt example.You just open, config and compile it.
+In order to test previous configure is correct, we support a Qt example.You just open, config and compile it.
 
 The first step, in the menu bar, select "File" -> "Open File or Project", in the open dialog box, browse and select "hellowrold" example project, choose "helloworld.pro" file,  click "Open" button.
 
-The scond step, choose "Projects" icon in left panel.The right panel will switch to "Build & Run" tab of "helloworld" project, click "Add kit" pop-down list, and choose "MYS6ULx-dev-kit" option.Then the "helloworld" project will use "MYS6ULx-dev-kit" option to build it. 
+The second step, choose "Projects" icon in left panel.The right panel will switch to "Build & Run" tab of "helloworld" project, click "Add kit" pop-down list, and choose "MYS6ULx-dev-kit" option.Then the "helloworld" project will use "MYS6ULx-dev-kit" option to build it. 
 
 ![](image/5-3-1.png)
-Figure5-3-1 config build option
+Figure5-3-1 config building option
 
-Step 3, click the menu bar "Build" -> "Build Project hellowrld" button, you can complete the project compilation, while the next side will compile the process output.
+Step 3, click the menu bar "Build" -> "Build Project hellowrld" button, you can complete the project compilation, while the bottom window will output compile process.
 
 ![](image/5-3-2.png)
 Figure5-3-2 Compling output

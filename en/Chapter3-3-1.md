@@ -45,11 +45,11 @@ core-image-minimal | minimal file system | used for MYS-6ULX to update system
 core-image-base | base file system has more command line feature | full commnand line system, no GUI
 fsl-image-qt5 | system use Qt5 as GUI | used for graphics requirment
 
-After build process finish, it will output manifest file.This file has each package name and version be install to target file system.
+After build process finish, it will output manifest file.This file has each package name and version be installed to target file system.
 
-The first build process of Yocto will take more time, this depend your PC cpu core number and RAM size. The Yocto recommend use eight core CPU and SSD hardware to impove build speed. Another way, the Yocto will generate cache after first build, the next build process also save more time for you.
+The first build process of Yocto will take more time, this depend on your PC cpu core number and RAM size. The Yocto recommend use eight core CPU and SSD hardware to impove build speed. Another way, the Yocto will generate cache after first build, the next build process also save more time for you.
 
-All output files are in "tmp/deploy/images/mys6ul14x14/" directory after build findish. Below is a example:
+All output files are in "tmp/deploy/images/mys6ul14x14/" directory after build complete. Below as example:
 
 ```
 kevinchen@debian:~/mys-imx6ul/fsl-release-yocto/build$ ls -lh tmp/deploy/images/mys6ul14x14/
@@ -100,7 +100,7 @@ lrwxrwxrwx 1 blackrose blackrose   67 Apr 16 23:04 zImage-mys-imx6ul-14x14-evk-g
 
 ```
 
-Some file are link file in output files.Below is description:
+Some files are link file in output files.Below is description:
 
 File Name | Usage
 ------ | ------
@@ -115,10 +115,10 @@ u-boot-sd-2016.03-r0.imx | u-boot used for boot SD card
 
 ## Bitbake common usage
 
-Bitbake arguments | description
+Bitbake arguments | Description
 ------------ | ----
--c fetch | download package from predefined of recipe
--c cleanall | clean all build directory
--c deploy | deploy image or package to target rootfs
--k | continue when error occure
--c compile | recompile image or package
+-c fetch | Download package from predefined of recipe
+-c cleanall | Clean all build directory
+-c deploy | Deploy image or package to target rootfs
+-k | Continue when error occure
+-c compile | Recompile image or package
