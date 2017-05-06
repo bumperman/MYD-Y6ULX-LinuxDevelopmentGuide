@@ -105,7 +105,7 @@ The first build process of Yocto will take more time, this depend on your PC cpu
 All output files are in "tmp/deploy/images/mys6ul14x14/" directory after build complete. Below as example:
 
 ```
-kevinchen@debian:~/mys-imx6ul/fsl-release-yocto/build$ ls -lh tmp/deploy/images/mys6ul14x14/
+ls -lh tmp/deploy/images/mys6ul14x14/
 total 1.8G
 -rw-r--r-- 1 kevinchen kevinchen  56M Apr 16 23:05 core-image-minimal-mys6ul14x14-20170416150516.rootfs.ext4
 -rw-r--r-- 1 kevinchen kevinchen 2.1K Apr 16 23:05 core-image-minimal-mys6ul14x14-20170416150516.rootfs.manifest

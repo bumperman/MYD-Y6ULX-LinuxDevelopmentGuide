@@ -120,7 +120,7 @@ Yocto第一次构建会需要很长时间，取决于计算机的CPU核心数和
 
 檭建完成后在会"tmp/deploy/images/mys6ul14x14/"或"tmp/deploy/images/mys6ull14x14/"目录下生成不同的文件，以下是构建后的一个例子：
 ```
-kevinchen@dev-machine:~/mys-imx6ul/fsl-release-yocto/build$ ls -lh tmp/deploy/images/mys6ul14x14/
+ls -lh tmp/deploy/images/mys6ul14x14/
 total 1.8G
 -rw-r--r-- 1 kevinchen kevinchen  56M Apr 16 23:05 core-image-minimal-mys6ul14x14-20170416150516.rootfs.ext4
 -rw-r--r-- 1 kevinchen kevinchen 2.1K Apr 16 23:05 core-image-minimal-mys6ul14x14-20170416150516.rootfs.manifest
