@@ -11,6 +11,8 @@ Below has two ways to use Yocto:
 
 If you the first time hear about Yocto, recommend use the first way
 
+Attention: building Yocto does not use previous toolchain, please open newtab for shell or new terminal window.
+
 ## MYS-6ULX support full Yocto package
 
 Extract Yocto source package, and extract the Yocto-downloads.tar.xz into Yocto source direcotry.The Yocto-downloads.tar.xz includes all packages when building MYS-6ULX from Yocto.

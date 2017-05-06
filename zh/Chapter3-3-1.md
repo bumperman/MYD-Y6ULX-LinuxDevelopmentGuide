@@ -11,6 +11,8 @@
 
 初次使用Yocto的用户，推荐使用第一种方式。
 
+注意：构建Yocto不需要加载工具链环境变量，请创建新shell或打开新的终端窗口。
+
 ## MYS-6ULX提供的Yocto
 
 解压Yocto源码包，同时解压Yocto-downloads.tar.xz软件包至Yocto目录下。Yocto-downloads.tar.xz是把MYS-6ULX构建中用到的第三方软件包打包，免除用户再次下载。

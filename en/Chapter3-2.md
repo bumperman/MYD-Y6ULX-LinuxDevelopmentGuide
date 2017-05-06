@@ -2,16 +2,16 @@
 
 Enter Kernel directory, extract it:
 
-    cd $DEV_ROOT/Kernel
-    tar -xvjf linux-4.1.tar.bz2
-    cd linux-4.1
+    cd $DEV_ROOT/04-Source
+    tar -xvf linux-4.1.15.tar.gz
+    cd linux-4.1.15
 
 Compiling：
 
 ```
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- distclean 
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- mys_imx6_defconfig
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- zImage dtbs modules
+make distclean 
+make mys_imx6_defconfig
+make zImage dtbs modules
 ```
 
 When the compilation is done, the kernel image file zImage is generated in the 'arch/arm/boot' directory, and the DTB file is generated in the 'arch/arm/boot/dts' directory.

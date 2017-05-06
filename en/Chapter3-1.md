@@ -3,17 +3,17 @@
 Enter Bootloader directory, extract U-boot source tar ball:
 
 ```
-cd $DEV_ROOT/Bootloader
-tar -xvjf u-boot-2016.03.tar.bz2
+cd $DEV_ROOT/04-Source
+tar -xvf u-boot-2016.03.tar.gz
 cd u-boot-2016.03
 ```
 
 Compiling：
  
 ```
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- distclean 
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- <config>
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
+make distclean 
+make <config>
+make
 ```
 
 The <config> option value is different boot mode. The MYS-6ULX supports four boot modes.

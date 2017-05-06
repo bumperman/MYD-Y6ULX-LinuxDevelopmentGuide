@@ -2,9 +2,9 @@
 
 进入Bootloader目录，解压U-boot源码：
 
-    cd $DEV_ROOT/Bootloader
-    tar -xvjf uboot-imx.tar.bz2
-    cd uboot-imx
+    cd $DEV_ROOT/04-Source/
+    tar -xvf u-boot-2016.03.tar.gz
+    cd u-boot-2016.03
 
 开始编译：
 
