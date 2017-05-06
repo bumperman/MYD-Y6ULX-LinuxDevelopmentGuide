@@ -19,18 +19,19 @@ Attention: The Yocto-downloads.tar.xz file is more large, it does not include in
 
 ```
 cd $DEV_ROOT
-tar xvf fsl-release-yocto.tar.xz
-tar xvf Yocto-downloads.tar.xz -C $DEV_ROOT/fsl-release-bsp
+tar xvf 04-Source/fsl-release-yocto.tar.xz
+tar xvf 04-Source/Yocto-downloads.tar.xz -C fsl-release-bsp
 cd fsl-release-bsp
 ```
 
 Last, also needs put the kernel and u-boot source into your home directory in linux.It will be fetch with Yocto.
 
 ```
+cd $DEV_ROOT
 mkdir ~/MYS-6ULX-Linux
 mkdir ~/MYS-6ULX-uboot
-tar xvf $DEV_ROOT/04-Source/linux-4.1.15.tar.gz -C ~/MYS-6ULX-Linux
-tar xvf $DEV_ROOT/04-Source/u-boot-2016.03.tar.gz -C ~/MYS-6ULX-uboot
+tar xvf 04-Source/linux-4.1.15.tar.gz -C ~/MYS-6ULX-Linux
+tar xvf 04-Source/u-boot-2016.03.tar.gz -C ~/MYS-6ULX-uboot
 ```
 
 ## NXP support Yocto
@@ -80,7 +81,7 @@ Use script by NXP supported, create a workspace directory, and Yocto will build 
 MYS-6ULX has two types board, "mys6ull14x14" is MYS-6ULX-IoT and "mys6ul14x14" is MYS-6ULX-IND.
 
 ```
-DISTRO=myir-imx-fb MACHINE=mys6ul14x14 source fsl-setup-release.sh build
+DISTRO=myir-imx-fb MACHINE=mys6ul14x14 source fsl-setup-release.sh -b build
 bitbake fsl-image-qt5
 ```
 

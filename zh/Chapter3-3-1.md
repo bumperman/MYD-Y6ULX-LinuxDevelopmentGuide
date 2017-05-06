@@ -19,14 +19,15 @@
 
 ```
 cd $DEV_ROOT
-tar xvf fsl-release-yocto.tar.xz
-tar xvf Yocto-downloads.tar.xz -C $DEV_ROOT/fsl-release-bsp
+tar xvf 04-Source/fsl-release-yocto.tar.xz
+tar xvf 04-Source/Yocto-downloads.tar.xz -C fsl-release-bsp
 cd fsl-release-bsp
 ```
 
 还需要将Linux内核和U-Boot代码放在用户家目录下，方便开发和Yocto编译。
 
 ```
+cd $DEV_ROOT
 mkdir ~/MYS-6ULX-Linux
 mkdir ~/MYS-6ULX-uboot
 tar xvf $DEV_ROOT/04-Source/linux-4.1.15.tar.gz -C ~/MYS-6ULX-Linux
@@ -78,7 +79,7 @@ tar xvf $DEV_ROOT/04-Source/u-boot-2016.03.tar.gz -C ~/MYS-6ULX-uboot
 这里的MACHINE参数有两种设备，"mys6ull14x14"对应于MYS-6ULX-IoT和"mys6ul14x14"对应于MYS-6ULX-IND版本。
 
 ```
-DISTRO=myir-imx-fb MACHINE=mys6ul14x14 source fsl-setup-release.sh
+DISTRO=myir-imx-fb MACHINE=mys6ul14x14 source fsl-setup-release.sh -b build
 tree conf/
 conf/
 ├── bblayers.conf
