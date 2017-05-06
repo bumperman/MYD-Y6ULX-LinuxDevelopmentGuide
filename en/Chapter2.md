@@ -34,7 +34,9 @@ Create a working directory to facilitate the creation of an unified environment 
 ```
 mkdir -p ~/MYS6ULx-devel
 export DEV_ROOT=~/MYS6ULx-devel
-cp -r <DVDROM>/04-Source/* $DEV_ROOT
+cp -r <DVDROM>/02-Images $DEV_ROOT
+cp -r <DVDROM>/03-Tools $DEV_ROOT
+cp -r <DVDROM>/04-Source $DEV_ROOT
 ```  
 
 ## Configure toolchain
@@ -71,6 +73,8 @@ gcc version 4.9.3 20141031 (prerelease) (Linaro GCC 2014.11)
 ```
 
 ### Yocto Toolchain
+
+Yocto supports two kinds toolchain, one is low-level development toolchain meta-toolchain, another is application development toolchain.The low-level toolchain likes Linaro.The another used for application development, include more third libaries and header files.The MYS-6ULX also supports two kinds, those file name is "myir-imx6ulx-fb-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh" and "myir-imx6ulx-fb-glibc-x86_64-meta-toolchain-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh".
 
 Yocto toolchain distribute SDK package type. You need install the toolchain SDK package, then use it. Below is install method:
 

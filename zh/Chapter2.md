@@ -25,7 +25,7 @@
 ```
 sudo apt-get install build-essential git-core libncurses5-dev flex bison \
 texinfo zip unzip zlib1g-dev gettext u-boot-tools g++ xz-utils mtd-utils \
-gawk diffstat gcc-multilib
+gawk diffstat gcc-multilib python git make gcc g++ diffstat bzip2 gawk chrpath wget cpio texinfo
 ```
 
 ## 建立工作目录
@@ -35,7 +35,9 @@ gawk diffstat gcc-multilib
 ```
 mkdir -p ~/MYS6ULx-devel
 export DEV_ROOT=~/MYS6ULx-devel
-cp -r <DVDROM>/04-Source/* $DEV_ROOT
+cp -r <DVDROM>/02-Images $DEV_ROOT
+cp -r <DVDROM>/03-Tools $DEV_ROOT
+cp -r <DVDROM>/04-Source $DEV_ROOT
 ```  
 
 ## 配置编译工具
@@ -72,7 +74,9 @@ gcc version 4.9.3 20141031 (prerelease) (Linaro GCC 2014.11)
 
 ### Yocto编译工具链
 
-Yocto编译器是由SDK工具包来提供，需要先安装SDK包后，才可以使用。安装方法如下：
+Yocto提供的工具链有两种，一种是底层开发的meta-toolchain，另一种是用于应用开发的工具链。前者和Linaro类似，后者包含应用开发中的相关库，可以直接使用pkg-config工具来解决头文件或库文件的依赖关系。MYS-6ULX的资源包中有提供两种工具链，文件名分别为myir-imx6ulx-fb-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh和myir-imx6ulx-fb-glibc-x86_64-meta-toolchain-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh。
+
+Yocto编译器是以SDK工具包方式来提供，需要先安装SDK包后，才可以使用。安装方法如下：
 
 以普通用户权限执行shell脚本，运行中会提示安装路径，默认在/opt目录下，同时会提示输入用户密码以便有写入目录的权限。安装完成后，可以使用"source"或"."命令加载工链接环境到当前终端。
 
