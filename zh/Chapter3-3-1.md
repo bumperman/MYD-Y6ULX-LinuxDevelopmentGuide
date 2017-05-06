@@ -15,7 +15,7 @@
 
 解压Yocto源码包，同时解压Yocto-downloads.tar.xz软件包至Yocto目录下。Yocto-downloads.tar.xz是把MYS-6ULX构建中用到的第三方软件包打包，免除用户再次下载。
 
-注意：由于Yocto-downloads.tar.xz文件较大，无法与MYS-6ULX打包在同一文件内，请访问http://down.myir-tech.com/MYS-6ULX/网页，自行下载。
+注意：由于Yocto-downloads.tar.xz文件较大，无法与MYS-6ULX打包在同一文件内，请访问网页下载: http://down.myir-tech.com/MYS-6ULX/。
 
 ```
 cd $DEV_ROOT
