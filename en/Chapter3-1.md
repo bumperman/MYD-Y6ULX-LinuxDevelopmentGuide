@@ -4,8 +4,8 @@ Enter Bootloader directory, extract U-boot source tar ball:
 
 ```
 cd $DEV_ROOT/04-Source
-tar -xvf u-boot-2016.03.tar.gz
-cd u-boot-2016.03
+tar -xvf MYS-IMX6UL-uboot.tar.gz
+cd MYS-IMX6UL-uboot
 ```
 
 Compiling：
@@ -30,11 +30,14 @@ U-Boot will search and execute a script file "boot.scr" when U-Boot booting up. 
 ```
 cat mys-imx6ul-boot-sdcard.txt
 setenv mmcroot '/dev/mmcblk0p2 rootwait rw rootdelay=5 mem=256M'
-setenv mmcargs 'setenv bootargs console=${console},${baudrate} root=${mmcroot} mtdparts=gpmi-nand:5m(boot),10m(kernel),1m(dtb),-(rootfs)'
+setenv mmcargs 'setenv bootargs console=${console},${baudrate} \
+root=${mmcroot} mtdparts=gpmi-nand:5m(boot),10m(kernel),\
+1m(dtb),-(rootfs)'
 run mmcargs
 fatload mmc 0 0x83000000 zImage
 fatload mmc 0 0x84000000 mys-imx6ul-14x14-evk-emmc.dtb
 bootz 0x83000000 - 0x84000000
 
-./tool/mkimage -A arm -T script -O linux -d mys-imx6ul-boot-sdcard.txt boot.scr
+./tool/mkimage -A arm -T script -O linux \
+-d mys-imx6ul-boot-sdcard.txt boot.scr
 ```

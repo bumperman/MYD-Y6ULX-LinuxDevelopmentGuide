@@ -18,7 +18,11 @@ QtCreator 构建 helloworld 项目后，编译好的二进制文件存放在"~/b
 
 ```
 file ~/build-helloworld-MYS6ULx_dev_kit-Debug/helloworld
-/home/kevinchen/build-helloworld-MYS6ULx_dev_kit-Debug/helloworld: ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 2.6.32, BuildID[sha1]=9c5f22deb1d8272c2a81528c171d215896112784, not stripped
+/home/kevinchen/build-helloworld-MYS6ULx_dev_kit-Debug/helloworld: 
+ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), 
+dynamically linked, interpreter /lib/ld-linux-armhf.so.3, 
+for GNU/Linux 2.6.32, 
+BuildID[sha1]=9c5f22deb1d8272c2a81528c171d215896112784, not stripped
 ```
 
 然后将 helloworld 文件拷贝到开发板下运行即可。

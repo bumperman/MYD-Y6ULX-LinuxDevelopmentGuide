@@ -43,8 +43,9 @@ Yocto下的项目比较多，为了便于管理使用与Android相同的代码�
 * 设置repo
 
 ```
-mkdir ~/bin (this step may not be needed if the bin folder already exists)
-curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+mkdir -p ~/bin
+curl http://commondatastorage.googleapis.com/git-repo-downloads/repo \
+> ~/bin/repo
 chmod a+x ~/bin/repo
 export PATH=~/bin:$PATH
 ```
@@ -60,7 +61,8 @@ git config --global user.email "Your email address"
 cd $DEV_ROOT
 mkdir fsl-release-bsp
 cd fsl-replease-bsp
-repo init -u git://git.freescale.com/imx/fsl-arm-yocto-bsp.git -b imx-4.1-krogoth
+repo init -u git://git.freescale.com/imx/fsl-arm-yocto-bsp.git \
+-b imx-4.1-krogoth
 repo sync
 ```
 
@@ -71,8 +73,10 @@ repo sync
 ```
 mkdir ~/MYS-6ULX-Linux
 mkdir ~/MYS-6ULX-uboot
-tar xvf $DEV_ROOT/04-Source/linux-4.1.15.tar.gz -C ~/MYS-6ULX-Linux
-tar xvf $DEV_ROOT/04-Source/u-boot-2016.03.tar.gz -C ~/MYS-6ULX-uboot
+tar xvf $DEV_ROOT/04-Source/linux-4.1.15.tar.gz \
+-C ~/MYS-6ULX-Linux
+tar xvf $DEV_ROOT/04-Source/u-boot-2016.03.tar.gz \
+-C ~/MYS-6ULX-uboot
 ```
 
 ## 初始化Yocto构建目录
@@ -81,7 +85,8 @@ tar xvf $DEV_ROOT/04-Source/u-boot-2016.03.tar.gz -C ~/MYS-6ULX-uboot
 这里的MACHINE参数有两种设备，"mys6ull14x14"对应于MYS-6ULX-IoT和"mys6ul14x14"对应于MYS-6ULX-IND版本。
 
 ```
-DISTRO=myir-imx-fb MACHINE=mys6ul14x14 source fsl-setup-release.sh -b build
+DISTRO=myir-imx-fb MACHINE=mys6ul14x14 source fsl-setup-release.sh \
+-b build
 tree conf/
 conf/
 ├── bblayers.conf
@@ -124,49 +129,107 @@ Yocto第一次构建会需要很长时间，取决于计算机的CPU核心数和
 ```
 ls -lh tmp/deploy/images/mys6ul14x14/
 total 1.8G
--rw-r--r-- 1 kevinchen kevinchen  56M Apr 16 23:05 core-image-minimal-mys6ul14x14-20170416150516.rootfs.ext4
--rw-r--r-- 1 kevinchen kevinchen 2.1K Apr 16 23:05 core-image-minimal-mys6ul14x14-20170416150516.rootfs.manifest
--rw-r--r-- 1 kevinchen kevinchen  72M Apr 16 23:05 core-image-minimal-mys6ul14x14-20170416150516.rootfs.sdcard
--rw-r--r-- 1 kevinchen kevinchen  11M Apr 16 23:05 core-image-minimal-mys6ul14x14-20170416150516.rootfs.tar.bz2
--rw-r--r-- 1 kevinchen kevinchen 7.3M Apr 16 23:05 core-image-minimal-mys6ul14x14-20170416150516.rootfs.tar.xz
-lrwxrwxrwx 1 kevinchen kevinchen   57 Apr 16 23:05 core-image-minimal-mys6ul14x14.ext4 -> core-image-minimal-mys6ul14x14-20170416150516.rootfs.ext4
-lrwxrwxrwx 1 kevinchen kevinchen   61 Apr 16 23:05 core-image-minimal-mys6ul14x14.manifest -> core-image-minimal-mys6ul14x14-20170416150516.rootfs.manifest
-lrwxrwxrwx 1 kevinchen kevinchen   59 Apr 16 23:05 core-image-minimal-mys6ul14x14.sdcard -> core-image-minimal-mys6ul14x14-20170416150516.rootfs.sdcard
-lrwxrwxrwx 1 kevinchen kevinchen   60 Apr 16 23:05 core-image-minimal-mys6ul14x14.tar.bz2 -> core-image-minimal-mys6ul14x14-20170416150516.rootfs.tar.bz2
-lrwxrwxrwx 1 kevinchen kevinchen   59 Apr 16 23:05 core-image-minimal-mys6ul14x14.tar.xz -> core-image-minimal-mys6ul14x14-20170416150516.rootfs.tar.xz
--rw-r--r-- 1 kevinchen kevinchen 780M Apr 16 23:08 fsl-image-qt5-mys6ul14x14-20170416150603.rootfs.ext4
--rw-r--r-- 1 kevinchen kevinchen  35K Apr 16 23:08 fsl-image-qt5-mys6ul14x14-20170416150603.rootfs.manifest
--rw-r--r-- 1 kevinchen kevinchen 796M Apr 16 23:08 fsl-image-qt5-mys6ul14x14-20170416150603.rootfs.sdcard
--rw-r--r-- 1 kevinchen kevinchen 166M Apr 16 23:08 fsl-image-qt5-mys6ul14x14-20170416150603.rootfs.tar.bz2
--rw-r--r-- 1 kevinchen kevinchen 105M Apr 16 23:09 fsl-image-qt5-mys6ul14x14-20170416150603.rootfs.tar.xz
-lrwxrwxrwx 1 kevinchen kevinchen   52 Apr 16 23:08 fsl-image-qt5-mys6ul14x14.ext4 -> fsl-image-qt5-mys6ul14x14-20170416150603.rootfs.ext4
-lrwxrwxrwx 1 kevinchen kevinchen   56 Apr 16 23:08 fsl-image-qt5-mys6ul14x14.manifest -> fsl-image-qt5-mys6ul14x14-20170416150603.rootfs.manifest
-lrwxrwxrwx 1 kevinchen kevinchen   54 Apr 16 23:09 fsl-image-qt5-mys6ul14x14.sdcard -> fsl-image-qt5-mys6ul14x14-20170416150603.rootfs.sdcard
-lrwxrwxrwx 1 kevinchen kevinchen   55 Apr 16 23:09 fsl-image-qt5-mys6ul14x14.tar.bz2 -> fsl-image-qt5-mys6ul14x14-20170416150603.rootfs.tar.bz2
-lrwxrwxrwx 1 kevinchen kevinchen   54 Apr 16 23:09 fsl-image-qt5-mys6ul14x14.tar.xz -> fsl-image-qt5-mys6ul14x14-20170416150603.rootfs.tar.xz
--rw-r--r-- 2 kevinchen kevinchen 657K Apr 16 23:04 modules--4.1.15-r0-mys6ul14x14-20170416150349.tgz
-lrwxrwxrwx 1 kevinchen kevinchen   49 Apr 16 23:04 modules-mys6ul14x14.tgz -> modules--4.1.15-r0-mys6ul14x14-20170416150349.tgz
--rw-r--r-- 2 kevinchen kevinchen  294 Apr 16 23:07 README_-_DO_NOT_DELETE_FILES_IN_THIS_DIRECTORY.txt
--rwxr-xr-x 2 kevinchen kevinchen 375K Apr 16 22:53 u-boot-emmc-2016.03-r0.imx
-lrwxrwxrwx 1 kevinchen kevinchen   26 Apr 16 22:53 u-boot.imx -> u-boot-emmc-2016.03-r0.imx
-lrwxrwxrwx 1 kevinchen kevinchen   26 Apr 16 22:53 u-boot.imx-emmc -> u-boot-emmc-2016.03-r0.imx
-lrwxrwxrwx 1 kevinchen kevinchen   26 Apr 16 22:53 u-boot.imx-nand -> u-boot-nand-2016.03-r0.imx
-lrwxrwxrwx 1 kevinchen kevinchen   24 Apr 16 22:53 u-boot.imx-sd -> u-boot-sd-2016.03-r0.imx
-lrwxrwxrwx 1 kevinchen kevinchen   26 Apr 16 22:53 u-boot-mys6ul14x14.imx -> u-boot-emmc-2016.03-r0.imx
-lrwxrwxrwx 1 kevinchen kevinchen   26 Apr 16 22:53 u-boot-mys6ul14x14.imx-emmc -> u-boot-emmc-2016.03-r0.imx
-lrwxrwxrwx 1 kevinchen kevinchen   26 Apr 16 22:53 u-boot-mys6ul14x14.imx-nand -> u-boot-nand-2016.03-r0.imx
-lrwxrwxrwx 1 kevinchen kevinchen   24 Apr 16 22:53 u-boot-mys6ul14x14.imx-sd -> u-boot-sd-2016.03-r0.imx
--rwxr-xr-x 2 kevinchen kevinchen 427K Apr 16 22:53 u-boot-nand-2016.03-r0.imx
--rwxr-xr-x 2 kevinchen kevinchen 375K Apr 16 22:53 u-boot-sd-2016.03-r0.imx
-lrwxrwxrwx 1 kevinchen kevinchen   48 Apr 16 23:04 zImage -> zImage--4.1.15-r0-mys6ul14x14-20170416150349.bin
--rw-r--r-- 2 kevinchen kevinchen 6.5M Apr 16 23:04 zImage--4.1.15-r0-mys6ul14x14-20170416150349.bin
--rw-r--r-- 2 kevinchen kevinchen  36K Apr 16 23:04 zImage--4.1.15-r0-mys-imx6ul-14x14-evk-20170416150349.dtb
--rw-r--r-- 2 kevinchen kevinchen  37K Apr 16 23:04 zImage--4.1.15-r0-mys-imx6ul-14x14-evk-emmc-20170416150349.dtb
--rw-r--r-- 2 kevinchen kevinchen  37K Apr 16 23:04 zImage--4.1.15-r0-mys-imx6ul-14x14-evk-gpmi-weim-20170416150349.dtb
-lrwxrwxrwx 1 kevinchen kevinchen   48 Apr 16 23:04 zImage-mys6ul14x14.bin -> zImage--4.1.15-r0-mys6ul14x14-20170416150349.bin
-lrwxrwxrwx 1 kevinchen kevinchen   57 Apr 16 23:04 zImage-mys-imx6ul-14x14-evk.dtb -> zImage--4.1.15-r0-mys-imx6ul-14x14-evk-20170416150349.dtb
-lrwxrwxrwx 1 kevinchen kevinchen   62 Apr 16 23:04 zImage-mys-imx6ul-14x14-evk-emmc.dtb -> zImage--4.1.15-r0-mys-imx6ul-14x14-evk-emmc-20170416150349.dtb
-lrwxrwxrwx 1 kevinchen kevinchen   67 Apr 16 23:04 zImage-mys-imx6ul-14x14-evk-gpmi-weim.dtb -> zImage--4.1.15-r0-mys-imx6ul-14x14-evk-gpmi-weim-20170416150349.dtb
+-rw-r--r-- 1 kevinchen kevinchen  56M Apr 16 23:05 
+core-image-minimal-mys6ul14x14-20170416150516.rootfs.ext4
+-rw-r--r-- 1 kevinchen kevinchen 2.1K Apr 16 23:05 
+core-image-minimal-mys6ul14x14-20170416150516.rootfs.manifest
+-rw-r--r-- 1 kevinchen kevinchen  72M Apr 16 23:05 
+core-image-minimal-mys6ul14x14-20170416150516.rootfs.sdcard
+-rw-r--r-- 1 kevinchen kevinchen  11M Apr 16 23:05 
+core-image-minimal-mys6ul14x14-20170416150516.rootfs.tar.bz2
+-rw-r--r-- 1 kevinchen kevinchen 7.3M Apr 16 23:05 
+core-image-minimal-mys6ul14x14-20170416150516.rootfs.tar.xz
+lrwxrwxrwx 1 kevinchen kevinchen   57 Apr 16 23:05 
+core-image-minimal-mys6ul14x14.ext4 -> core-image-minimal-
+mys6ul14x14-20170416150516.rootfs.ext4
+lrwxrwxrwx 1 kevinchen kevinchen   61 Apr 16 23:05 
+core-image-minimal-mys6ul14x14.manifest -> core-image-minimal-
+mys6ul14x14-20170416150516.rootfs.manifest
+lrwxrwxrwx 1 kevinchen kevinchen   59 Apr 16 23:05 
+core-image-minimal-mys6ul14x14.sdcard -> core-image-minimal-
+mys6ul14x14-20170416150516.rootfs.sdcard
+lrwxrwxrwx 1 kevinchen kevinchen   60 Apr 16 23:05 
+core-image-minimal-mys6ul14x14.tar.bz2 -> core-image-minimal-
+mys6ul14x14-20170416150516.rootfs.tar.bz2
+lrwxrwxrwx 1 kevinchen kevinchen   59 Apr 16 23:05 
+core-image-minimal-mys6ul14x14.tar.xz -> core-image-minimal-
+mys6ul14x14-20170416150516.rootfs.tar.xz
+-rw-r--r-- 1 kevinchen kevinchen 780M Apr 16 23:08 
+fsl-image-qt5-mys6ul14x14-20170416150603.rootfs.ext4
+-rw-r--r-- 1 kevinchen kevinchen  35K Apr 16 23:08 
+fsl-image-qt5-mys6ul14x14-20170416150603.rootfs.manifest
+-rw-r--r-- 1 kevinchen kevinchen 796M Apr 16 23:08 
+fsl-image-qt5-mys6ul14x14-20170416150603.rootfs.sdcard
+-rw-r--r-- 1 kevinchen kevinchen 166M Apr 16 23:08 
+fsl-image-qt5-mys6ul14x14-20170416150603.rootfs.tar.bz2
+-rw-r--r-- 1 kevinchen kevinchen 105M Apr 16 23:09 
+fsl-image-qt5-mys6ul14x14-20170416150603.rootfs.tar.xz
+lrwxrwxrwx 1 kevinchen kevinchen   52 Apr 16 23:08 
+fsl-image-qt5-mys6ul14x14.ext4 -> fsl-image-qt5-
+mys6ul14x14-20170416150603.rootfs.ext4
+lrwxrwxrwx 1 kevinchen kevinchen   56 Apr 16 23:08 
+fsl-image-qt5-mys6ul14x14.manifest -> fsl-image-qt5-
+mys6ul14x14-20170416150603.rootfs.manifest
+lrwxrwxrwx 1 kevinchen kevinchen   54 Apr 16 23:09 
+fsl-image-qt5-mys6ul14x14.sdcard -> fsl-image-qt5-
+mys6ul14x14-20170416150603.rootfs.sdcard
+lrwxrwxrwx 1 kevinchen kevinchen   55 Apr 16 23:09 
+fsl-image-qt5-mys6ul14x14.tar.bz2 -> fsl-image-qt5-
+mys6ul14x14-20170416150603.rootfs.tar.bz2
+lrwxrwxrwx 1 kevinchen kevinchen   54 Apr 16 23:09 
+fsl-image-qt5-mys6ul14x14.tar.xz -> fsl-image-qt5-
+mys6ul14x14-20170416150603.rootfs.tar.xz
+-rw-r--r-- 2 kevinchen kevinchen 657K Apr 16 23:04 
+modules--4.1.15-r0-mys6ul14x14-20170416150349.tgz
+lrwxrwxrwx 1 kevinchen kevinchen   49 Apr 16 23:04 
+modules-mys6ul14x14.tgz -> modules--4.1.15-r0-
+mys6ul14x14-20170416150349.tgz
+-rw-r--r-- 2 kevinchen kevinchen  294 Apr 16 23:07 
+README_-_DO_NOT_DELETE_FILES_IN_THIS_DIRECTORY.txt
+-rwxr-xr-x 2 kevinchen kevinchen 375K Apr 16 22:53 
+u-boot-emmc-2016.03-r0.imx
+lrwxrwxrwx 1 kevinchen kevinchen   26 Apr 16 22:53 
+u-boot.imx -> u-boot-emmc-2016.03-r0.imx
+lrwxrwxrwx 1 kevinchen kevinchen   26 Apr 16 22:53 
+u-boot.imx-emmc -> u-boot-emmc-2016.03-r0.imx
+lrwxrwxrwx 1 kevinchen kevinchen   26 Apr 16 22:53 
+u-boot.imx-nand -> u-boot-nand-2016.03-r0.imx
+lrwxrwxrwx 1 kevinchen kevinchen   24 Apr 16 22:53 
+u-boot.imx-sd -> u-boot-sd-2016.03-r0.imx
+lrwxrwxrwx 1 kevinchen kevinchen   26 Apr 16 22:53 
+u-boot-mys6ul14x14.imx -> u-boot-emmc-2016.03-r0.imx
+lrwxrwxrwx 1 kevinchen kevinchen   26 Apr 16 22:53 
+u-boot-mys6ul14x14.imx-emmc -> u-boot-emmc-2016.03-r0.imx
+lrwxrwxrwx 1 kevinchen kevinchen   26 Apr 16 22:53 
+u-boot-mys6ul14x14.imx-nand -> u-boot-nand-2016.03-r0.imx
+lrwxrwxrwx 1 kevinchen kevinchen   24 Apr 16 22:53 
+u-boot-mys6ul14x14.imx-sd -> u-boot-sd-2016.03-r0.imx
+-rwxr-xr-x 2 kevinchen kevinchen 427K Apr 16 22:53 
+u-boot-nand-2016.03-r0.imx
+-rwxr-xr-x 2 kevinchen kevinchen 375K Apr 16 22:53 
+u-boot-sd-2016.03-r0.imx
+lrwxrwxrwx 1 kevinchen kevinchen   48 Apr 16 23:04 
+zImage -> zImage--4.1.15-r0-mys6ul14x14-20170416150349.bin
+-rw-r--r-- 2 kevinchen kevinchen 6.5M Apr 16 23:04 
+zImage--4.1.15-r0-mys6ul14x14-20170416150349.bin
+-rw-r--r-- 2 kevinchen kevinchen  36K Apr 16 23:04 
+zImage--4.1.15-r0-mys-imx6ul-14x14-evk-20170416150349.dtb
+-rw-r--r-- 2 kevinchen kevinchen  37K Apr 16 23:04 
+zImage--4.1.15-r0-mys-imx6ul-14x14-evk-emmc-20170416150349.dtb
+-rw-r--r-- 2 kevinchen kevinchen  37K Apr 16 23:04 zImage
+--4.1.15-r0-mys-imx6ul-14x14-evk-gpmi-weim-20170416150349.dtb
+lrwxrwxrwx 1 kevinchen kevinchen   48 Apr 16 23:04 zImage-
+mys6ul14x14.bin -> zImage--4.1.15-r0-mys6ul14x14-
+20170416150349.bin
+lrwxrwxrwx 1 kevinchen kevinchen   57 Apr 16 23:04 zImage-
+mys-imx6ul-14x14-evk.dtb -> zImage--4.1.15-r0-mys-
+imx6ul-14x14-evk-20170416150349.dtb
+lrwxrwxrwx 1 kevinchen kevinchen   62 Apr 16 23:04 zImage-
+mys-imx6ul-14x14-evk-emmc.dtb -> zImage--4.1.15-r0-mys-
+imx6ul-14x14-evk-emmc-20170416150349.dtb
+lrwxrwxrwx 1 kevinchen kevinchen   67 Apr 16 23:04 zImage-
+mys-imx6ul-14x14-evk-gpmi-weim.dtb -> zImage--4.1.15-r0-
+mys-imx6ul-14x14-evk-gpmi-weim-20170416150349.dtb
 
 ```
 

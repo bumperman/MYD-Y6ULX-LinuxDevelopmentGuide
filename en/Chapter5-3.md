@@ -17,8 +17,12 @@ Figure5-3-2 Compling output
 QtCreator build helloworld project, compiled binary files stored in the "~/build-helloworld-MYS6ULx_dev_kit-Debug/" directory, you can use the file command to see whether is the compiler for the ARM architecture.
 
 ```
-file ~/build-helloworld-MYS6ULx_dev_kit-Debug/helloworld
-/home/kevinchen/build-helloworld-MYS6ULx_dev_kit-Debug/helloworld: ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 2.6.32, BuildID[sha1]=9c5f22deb1d8272c2a81528c171d215896112784, not stripped
+$ file ~/build-helloworld-MYS6ULx_dev_kit-Debug/helloworld
+/home/kevinchen/build-helloworld-MYS6ULx_dev_kit-Debug/
+helloworld: ELF 32-bit LSB executable, ARM, EABI5 version 1 
+(GNU/Linux), dynamically linked, interpreter /lib/ld-linux-
+armhf.so.3, for GNU/Linux 2.6.32, BuildID[sha1]=
+9c5f22deb1d8272c2a81528c171d215896112784, not stripped
 ```
 
 Copy the helloworld file to board and run it.

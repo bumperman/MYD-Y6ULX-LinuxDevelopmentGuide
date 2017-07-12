@@ -3,8 +3,8 @@
 Enter Bootloader directory, extract U-boot source tar ball:
 
     cd $DEV_ROOT/Bootloader
-    tar -xvjf u-boot-2016.03.tar.bz2
-    cd u-boot-2016.03
+    tar -xvjf MYS-IMX6UL-uboot.tar.gz
+    cd MYS-IMX6UL-uboot
 
 Compiling：
 

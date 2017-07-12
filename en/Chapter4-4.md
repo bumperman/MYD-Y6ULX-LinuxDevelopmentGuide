@@ -5,11 +5,11 @@ This example demonstrates how to read key state and key values in Linux user spa
 - Run the program on board:
 
 ```
-# ./gpio_key /dev/input/event0
+# ./gpio_key /dev/input/event2
 Hit any key on board ......
-key 260 Pressed
-key 260 Released
-key 260 Pressed
-key 260 Released
+key 2 Pressed
+key 2 Released
+key 2 Pressed
+key 2 Released
 ```
 

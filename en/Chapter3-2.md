@@ -2,9 +2,11 @@
 
 Enter Kernel directory, extract it:
 
-    cd $DEV_ROOT/04-Source
-    tar -xvf linux-4.1.15.tar.gz
-    cd linux-4.1.15
+```
+cd $DEV_ROOT/04-Source
+tar -xvf linux-4.1.15.tar.gz
+cd linux-4.1.15
+```
 
 Compiling：
 

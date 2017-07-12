@@ -6,7 +6,7 @@ MYS-6ULX series board use two methods to update system to NAND flash on board, M
 
 ### Install tool
 
-The NXP supports a manufacture tool called MfgTool, we use MfgTool 2.7.0 version.The MfgTool suppors Windows and Linux system.It is located in directory "03-Tools\MfgTool" of resource package.You can copy and extract it to your work directory.
+The NXP supports a manufacture tool called MfgTool, we use MfgTool 2.7.0 version.The MfgTool suppors Windows and Linux system.It is located in directory "03-Tools/ManufactoryTool" of resource package.You can copy and extract it to your work directory.
 
 ### Update steps(follow the sequence):
 
@@ -63,7 +63,7 @@ Bit2 | ON
 Bit3 | OFF
 Bit4 | ON
 
-Use USB to TTL cable connect to Debug port(JP1), configure your serial terminal software.Use USB Micro B cable as power plug into USB OTG port(J7) on board.You can view update progress in serial terminal software.
+Use USB to TTL cable connect to Debug port(JP1), configure your serial terminal software.Use USB Micro B cable as power plug into USB OTG port(J7) on board(or use DC adapter plug into J1 interface).You can view update progress in serial terminal software.
 
 Also, you can through LED(D12) to view the current update status, the updating is flash, the update success is light on, the update fail is light off.
 

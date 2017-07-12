@@ -1,4 +1,4 @@
-# 4.5 GPIO-KEY 测试
+# 4.5 GPIO-LED 测试
 
 本例程演示使用Linux系统API操作开发板上的LED灯，D12。运行程序后，D12闪烁。按下"Ctrl-C"可结束程序。
 
