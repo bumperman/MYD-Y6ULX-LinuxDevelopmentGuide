@@ -26,3 +26,5 @@ mys-imx6ull-14x14-evk-emmc.dtb | MYS-6ULX-IoT eMMC
 mys-imx6ull-14x14-evk-gpmi-weim.dtb | MYS-6ULX-IoT NAND
 
 The MYS-6ULX Micro SD slot is connected to mmc0 controller.So, all dtb file is enabled with mmc0 controller.
+
+Those "myb6ulx" tag dtb files are support MYB-6ULX board, configured CAN, RS485, Ethernet, Camera and Audio functions.Please install the MYB-6ULX onto MYS-6ULX-IOT or MYS-6ULX-IND board before use those files.

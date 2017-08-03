@@ -18,5 +18,5 @@ ifconfig eth1 192.168.1.42
 ```
 
 uvc_stream提供两种web功能，snapshot和streaming。snapshot的请求URL是snapshot.jpeg，streaming的请求URL是stream.mjpeg。
-PC和开发板在同一网络内时，打开流览器，输入地址http://192.168.1.42:8080/stream.mjpeg，可以看到有登录框，输入用户名为uvc_user，密码为123456，就可以看到从MY-CAM011B实时采集到的图像了。
+PC和开发板在同一网络内时，打开流览器，输入地址[http://192.168.1.42:8080/stream.mjpeg](http://192.168.1.42:8080/stream.mjpeg)，可以看到有登录框，输入用户名为uvc_user，密码为123456，就可以看到从MY-CAM011B实时采集到的图像了。
 
