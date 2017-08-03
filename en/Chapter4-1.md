@@ -28,3 +28,119 @@ color: r & b   rgb_val: 0000F81F
 color: white   rgb_val: 0000FFFF
 color: black   rgb_val: 00000000
 ```
+
+
+## Configure for MY-TFT070RV2 module
+
+The Linux source of MYS-6ULX series board has alread support display and touch function.The MY-TFT070RV2 touch function through ADC type.You just enable the relative function in dts file.
+
+* MYS-6ULX-IND
+The first step, edit "arch/arm/boot/dts/mys-imx6ul-14x14-evk.dts" file, modify the status property of tsc node to okay value.
+```
+&tsc {
+     pinctrl-names = "default";
+     pinctrl-0 = <&pinctrl_tsc>;
+     xnur-gpio = <&gpio1 3 GPIO_ACTIVE_LOW>;
+     measure-delay-time = <0xfffff>;
+     pre-charge-time = <0xffff>;
+     status = "okay";
+};
+```
+The second step, comment the argument of 4.3 inch screen, and enable argument of 7.0 inch screen.Search and modify the display-timings node of lcfif node, change it follow below.
+```
+        display-timings {
+            native-mode = <&timing0>;
+/*
+             timing0: timing0 {
+             clock-frequency = <9200000>
+             hsync-len = <41>;
+             vback-porch = <2>;
+             vfront-porch = <4>;
+             vsync-len = <10>;
+ 
+             hsync-active = <0>;
+             vsync-active = <0>;
+             de-active = <1>;
+             pixelclk-active = <0>;
+             };
+*/
+             timing0: timing0 {
+             clock-frequency = <33000000>;
+             hactive = <800>;
+             vactive = <480>;
+             hfront-porch = <210>;
+             hback-porch = <46>;
+             hsync-len = <1>;
+             vback-porch = <22>;
+             vfront-porch = <23>;
+             vsync-len = <20>;
+ 
+             hsync-active = <0>;
+             vsync-active = <0>;
+             de-active = <1>;
+             pixelclk-active = <1>;
+             };
+ 
+        };
+```
+
+* MYS-6ULX-IoT
+The MYS-6ULX-IoT use same method with MYS-6ULX-IND, you just edit the "arch/arm/boot/dts/mys-imx6ull-14x14-evk.dts" file follow above step.
+
+## Configure for MY-TFT070CV2 module
+
+The touch function of MY-TFT070CV2 module use I2C type.The slave device has already added to i2c2 controller node.You just disable tsc controller and enable argument of 7 inch screen.
+
+* MYS-6ULX-IND
+The first step, edit "arch/arm/boot/dts/mys-imx6ul-14x14-evk.dts" file, modify the status property of tsc node is disabled value.
+```
+&tsc {
+     pinctrl-names = "default";
+     pinctrl-0 = <&pinctrl_tsc>;
+     xnur-gpio = <&gpio1 3 GPIO_ACTIVE_LOW>;
+     measure-delay-time = <0xfffff>;
+     pre-charge-time = <0xffff>;
+     status = "disabled";
+};
+```
+The second step, comment the argument of 4.3 inch screen.And enable the argument of 7.0 inch screen.Search and modify display-timings node of lcdif node, change it follow below.
+```
+        display-timings {
+            native-mode = <&timing0>;
+/*
+             timing0: timing0 {
+             clock-frequency = <9200000>
+             hsync-len = <41>;
+             vback-porch = <2>;
+             vfront-porch = <4>;
+             vsync-len = <10>;
+ 
+             hsync-active = <0>;
+             vsync-active = <0>;
+             de-active = <1>;
+             pixelclk-active = <0>;
+             };
+*/
+             timing0: timing0 {
+             clock-frequency = <33000000>;
+             hactive = <800>;
+             vactive = <480>;
+             hfront-porch = <210>;
+             hback-porch = <46>;
+             hsync-len = <1>;
+             vback-porch = <22>;
+             vfront-porch = <23>;
+             vsync-len = <20>;
+ 
+             hsync-active = <0>;
+             vsync-active = <0>;
+             de-active = <1>;
+             pixelclk-active = <1>;
+             };
+ 
+        };
+```
+
+* MYS-6ULX-IoT
+The MYS-6ULX-IoT use same method with MYS-6ULX-IND.Follow above step to edit "arch/arm/boot/dts/mys-imx6ull-14x14-evk.dts"file.
+

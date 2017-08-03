@@ -8,6 +8,7 @@ Version | Description | Date
 ---- | ---- | ----
 V1.0 | Init version | 2017.04.20
 V1.1 | add support MYB-6ULX board | 2017.07.11
+V1.2 | add support 7.0 inch LCD screen | 2017.08.03
 
 ## Hardware Version
 
