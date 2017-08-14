@@ -30,10 +30,8 @@ Last, also needs put the kernel and u-boot source into your home directory in li
 
 ```
 cd $DEV_ROOT
-mkdir ~/MYS-6ULX-Linux
-mkdir ~/MYS-6ULX-uboot
-tar xvf 04-Source/linux-4.1.15.tar.gz -C ~/MYS-6ULX-Linux
-tar xvf 04-Source/u-boot-2016.03.tar.gz -C ~/MYS-6ULX-uboot
+tar xvf 04-Source/myir-imx6-linux.tar.gz -C ~/
+tar xvf 04-Source/myir-imx6-uboot.tar.gz -C ~/
 ```
 
 ## NXP support Yocto
