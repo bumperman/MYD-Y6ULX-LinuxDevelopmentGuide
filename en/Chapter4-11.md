@@ -12,9 +12,16 @@ Use FPC wire connects MYB-CAM011B module and camera interface J10 of MYB-6ULX.
 
 ## Software operations
 
-The uvc_stream through network show video data.You need setup ethernet IP address of MYS-6ULX, the correspond device is eth1. The MY-CAM011B module device node is /dev/video1 in Linux system. The uvc_stream parameter '-y' means use yuyv type, the '-P' means setting password of web page. The uvc_stream default username is uvc_user.
+The uvc_stream through network show video data.You need setup ethernet IP address of MYS-6ULX, the correspond device is eth1. Uses "v4l2-ctl" command to query the device node of MY-CAM011B on Linux system.It outputs information about video device.The "i.MX6S_CSI" string is camera controller and correspond string "/dev/video1" is device node of MY-CAM011B module. The uvc_stream parameter '-y' means use yuyv type, the '-P' means setting password of web page. The uvc_stream default username is uvc_user.
 ```
 ifconfig eth1 192.168.1.42
+v4l2-ctl --list-devices
+i.MX6S_CSI (platform:21c4000.csi):
+    /dev/video1
+
+    pxp (pxp_v4l2):
+        /dev/video0
+
 ./uvc_stream -d /dev/video1 -y -P 123456
 ```
 
