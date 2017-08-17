@@ -18,6 +18,28 @@ MYS-6ULX系列板的系统更新使用两种方法，MfgTool更新和SD卡更新
 
 更新成功后底部的总进度条会显示为绿色。若失败则为红色时，可以查看"MfgTool.log"文件的错误提示信息。或者使用USB转TTL串口线连接至JP1，再重新更新系统，就可以从串口查看更新过程并分析失败的原因。
 
+### 更新MfgTool
+
+MfgTool的文件更新有两个部分，firmware和files。files目录下为烧写的目标镜像文件，路径为"MYS-6ULX-mfgtools/Profiles/Linux/OS Firmware/files/"。
+firmware是烧写系统的镜像文件，路径为"MYS-6ULX-mfgtools/Profiles/Linux/OS Firmware/firmware/"。当更新系统的分区大小或烧写方式时才需要更新firmware中的文件。
+
+files目录下的文件说明：
+
+文件名 | 描述
+---- | -----
+imx6ull-rootfs_nogpu.tar.bz2 | MYS-6ULX-IND 文件系统
+imx6ul-rootfs_nogpu.tar.bz2 | MYS-6ULX-IoT 文件系统
+u-boot-imx6ul14x14evk_emmc.imx | MYS-6ULX-IND 支持eMMC的uboot
+u-boot-imx6ul14x14evk_nand.imx | MYS-6ULX-IND 支持NAND的uboot
+u-boot-imx6ull14x14evk_emmc.imx | MYS-6ULX-IoT 支持eMMC的uboot
+u-boot-imx6ull14x14evk_nand.imx | MYS-6ULX-IoT 支持NAND的uboot
+zImage | MYS-6ULX-IND 和MYS-6ULX-IoT的内核镜像
+zImage-imx6ul-14x14-evk-emmc.dtb | MYS-6ULX-IND支持eMMC的设备树文件
+zImage-imx6ul-14x14-evk-gpmi-weim.dtb | MYS-6ULX-IND支持NAND的设备树文件
+zImage-imx6ull-14x14-evk-emmc.dtb | MYS-6ULX-IoT支持eMMC的设备树文件
+zImage-imx6ull-14x14-evk-gpmi-weim.dtb | MYS-6ULX-IND支持NAND的设备树文件
+
+
 ## Micro SD卡更新系统
 
 由于i.MX6ULL/i.MX6UL烧写bootloaer时需要使用kobs-ng工具添加头部信息，需要在操作系统上才可以烧写。

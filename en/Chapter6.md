@@ -18,6 +18,27 @@ The NXP supports a manufacture tool called MfgTool, we use MfgTool 2.7.0 version
 
 The progress bar will show as green when update finish. While it will show as red if failed.In this case you can view "MfgTool.log" file to get more information.Another way is use USB to TTL cable connect to Debug port(JP1), you can view the serial port output to analysis failed reason after update again.
 
+### Update files on MfgTool
+
+MfgTool update files has two directories, firmware and files.The files directory store files for burn into flash of MYS-6ULX board. It's locate in "MYS-6ULX-mfgtools/Profiles/Linux/OS Firmware/files/".
+The firmware directory store files for burn system.It's locate in "MYS-6ULX-mfgtools/Profiles/Linux/OS Firmware/firmware/".You need to update those files when you change flash size or partition offset.
+
+list of files directory:
+
+FileName | Description
+---- | -----
+imx6ull-rootfs_nogpu.tar.bz2 | MYS-6ULX-IND file system
+imx6ul-rootfs_nogpu.tar.bz2 | MYS-6ULX-IoT file system
+u-boot-imx6ul14x14evk_emmc.imx | support eMMC of uboot for MYS-6ULX-IND
+u-boot-imx6ul14x14evk_nand.imx | support NAND of uboot for MYS-6ULX-IND
+u-boot-imx6ull14x14evk_emmc.imx | support eMMC of uboot for MYS-6ULX-IoT
+u-boot-imx6ull14x14evk_nand.imx | support NAND of uboot for MYS-6ULX-IoT
+zImage | Linux kernel image for MYS-6ULX-IND and MYS-6ULX-IoT
+zImage-imx6ul-14x14-evk-emmc.dtb | support eMMC of DeviceTree file for MYS-6ULX-IND
+zImage-imx6ul-14x14-evk-gpmi-weim.dtb | support NAND of DeviceTree file for MYS-6ULX-IND
+zImage-imx6ull-14x14-evk-emmc.dtb | support eMMC of DeviceTree file for MYS-6ULX-IoT
+zImage-imx6ull-14x14-evk-gpmi-weim.dtb | support NAND of DeviceTree file for MYS-6ULX-IoT
+
 ## Micro SD card update method
 
 Because i.MX6ULL/i.MX6UL chip need kobs-ng to add some header data to bootloader, so it needs read or write under system.
