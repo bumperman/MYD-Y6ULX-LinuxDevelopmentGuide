@@ -21,6 +21,7 @@
     * [4.9 CAN bus测试](Chapter4-9.md)
     * [4.10 Audio测试](Chapter4-10.md)
     * [4.11 Camera测试](Chapter4-11.md)
+    * [4.12 WiFi测试](Chapter4-12.md)
 * [5 QT应用开发](Chapter5.md)
     * [5.1 安装QtCreator](Chapter5-1.md)
     * [5.2 配置QtCreator](Chapter5-2.md)
