@@ -11,7 +11,6 @@ MYS-6ULX系列板的系统更新使用两种方法，MfgTool更新和SD卡更新
 ### 更新步骤如下(顺序不可颠倒):
 
 * 拨动启动拨码开关(SW1)的第3位为ON，第4位为OFF。
-* 连接开发板电源(J1)。
 * 使用mini-USB线连接PC机USB端口与开发板
 * 双击MfgTool目录下的"mfgtool2-yocto-mx6ul-evk-nand.vbs"文件，此时可以看到MfgTool界面已识别到开发板。
 * 点击MfgTool界面上的"Start"按钮，MfgTool就开始自动更新系统至板载存储设备。

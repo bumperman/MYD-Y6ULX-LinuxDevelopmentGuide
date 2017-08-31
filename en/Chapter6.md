@@ -11,7 +11,6 @@ The NXP supports a manufacture tool called MfgTool, we use MfgTool 2.7.0 version
 ### Update steps(follow the sequence):
 
 * Change third bit as ON, four bit as OFF on toggle switch(SW1).
-* Connect power adapter to power jack(J1) on board.
 * Use Micro USB cable connect to board with PC USB port.
 * Double click file "mfgtool2-yocto-mx6ul-evk-nand.vbs" under MfgTool directory, then the MfgTool will show the HID device on reconigz.
 * Click the "Start" button on MfgTool GUI, it will auto download system image to storage of board.
