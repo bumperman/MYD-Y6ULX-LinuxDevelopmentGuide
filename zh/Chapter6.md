@@ -47,9 +47,28 @@ zImage-imx6ull-14x14-evk-gpmi-weim.dtb | MYS-6ULX-IND支持NAND的设备树文�
 
 sdcard镜像文件需要使用特殊的磁盘操作工具才可以写入Micro SD卡内，Linux系统用户可以直接使用dd命令，Windows系统用户使用Win32ImageWriter工具。
 
-### 制做更新Micro SD卡系统
+### 制做支持SD更新的镜像
 
-为了方便使用，建议把Micro SD插入USB读卡器，再插入电脑USB端口。
+若对系统Linux kernel，U-Boot或者Yocto有修改，需要使用工具将这些二进制文件更新的开发板上。MYS-6ULX开发板提供了一个可以制做SD更新镜像的工具MYS-6ULX-mkupdate-sdcard，存放在04-Tools/ManufactoryTool目录。解压后就可以开始制做镜像了。
+
+```
+sudo ./build-sdcard.sh -p mys6ull -n -d mfgimages-mys-imx6ul-ddr256m-nand256m
+```
+
+build-sdcard.sh提供了四种参数：
+* '-p' 表示平台，可用参数为"mys6ull"代表MYS-6ULX-IOT和"mys6ul"代表MYS-6ULX-IND
+* '-n' 表示板上存储芯片是NAND
+* '-e' 表示板上存储芯片是eMMC
+* '-d' 表示更新文件的目录
+
+注意：'-n'和'-e'不能同时使用，只能使用一种。
+
+运行结束后会生成一个sdcard后缀的文件，如'mys6ull-update-nand-20170825150819.rootfs.sdcard'。
+
+### 制做可更新系统的SD卡
+
+MYS-6ULX资源包内提供了用于更新系统的sdcard镜像文件，可以直接使用，也可以使用上一步制做的sdcard文件。
+有了用于更新的SD卡镜像文件，就可以把镜像文件写入到SD卡。为了方便使用，建议把Micro SD插入USB读卡器，再插入电脑USB端口。
 
 * Linux系统
 

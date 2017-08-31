@@ -46,7 +46,25 @@ In this case, we support two suffix as sdcard image files, correspond to each bo
 
 The sdcard image file needs special tool to write Micro SD storage card.The linux user can directly use dd command.The windows user need "Win32ImageWriter" tool.
 
-### Make update system on Micro SD
+### Build updatable SD Card system image
+
+If you modify the Linux kernel, U-Boot or Yocto, then you need a tool for update those files into the board.
+The MYS-6ULX board support a tool MYS-6ULX-mkupdate-sdcard that builds updatable SD Card image.It locates in '04-Tools/ManufactoryTool' directory.
+
+```
+sudo ./build-sdcard.sh -p mys6ull -n -d mfgimages-mys-imx6ul-ddr256m-nand256m
+```
+The tool support four arguments.
+'-p' stands for a platform, only two option 'mys6ull' and 'mys6ul'.
+'-n' stands for the storage device of NAND flash.
+'-e' stands for the storage  device of eMMC flash.
+'-d' stands for target files directory.
+
+Attention: the '-n' and '-e' do not both exist in the argument.
+
+After builds complete, a sdcard suffix file in current directory, 'mys6ull-update-nand-20170825150819.rootfs.sdcard'.
+
+### Build updatable Micro SD
 
 Recommend insert Micro SD card to Card Reader, and plug into PC USB port.
 
