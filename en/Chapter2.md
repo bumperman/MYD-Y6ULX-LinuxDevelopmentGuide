@@ -5,7 +5,7 @@ You need to install the Linux Operation System on your host PC.Recommend to use 
 ## Connect development board with PC
 
 1. PC use USB to TLL cable with DEBUG port(JP1) on board.
-2. Plug the power adapter into J1 interface.
+2. Open serial program with exist serial device
 
 PC serial port configure parameters:
 

@@ -1,6 +1,6 @@
 # MYS-6ULX Linux开发手册
 
-本文档介绍基于MYS-6ULX系列开发板下，进行Linux系统的编译和安装，硬件接口的使用，Qt应用开发等。
+本文档介绍基于MYS-6ULX系列开发板和MYB-6ULX扩展板，进行Linux系统的编译和安装，硬件接口的使用，Qt应用开发等。
 
 ## 历史版本
 
@@ -12,4 +12,8 @@ V1.2 | 添加LCD 7.0吋屏幕的支持 | 2017.08.03
 
 ## 硬件版本
 
-本手册适合于MYS-6ULX系列开发板，MYS-6ULX-IND和MYS-6ULX-IoT开发板。
+本手册适合于以下型号的开发板：
+
+* MYS-6ULX-IND
+* MYS-6ULX-IoT
+* MYB-6ULX
