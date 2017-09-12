@@ -16,7 +16,7 @@
     * [4.4 GPIO-KEY测试](Chapter4-4.md)
     * [4.5 GPIO-LED测试](Chapter4-5.md)
     * [4.6 USB Host测试](Chapter4-6.md)
-    * [4.7 USB OTG测试](Chapter4-7.md)
+    * [4.7 USB Device测试](Chapter4-7.md)
     * [4.8 RS485测试](Chapter4-8.md)
     * [4.9 CAN bus测试](Chapter4-9.md)
     * [4.10 Audio测试](Chapter4-10.md)
