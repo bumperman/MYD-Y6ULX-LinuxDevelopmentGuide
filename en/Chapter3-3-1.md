@@ -30,8 +30,8 @@ Last, also needs put the kernel and u-boot source into your home directory in li
 
 ```
 cd $DEV_ROOT
-tar xvf 04-Source/myir-imx6-linux.tar.gz -C ~/
-tar xvf 04-Source/myir-imx6-uboot.tar.gz -C ~/
+tar xvf 04-Source/MYiR-iMX-Linux.tar.gz -C ~/
+tar xvf 04-Source/MYiR-iMX-uboot.tar.bz -C ~/
 ```
 
 ## NXP support Yocto

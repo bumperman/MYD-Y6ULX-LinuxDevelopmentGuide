@@ -30,8 +30,8 @@ cd fsl-release-bsp
 
 ```
 cd $DEV_ROOT
-tar xvf $DEV_ROOT/04-Source/myir-imx6-linux.tar.gz -C ~/
-tar xvf $DEV_ROOT/04-Source/myir-imx6-uboot.tar.gz -C ~/
+tar xvf $DEV_ROOT/04-Source/linux-4.1.15.tar.gz -C ~/
+tar xvf $DEV_ROOT/04-Source/uboot.tar.gz -C ~/
 ```
 
 ## NXP官方提供的Yocto
@@ -69,12 +69,8 @@ repo sync
 也需要将Linux内核和U-Boot代码放在用户家目录下，方便开发和Yocto编译。
 
 ```
-mkdir ~/MYS-6ULX-Linux
-mkdir ~/MYS-6ULX-uboot
-tar xvf $DEV_ROOT/04-Source/linux-4.1.15.tar.gz \
--C ~/MYS-6ULX-Linux
-tar xvf $DEV_ROOT/04-Source/u-boot-2016.03.tar.gz \
--C ~/MYS-6ULX-uboot
+tar xvf $DEV_ROOT/04-Source/MYiR-iMX-Linux.tar.gz -C ~/
+tar xvf $DEV_ROOT/04-Source/MYiR-iMX-uboot.tar.bz -C ~/
 ```
 
 ## 初始化Yocto构建目录
