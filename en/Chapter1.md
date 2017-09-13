@@ -23,7 +23,7 @@ Driver | Audio | WM8904 codec driver | YES
 Driver | CAN bus | CANb bus driver | YES
 Driver | RS485 | RS485 bus driver | YES
 Driver | Camera | ov2659 driver | YES
-FileSystem | Debian rootfs | Based on Debian build filesystem(include X11 package) | YES
+FileSystem | Debian rootfs | Based on Debian build filesystem(include X11 package) | BINARY
 FileSystem | Yotcto rootfs | Based Yocto build filesystem(include Qt 5.6 package) | YES
 FileSystem | Yotcto rootfs | Based Yocto build filesystem(Full command line package) | YES
 Application | GPIO KEY | Reads the GPIO key code value demo  | YES
