@@ -52,6 +52,21 @@ The sdcard image file needs special tool to write Micro SD storage card.The linu
 If you modify the Linux kernel, U-Boot or Yocto, then you need a tool for update those files into the board.
 The MYS-6ULX board support a tool MYS-6ULX-mkupdate-sdcard that builds updatable SD Card image.It locates in '04-Tools/ManufactoryTool' directory.
 
+The build-sdcard.sh script used to generate a system image that contains update system and update target files.
+The firmware directory used for the system of the update.Generally, you do not modify it otherwise your NAND flash or other BSP code changed.
+
+The "mfgimages-*" directory store need update files.Those name of files are defined in 'Manifest' file, please follow below rules:
+
+```
+ubootfile="u-boot.imx"
+envfile="boot.scr"
+kernelfile="zImage"
+dtbfile="mys-imx6ull-14x14-evk-emmc.dtb"
+rootfsfile="core-image-base.rootfs.tar.xz"
+```
+The 'envfile' variable only used for eMMC flash type.
+The update program will read the Manifest file and load those files be written into flash.
+
 ```
 sudo ./build-sdcard.sh -p mys6ull -n -d mfgimages-mys-imx6ul-ddr256m-nand256m
 ```

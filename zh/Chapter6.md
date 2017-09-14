@@ -48,9 +48,28 @@ zImage-imx6ull-14x14-evk-gpmi-weim.dtb | MYS-6ULX-IND支持NAND的设备树文�
 
 sdcard镜像文件需要使用特殊的磁盘操作工具才可以写入Micro SD卡内，Linux系统用户可以直接使用dd命令，Windows系统用户使用Win32ImageWriter工具。
 
-### 制做支持SD更新的镜像
+### 制做SD启动更新的镜像
 
-若对系统Linux kernel，U-Boot或者Yocto有修改，需要使用工具将这些二进制文件更新的开发板上。MYS-6ULX开发板提供了一个可以制做SD更新镜像的工具MYS-6ULX-mkupdate-sdcard，存放在04-Tools/ManufactoryTool目录。解压后就可以开始制做镜像了。
+若对系统Linux kernel，U-Boot或者文件系统有修改，需要使用工具将这些二进制文件更新的开发板上。MYS-6ULX开发板提供了一个可以制做SD更新镜像的工具MYS-6ULX-mkupdate-sdcard，存放在04-Tools/ManufactoryTool目录。
+
+build-sdcard.sh脚本用于制做从SD卡更新系统的镜像，分为两个部分：更新系统和目标文件。
+firmware目录下是更新系统，一般情况下不需要修改。
+'mfgimages-*'是目标文件，里面的文件最终会烧写进板载的NAND或者eMMC存储芯片内。如果修改u-boot, kernel后，需要把相应的文件替换到目标文件内即可。
+
+'mfgimage-*'目录内的文件名遵循以下方式命名，错误的文件名称在更新系统时不会被识别，会出现升级失败。
+这些文件的名称被定义在Manifest文件内，命名规则如下：
+
+```
+ubootfile="u-boot.imx"
+envfile="boot.scr"
+kernelfile="zImage"
+dtbfile="mys-imx6ull-14x14-evk-emmc.dtb"
+rootfsfile="core-image-base.rootfs.tar.xz"
+```
+变量'envfile' 仅用于eMMC版本。
+更新程序启动后会根据Manifest文件加载需要的文件，以将它们写入到目标Flash。
+
+解压后就可以开始制做镜像了。
 
 ```
 sudo ./build-sdcard.sh -p mys6ull -n -d mfgimages-mys-imx6ul-ddr256m-nand256m
@@ -65,6 +84,8 @@ build-sdcard.sh提供了四种参数：
 注意：'-n'和'-e'不能同时使用，只能使用一种。
 
 运行结束后会生成一个sdcard后缀的文件，如'mys6ull-update-nand-20170825150819.rootfs.sdcard'。
+
+
 
 ### 制做可更新系统的SD卡
 
