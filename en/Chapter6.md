@@ -28,13 +28,14 @@ list of files directory:
 
 FileName | Description
 ---- | -----
-imx6ull-rootfs_nogpu.tar.bz2 | MYS-6ULX-IND file system
-imx6ul-rootfs_nogpu.tar.bz2 | MYS-6ULX-IoT file system
+core-image-base-mys6ul14x14.rootfs.tar.bz2 | MYS-6ULX-IND file system
+core-image-base-mys6ull14x14.rootfs.tar.bz2 | MYS-6ULX-IoT file system
 u-boot-imx6ul14x14evk_emmc.imx | support eMMC of uboot for MYS-6ULX-IND
 u-boot-imx6ul14x14evk_nand.imx | support NAND of uboot for MYS-6ULX-IND
 u-boot-imx6ull14x14evk_emmc.imx | support eMMC of uboot for MYS-6ULX-IoT
 u-boot-imx6ull14x14evk_nand.imx | support NAND of uboot for MYS-6ULX-IoT
-zImage | Linux kernel image for MYS-6ULX-IND and MYS-6ULX-IoT
+zImage-imx6ul | Linux kernel image for MYS-6ULX-IND
+zImage-imx6ull | Linux kernel image for MYS-6ULX-IoT
 zImage-imx6ul-14x14-evk-emmc.dtb | support eMMC of DeviceTree file for MYS-6ULX-IND
 zImage-imx6ul-14x14-evk-gpmi-weim.dtb | support NAND of DeviceTree file for MYS-6ULX-IND
 zImage-imx6ull-14x14-evk-emmc.dtb | support eMMC of DeviceTree file for MYS-6ULX-IoT
@@ -82,7 +83,9 @@ After builds complete, a sdcard suffix file in current directory, 'mys6ull-updat
 
 ### Build updatable Micro SD
 
-Recommend insert Micro SD card to Card Reader, and plug into PC USB port.
+Recommend insert Micro SD card to Card Reader, and plug into PC USB port.MYS-6ULX resource package support some prebuilt sdcard files.You can throught tool to write it into your SD card.Those files locate in 02-Images direcory of resource package.
+
+Attention: The date tag of file name is always changed, please follow the real in 02-Images directory.
 
 * Linux system
 
@@ -91,7 +94,7 @@ Generally, linux use "sd[x][n]" format to naming a storage device.The x means wh
 Attention: the "/dev/sdb" do not append any digit
 
 ```
-sudo dd if=mys6ull-update.sdcard of=/dev/sdb conv=fsync
+sudo dd if=mys6ull-update-nand-20190919090957.sdcard of=/dev/sdb conv=fsync
 ```
 
 The write speed is relative with USB host version and Micro SD card write speed. We recommend use higher speed class Micro SD storage card.

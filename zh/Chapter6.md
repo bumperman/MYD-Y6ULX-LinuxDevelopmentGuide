@@ -28,13 +28,14 @@ files目录下的文件说明：
 
 文件名 | 描述
 ---- | -----
-imx6ull-rootfs_nogpu.tar.bz2 | MYS-6ULX-IND 文件系统
-imx6ul-rootfs_nogpu.tar.bz2 | MYS-6ULX-IoT 文件系统
+core-image-base-mys6ul14x14.rootfs.tar.bz2 | MYS-6ULX-IND 文件系统
+core-image-base-mys6ull14x14.rootfs.tar.bz2 | MYS-6ULX-IoT 文件系统
 u-boot-imx6ul14x14evk_emmc.imx | MYS-6ULX-IND 支持eMMC的uboot
 u-boot-imx6ul14x14evk_nand.imx | MYS-6ULX-IND 支持NAND的uboot
 u-boot-imx6ull14x14evk_emmc.imx | MYS-6ULX-IoT 支持eMMC的uboot
 u-boot-imx6ull14x14evk_nand.imx | MYS-6ULX-IoT 支持NAND的uboot
-zImage | MYS-6ULX-IND 和MYS-6ULX-IoT的内核镜像
+zImage-imx6ul | MYS-6ULX-IND的内核镜像
+zImage-imx6ull | MYS-6ULX-IoT的内核镜像
 zImage-imx6ul-14x14-evk-emmc.dtb | MYS-6ULX-IND支持eMMC的设备树文件
 zImage-imx6ul-14x14-evk-gpmi-weim.dtb | MYS-6ULX-IND支持NAND的设备树文件
 zImage-imx6ull-14x14-evk-emmc.dtb | MYS-6ULX-IoT支持eMMC的设备树文件
@@ -89,15 +90,17 @@ build-sdcard.sh提供了四种参数：
 
 ### 制做可更新系统的SD卡
 
-MYS-6ULX资源包内提供了用于更新系统的sdcard镜像文件，可以直接使用，也可以使用上一步制做的sdcard文件。
+MYS-6ULX资源包内提供了用于更新系统的sdcard镜像文件，可以直接使用，也可以使用上一步制做的sdcard文件。MYS-6ULX提供好的sdcard文件在02-Images目录内。
 有了用于更新的SD卡镜像文件，就可以把镜像文件写入到SD卡。为了方便使用，建议把Micro SD插入USB读卡器，再插入电脑USB端口。
+
+注意: 02-Images目录内的文件名的时间标识部分可能与如下示例代码有差异，请以实际为主。
 
 * Linux系统
 
 通常Linux下的存储设备名为"sd[x][n]"形式，x表示第几个存储设备，一般使用字母a~z表示。n表示存储设备的分区，一般使用数字，从1开始。插入后可以使用"dmesg | tail"命令查看新设备的设备名称。这里以"/dev/sdb"设备为例，sdb后面不写任务分区数字。
 
 ```
-sudo dd if=mys6ull-update.sdcard of=/dev/sdb conv=fsync
+sudo dd if=mys6ull-update-nand-20170919090957.rootfs.sdcard of=/dev/sdb conv=fsync
 ```
 
 写入的速度与USB和Micro SD卡的速率有关，如果对速度有要求，建议选用更高速度等级的Micro SD存储卡。

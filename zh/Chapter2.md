@@ -19,6 +19,10 @@
 图2-1 MYS-6ULX-IND接口定义
 ![](image/2-2.png)
 图2-2 MYS-6ULX-IoT接口定义
+![](image/2-3.png)
+图2-3 MYB-6ULX接口定义
+![](image/2-4.png)
+图2-4 MYS-6ULX安装MYB-6ULX侧面图
 
 ## 安装必备软件包
 
