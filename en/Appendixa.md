@@ -93,9 +93,9 @@ MYIR will always select mainstream chips for our design, thus to ensure at least
 
 MYIR Tech Limited
 
-Room 1306, Wensheng Center, Wenjin Plaza, 
+Room 04, 6th Floor, Building No.2, Fada Road,
 
-North Wenjin Road, Luohu District, Shenzhen, China 518020
+Yunli Inteiligent Park, Bantian, Longgang District.
 
 Support Email: support@myirtech.com
 
