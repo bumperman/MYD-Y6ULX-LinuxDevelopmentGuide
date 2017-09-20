@@ -16,6 +16,10 @@
             "showLevel": true
         }
     },
+
+    "styles": {
+        "pdf": "styles/pdf.css"
+    },
     
     "pdf" : {
         "paperSize" : "a4"
