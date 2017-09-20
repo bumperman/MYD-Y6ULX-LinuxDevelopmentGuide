@@ -4,8 +4,8 @@ Enter Bootloader directory, extract U-boot source tar ball:
 
 ```
 cd $DEV_ROOT/04-Source
-tar -xvf MYS-IMX6UL-uboot.tar.gz
-cd MYS-IMX6UL-uboot
+tar -xvf MYiR-iMX-uboot.tar.gz
+cd MYiR-iMX-uboot
 ```
 
 Compiling：

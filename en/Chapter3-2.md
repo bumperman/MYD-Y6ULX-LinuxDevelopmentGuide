@@ -4,8 +4,8 @@ Enter Kernel directory, extract it:
 
 ```
 cd $DEV_ROOT/04-Source
-tar -xvf linux-4.1.15.tar.gz
-cd linux-4.1.15
+tar -xvf MYiR-iMX-Linux.tar.gz
+cd MYiR-iMX-Linux
 ```
 
 Compiling：
