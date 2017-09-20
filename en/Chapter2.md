@@ -112,7 +112,14 @@ gcc version 4.9.3 20141031 (prerelease) (Linaro GCC 2014.11)
 
 ### Yocto Toolchain
 
-Yocto supports two kinds toolchain, one is low-level development toolchain meta-toolchain, another is application development toolchain.The low-level toolchain likes Linaro.The another used for application development, include more third libaries and header files.The MYS-6ULX also supports two kinds, those file name is "myir-imx-fb-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh" and "myir-imx-fb-glibc-x86_64-meta-toolchain-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh".
+Yocto supports two kinds toolchain, one is low-level development toolchain meta-toolchain, another is application development toolchain.The low-level toolchain likes Linaro.The another used for application development, include more third libaries and header files.The MYS-6ULX also supports two kinds, those files are list below.
+
+Toolchain file name | Description
+------------ | -----
+myir-imx-fb-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh | Include Qt5 libraries
+myir-imx-fb-glibc-x86_64-core-image-base-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh | Not include Qt5 libraries
+myir-imx-fb-glibc-x86_64-meta-toolchain-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh | meta-toolchain
+
 
 Yocto toolchain distribute SDK package type. You need install the toolchain SDK package, then use it. Below is install method:
 

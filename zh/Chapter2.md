@@ -109,7 +109,13 @@ gcc version 4.9.3 20141031 (prerelease) (Linaro GCC 2014.11)
 
 ### Yocto编译工具链
 
-Yocto提供的工具链有两种，一种是底层开发的meta-toolchain，另一种是用于应用开发的工具链。前者和Linaro类似，后者包含应用开发中的相关库，可以直接使用pkg-config工具来解决头文件或库文件的依赖关系。MYS-6ULX的资源包中有提供两种工具链，文件名分别为myir-imx-fb-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh和myir-imx-fb-glibc-x86_64-meta-toolchain-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh。
+Yocto提供的工具链有两种，一种是底层开发的meta-toolchain，另一种是用于应用开发的工具链。前者和Linaro类似，后者包含应用开发中的相关库，可以直接使用pkg-config工具来解决头文件或库文件的依赖关系。MYS-6ULX的资源包中有提供两种工具链。
+
+工具链文件名 | 描述
+------------ | -----
+myir-imx-fb-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh | 包含Qt5相关库的应用工具链
+myir-imx-fb-glibc-x86_64-core-image-base-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh | 不包含Qt5的应用工具链
+myir-imx-fb-glibc-x86_64-meta-toolchain-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh | meta-toolchain
 
 Yocto编译器是以SDK工具包方式来提供，需要先安装SDK包后，才可以使用。安装方法如下：
 
