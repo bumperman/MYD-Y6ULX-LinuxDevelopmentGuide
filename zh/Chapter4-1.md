@@ -5,7 +5,7 @@
 执行程序后，LCD液晶屏会出现相应颜色,以下是终端输出信息:
 
 ```
-#./framebuffer_test
+# ./framebuffer_test
 The framebuffer device was opened successfully.
 vinfo.xres=480
 vinfo.yres=272
