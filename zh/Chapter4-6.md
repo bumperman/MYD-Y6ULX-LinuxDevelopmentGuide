@@ -1,6 +1,6 @@
 # 4.6 USB Host 测试
 
-使用USB存储设备插入USB HOST(J9)接口，调试串口会输出检测设备信息。同时，使用将此存储设备挂载至linux系统下对其读写。
+使用USB存储设备插入USB HOST\(J9\)接口，调试串口会输出检测设备信息。同时，使用将此存储设备挂载至linux系统下对其读写。
 
 ```
 # usb 1-2: USB disconnect, device number 6
@@ -27,3 +27,6 @@ support DPO or FUA
 # cat /mnt/hello.txt
 hello
 ```
+
+
+
