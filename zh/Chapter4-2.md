@@ -6,8 +6,9 @@ MYD-Y6ULX支持两种触摸方式，电容和电阻。米尔科技可提供两�
 
 ```
 # export TSLIB_TSDEVICE=/dev/input/event1
-# ts_calibrate
 
+# ts_calibrate
+//测试触摸屏
 # ts_test
 ```
 

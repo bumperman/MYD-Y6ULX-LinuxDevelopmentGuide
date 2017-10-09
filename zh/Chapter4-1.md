@@ -1,6 +1,6 @@
 # 4.1 LCD测试
 
-本例程演示对Linux的FrameBuffer设备操作，实现液晶输出显示RGB颜色和颜色合成测试。例程基于Linux FrameBuffer API接口开发。测试前需要把LCD连接至J8接口上。米尔科技提供两种LCD模块，分别是7寸的MY-TFT070CV2和4.3寸的MY-TFT043RV2。提供的prebuilt镜像是默认为4.3寸液晶的。
+本例程演示对Linux的FrameBuffer设备操作，实现液晶输出显示RGB颜色和颜色合成测试。例程基于Linux FrameBuffer API接口开发。测试前需要把LCD连接至J3接口上。米尔科技提供两种LCD模块，分别是7寸的MY-TFT070CV2和4.3寸的MY-TFT043RV2。提供的prebuilt镜像是默认为4.3寸液晶的。
 
 执行程序后，LCD液晶屏会出现相应颜色,以下是终端输出信息:
 
@@ -31,7 +31,7 @@ color: black   rgb_val: 00000000
 
 ## 支持MY-TFT070RV2的配置方法
 
-MYS-6ULX开发板中提供的Linux代码已经支持该模块的显示和触摸功能。MY-TFT070RV2的触摸功能是通过ADC采样方式，dts代码中已配置好,只需要启用相应功能即要可。
+MYD-Y6ULX开发板中提供的Linux代码已经支持该模块的显示和触摸功能。MY-TFT070RV2的触摸功能是通过ADC采样方式，dts代码中已配置好,只需要启用相应功能即要可。
 
 * MYS-6ULX-IND  
   第一步，编辑"arch/arm/boot/dts/mys-imx6ul-14x14-evk.dts"文件，修改tsc的status属性为okay。
@@ -85,9 +85,6 @@ MYS-6ULX开发板中提供的Linux代码已经支持该模块的显示和触摸�
 
         };
   ```
-
-* MYS-6ULX-IoT  
-  MYS-6ULX-IoT的修改方法和MYS-6ULX-IND的相同，编辑的文件为"arch/arm/boot/dts/mys-imx6ull-14x14-evk.dts"。
 
 ## 支持MY-TFT070CV2的配置方法
 
@@ -145,9 +142,4 @@ MY-TFT070CV2模块的触摸使用的是I2C方式通讯，丛设备已添加到i2
 
         };
   ```
-
-* MYS-6ULX-IoT  
-  MYS-6ULX-IoT的修改方法和MYS-6ULX-IND的相同，编辑的文件为"arch/arm/boot/dts/mys-imx6ull-14x14-evk.dts"。
-
-
 

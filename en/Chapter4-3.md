@@ -1,6 +1,6 @@
 # 4.3 Ethernet(CN1)
 
-This example uses the TCP / IP socket API to implement a simple C / S structure of the program. Copy the executable program arm_client to the development board, pc_server copy to the PC, the development board and PC access network.
+This example uses the TCP / IP socket API to implement a simple C/S structure of the program. Copy the executable program arm_client to the development board, pc_server copy to the PC, the development board and PC access network.
 
 Configure IP of PC machine and run server program:
 
