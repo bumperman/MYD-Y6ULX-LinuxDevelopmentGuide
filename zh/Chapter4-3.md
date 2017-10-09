@@ -1,14 +1,14 @@
 # 4.6 Ethernet 测试
 
-本例使用Linux sokect API，实现简单的C/S结构的程序，两个程序通过TCP/IP协议栈通信。将可执行程序arm_client拷贝至开发板，pc_server拷贝至PC，将开发板和PC接入网络。
+本例使用Linux sokect API，实现简单的C/S结构的程序，两个程序通过TCP/IP协议栈通信。将可执行程序arm\_client拷贝至开发板，pc\_server拷贝至PC，将开发板和PC接入网络。
 
 ## MYS-6ULX 网口
 
 在 PC 上配置IP并运行服务程序:
 
 ```
-sudo ifconfig eth0 192.168.1.111
-./pc_server
+# sudo ifconfig eth0 192.168.1.111
+# ./pc_server
 REC FROM: 192.168.1.222
 ```
 
@@ -29,9 +29,13 @@ MYS-6ULX-IOT或MYS-6ULX-IND安装MYB-6ULX扩展板后，系统中的eth0设备�
 两个网口测试时，可以分别连接至两个不同网段的路由器或交换机。
 
 测试双网口通讯，设置两个网段的IP地址，使用ping命令测试网络连通性。
+
 ```
 ifconfig eth0 192.168.1.100
 ifconfig eth1 192.168.2.100
 ping 192.168.1.101
 ping 192.168.2.101
 ```
+
+
+
