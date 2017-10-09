@@ -89,8 +89,7 @@ MYD-Y6ULX开发板中提供的Linux代码已经支持该模块的显示和触摸
 
 MY-TFT070CV2模块的触摸使用的是I2C方式通讯，丛设备已添加到i2c2控制器上。使用前禁用tsc控制器，再启用7寸屏的配置参数即可。
 
-* MYS-6ULX-IND  
-  第一步，编辑"arch/arm/boot/dts/mys-imx6ul-14x14-evk.dts"文件，修改tsc的status属性为disabled。
+第一步，编辑"arch/arm/boot/dts/mys-imx6ul-14x14-evk.dts"文件，修改tsc的status属性为disabled。
 
   ```
   &tsc {
@@ -103,7 +102,7 @@ MY-TFT070CV2模块的触摸使用的是I2C方式通讯，丛设备已添加到i2
   };
   ```
 
-  第二步，将默认的4.3寸屏莫的配置注释，并打开7.0寸的配置。找到lcfif节点下的display-timings节点，修改如下：
+第二步，将默认的4.3寸屏莫的配置注释，并打开7.0寸的配置。找到lcfif节点下的display-timings节点，修改如下：
 
   ```
         display-timings {
