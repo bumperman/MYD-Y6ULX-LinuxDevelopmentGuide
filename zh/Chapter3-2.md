@@ -2,31 +2,38 @@
 
 进入Kernel目录，解压内核源码：
 
-    cd $DEV_ROOT/Kernel
-    tar -xvf MYiR-iMX-Linux.tar.bz2
-    cd MYiR-iMX-Linux
+```
+cd $DEV_ROOT/Kernel
+tar -xvf MYiR-iMX-Linux.tar.bz2
+cd MYiR-iMX-Linux
+```
 
 开始编译：
 
-    make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- distclean 
-    make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- mys_imx6_defconfig
-    make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- zImage dtbs modules
+```
+make distclean 
+make myd_y6ulx_defconfig
+make zImage dtbs
+```
 
 编译完成后在"arch/arm/boot"目录会生成内核镜像文件zImage，在"arch/arm/boot/dts"目录会生成DTB文件。
 
 DTB文件 | 备注
 ------- | ----
-mys-imx6ul-14x14-evk-emmc.dtb | MYS-6ULX-IND eMMC
-mys-imx6ul-14x14-evk-gpmi-weim.dtb | MYS-6ULX-IND NAND
-mys-imx6ul-14x14-evk-emmc-myb6ulx.dtb | MYS-6ULX-IND eMMC 上安装MYB-6ULX扩展板
-mys-imx6ul-14x14-evk-gpmi-weim-myb6ulx.dtb | MYS-6ULX-IND NAND 上安装MYB-6ULX扩展板
-mys-imx6ull-14x14-evk-emmc.dtb | MYS-6ULX-IoT eMMC
-mys-imx6ull-14x14-evk-gpmi-weim.dtb | MYS-6ULX-IoT NAND
-mys-imx6ull-14x14-evk-emmc-myb6ulx.dtb | MYS-6ULX-IoT eMMC 上安装MYB-6ULX扩展板
-mys-imx6ull-14x14-evk-gpmi-weim-myb6ulx.dtb | MYS-6ULX-IoT NAND 上安装MYB-6ULX扩展板
+myd-y6ull-gpmi-weim.dts | MYD-Y6ULX NAND启动方式
 
-MYS-6ULX板上的Micro SD卡槽是连接mmc0控制器，所有的dtb文件都是默认启用mmc0控制器。
+MYD-Y6ULX板上的Micro SD卡槽是连接mmc0控制器，所有的dtb文件都是默认启用mmc0控制器。
 
-添加有"myb6ulx"标识的dtb文件，是用于支持MYB-6ULX扩展板，已配置好MYB-6ULX上的CAN，RS485，Ethernet，Camera和Audio功能，使用"myb6ulx"标识的dtb文件可以直接启动并使用相关功能。使用前请先安装好MYB-6ULX扩展板至MYS-6ULX-IOT或MYS-6ULX-IND开发板上。
+SD卡方式启动时，U-Boot默认查找的文件是myd-imx6ull-14x14-evk-gpmi-weim.dtb文件。
 
-SD卡或eMMC方式启动时，U-Boot默认查找的文件是mys-imx6ul-14x14-evk-emmc.dtb或mys-imx6ull-14x14-evk-emmc.dtb文件。因此，带有"myb6ulx"标识的文件，修改编译后需要重新命名为对应文件名。由于NAND启动是从地址读数据，不受影响。
+更新kernel后，由于版本标识改变，若驱劝是以模块方式加载，需要重新编译驱动模块:
+
+```
+make modules
+```
+编译后，可以安装在指定位置：
+```
+mkdir ../target-kernel
+make INSTALL_MOD_PATH=../target-kernel modules_install
+```
+这样就可以把target-kernel目录打包后，解压在MYD-Y6ULX开发板的/lib目录下使用。
