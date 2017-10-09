@@ -20,5 +20,5 @@ MYD-Y6ULX上有一个RS232接口(J10)，可以将TXD，RXD信号线与另外的R
 /dev/ttyS1 RECV 10 total
 /dev/ttyS1 RECV: 1234567890
 ```
-PC端可以使用串口工具查看接收的数据。
+在PC端可以使用串口工具查看接收的数据。
 

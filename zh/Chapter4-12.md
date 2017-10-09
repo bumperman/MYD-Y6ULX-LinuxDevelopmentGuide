@@ -1,4 +1,4 @@
-# 4.11 Camera 测试
+# 4.12 Camera 测试
 
 MYD-Y6ULX上提供一个并行Camera接口(J9)，可以连接MY-CAM011B型号的Camera模块，模块之间使用FPC线连接。由于信号序列影响，请勿直接将其它型号的Camera的模块插入，否则会引起模块或开发板的损坏。
 

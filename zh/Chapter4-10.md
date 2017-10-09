@@ -1,4 +1,4 @@
-# 4.9 CAN Bus 测试
+# 4.10 CAN Bus 测试
 
 本例程演示使用Linux socket CAN API，使用MYD-Y6ULX上的CAN总线接口发送和接收数据。将can_send和can_receive拷贝至开发板。执行以下步骤:
 

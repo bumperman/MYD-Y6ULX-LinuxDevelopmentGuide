@@ -1,4 +1,4 @@
-# 4.11 Test Camera
+# 4.12 Test Camera
 
 MYD-Y6ULX board has an paraller camera interface(J9).It can connects camera module of MY-CAM011B model.The module and board connects with FPC wire.Inorder the signal wire order, please do not insert other Camera module  into interface.This operation will damage your board or camera module.
 

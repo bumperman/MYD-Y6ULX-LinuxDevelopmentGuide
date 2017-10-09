@@ -1,10 +1,10 @@
-# 4.8 Test RS485
+# 4.9 Test RS232
 
-This example demonstrates how to use the Linux serial API to configure the RS485 on the development board to send and receive data. For details, refer to the source code.
+This example demonstrates how to use the Linux serial API to configure the RS232 on the development board to send and receive data. For details, refer to the source code.
 
 
 ## Hardware
-MYD-Y6ULX board have an RS485 interface(J10).You need connect the TXD,RXD signal wire to another RS232 device or USB to RS485 converter.
+MYD-Y6ULX board have an RS232 interface(J10).You need connect the TXD,RXD signal wire to another RS232 device or USB to RS232 converter.
 
 ## Software
 

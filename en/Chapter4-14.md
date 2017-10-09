@@ -1,4 +1,4 @@
-# 4.12 WiFi Test
+# 4.14 WiFi Test
 
 
 The MYS-6ULX-IOT board has a WiFi module (J11)  on back.It's supports Client and AP mode.

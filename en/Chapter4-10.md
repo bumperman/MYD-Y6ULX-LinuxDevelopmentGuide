@@ -1,4 +1,4 @@
-# 4.9 Test CAN Bus
+# 4.10 Test CAN Bus
 
 This example demonstrates the use of the Linux API, which uses the CAN bus interface on the development board to send and receive data. Copy can_send and can_receive to the development board. Perform the following steps
 
