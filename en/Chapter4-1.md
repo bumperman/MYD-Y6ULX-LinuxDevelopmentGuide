@@ -34,7 +34,6 @@ color: black   rgb_val: 00000000
 
 The Linux source of MYS-6ULX series board has alread support display and touch function.The MY-TFT070RV2 touch function through ADC type.You just enable the relative function in dts file.
 
-* MYS-6ULX-IND
 The first step, edit "arch/arm/boot/dts/mys-imx6ul-14x14-evk.dts" file, modify the status property of tsc node to okay value.
 ```
 &tsc {
