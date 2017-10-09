@@ -1,31 +1,18 @@
-# 4.11 Camera 测试
-
-MYD-Y6ULX上提供一个并行Camera接口(J9)，可以连接MY-CAM011B型号的Camera模块，模块之间使用FPC线连接。由于信号序列影响，请勿直接将其它型号的Camera的模块插入，否则会引起模块或开发板的损坏。
-
-本例程演示使用一款开源的视频流软件uvc_stream，可以将Camera设备捕捉的数据显示在web页面。
+# 4.10 Audio 测试
 
 ## 硬件连接
 
-使用FPC数据线将MYB-CAM011B模块和MYD-Y6ULX板上的J9接口相连接。
+本例程演示使用Linux系统中的arecord/aplay命令对音频接口录音和放音。需要使用两头3.5mm的音频AUX线，从电脑音频输出孔和开发板的LINE IN(J5)接口连接，HEADERPHONE(J4)连接耳机。
 
 ## 软件操作
 
-uvc_stream是通过的网络传输数据，需要先设置好MYD-Y6ULX板的以太网IP地址，对应系统中的eth0设备。Linux系统中的MY-CAM011B模块的设备，可通通过v4l2-ctl命令来查询到，输出信息的i.MX6S_CSI表示Camera控制器，对应设备是/dev/video1。uvc_stream参数中'-y'是使用yuyv方式，'-P'后面是设置web界面的登录密码，用户名默认为uvc_user。'-r'是指定分辨率，当前仅支持800x600。可以用ctrl + c来停止。
-
-
+在电脑中播放音频文件，执行arecord命令会先将LINE IN中的音频录制并保存为test.wav文件。运行一分钟后再按ctrl + c来停止。
 ```
-# ifconfig eth1 192.168.1.42
-# v4l2-ctl --list-devices
- 
-  i.MX6S_CSI (platform:21c4000.csi):
-    /dev/video1
-
-    pxp (pxp_v4l2):
-        /dev/video0
-
-# ./uvc_stream -d /dev/video1 -y -P 123456 -r 800x600
+arecord -f cd test.wav
 ```
 
-uvc_stream提供两种web功能，snapshot和streaming。snapshot的请求URL是snapshot.jpeg，streaming的请求URL是stream.mjpeg。
-PC和开发板在同一网络内时，打开流览器，输入地址[http://192.168.1.42:8080/stream.mjpeg](http://192.168.1.42:8080/stream.mjpeg)，可以看到有登录框，输入用户名为uvc_user，密码为123456，就可以看到从MY-CAM011B实时采集到的图像了。
+执行aplay命令来播放上面录制好的音频文件。
+```
+aplay test.wav
+```
 
