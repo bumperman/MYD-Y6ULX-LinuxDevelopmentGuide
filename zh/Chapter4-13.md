@@ -11,7 +11,7 @@ MYD-Y6ULX开发板提供一个WiFi模块(J11)，支持Client和AP模式，本节
 
 Client模式是用于将WiFi模块作为客户访问设备，主动连接于路由器或其它提供无线热点的设备。
 
-系统中已经加入WiFi模块的驱动，启动后会自动加载相应驱动，可以使用lsmod命令来确认。驱动加载成功后会出现对应的wlan0网络设备，使用ifconfig命令来确认。
+系统中已经加入WiFi模块的驱动，启动后会自动加载相应驱动。驱动加载成功后会出现对应的wlan0网络设备，使用ifconfig命令来确认。
 
 ```
 #ifconfig wlan0
@@ -71,11 +71,11 @@ AP模式是由软件和硬件同时支持才可以实现，MYD-Y6ULX板上的WiF
 资源包中有提供hostapd的源码，同时提供的镜像中也有安装hostapd软件。
 
 ```
-tar xvf RTL8188-hostapd-2.0.tar.gz
-cd RTL8188-hostapd-2.0/hostapd
-make
+#tar xvf RTL8188-hostapd-2.0.tar.gz
+#cd RTL8188-hostapd-2.0/hostapd
+#make
 mkdir ~/hostapd-armhf
-make install DESTDIR=~/hostapd-armhf
+#make install DESTDIR=~/hostapd-armhf
 ```
 
 这里把hostapd安装在了"~/hostapd-armhf"位置，可以使用NFS或sdcard将其复制到开发板上。可以使用"-v"检查版本信息。
@@ -122,8 +122,8 @@ manufacturer=Realtek
 
 Hostapd以daemon方式运行，命令如下：
 ```
-ifconfig wlan0 up
-hostapd /etc/hostapd/hostapd.conf -B
+#ifconfig wlan0 up
+#hostapd /etc/hostapd/hostapd.conf -B
 ```
 
 Hostapd只是提供AP的功能，还需要有DHCP服务才可以给连接到WiFi网络的设备分配IP地址。udhcpd命令实现了简单的DHCP服务器功能。首先将下面的配置写入/etc/udhcpd.conf文件，若没有请先创建该文件。
@@ -220,7 +220,7 @@ option	lease	864000		# 10 days of seconds
 
 然后将wlan0作为路由，运行udhcpd服务：
 ```
-ifconfig wlan0 192.168.2.1
-udhcpd -fS /etc/udhcpd.conf
+#ifconfig wlan0 192.168.2.1
+#udhcpd -fS /etc/udhcpd.conf
 ```
 使用手机或其他WiFi设备连接"myir-test"热点后，即可分配到正确的IP地址。

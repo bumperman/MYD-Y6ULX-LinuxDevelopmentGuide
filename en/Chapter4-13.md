@@ -73,11 +73,11 @@ AccessPoint mode needs software and hardware to suporrt AP feature. The WiFi mod
 MYD-Y6ULX resource package has contains hostapd source.And prebuilt image has support hostapd package.
 
 ```
-tar xvf RTL8188-hostapd-2.0.tar.gz
-cd RTL8188-hostapd-2.0/hostapd
-make
-mkdir ~/hostapd-armhf
-make install DESTDIR=~/hostapd-armhf
+#tar xvf RTL8188-hostapd-2.0.tar.gz
+#cd RTL8188-hostapd-2.0/hostapd
+#make
+#mkdir ~/hostapd-armhf
+#make install DESTDIR=~/hostapd-armhf
 ```
 
 Now, the hostapd be installed in path "~/hostapd-armhf".You can throught NFS or sdcard to copy those file to your board.After that, you need uses "-v" argument for hostapd to confirm version.
@@ -122,8 +122,8 @@ manufacturer=Realtek
 
 Running hostapd as daemon type:
 ```
-ifconfig wlan0 up
-hostapd /etc/hostapd/hostapd.conf -B
+#ifconfig wlan0 up
+#hostapd /etc/hostapd/hostapd.conf -B
 ```
 
 The hostapd only support AP function.We also need DHCP service to distribute IP address for each client device of connected to WiFi network.
@@ -223,7 +223,7 @@ option	lease	864000		# 10 days of seconds
 
 Secondly, setting wlan0 as route IP address, and running udhcpd service.
 ```
-ifconfig wlan0 192.168.2.1
-udhcpd -fS /etc/udhcpd.conf
+#ifconfig wlan0 192.168.2.1
+#udhcpd -fS /etc/udhcpd.conf
 ```
 Now, you can use mobile or other WiFi device to connect "myir-test" WiFi signal.Also, the device will get an IP address.
