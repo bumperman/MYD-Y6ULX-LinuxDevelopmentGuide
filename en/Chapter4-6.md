@@ -1,6 +1,6 @@
 # 4.6 Test USB Host
 
-Connect the USB flash disk to USB HOST(J9) interface, will output detection device information. At the same time, use this storage device to mount the Linux system under its read and write.
+Connect the USB flash disk to USB HOST(J6) interface, will output detection device information. At the same time, use this storage device to mount the Linux system under its read and write.
 
 ```
 # usb 1-2: USB disconnect, device number 6

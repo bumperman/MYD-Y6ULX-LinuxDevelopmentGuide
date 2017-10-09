@@ -1,16 +1,14 @@
 # 4.9 CAN Bus 测试
 
-注意：本例程需要在MYS-6ULX-IOT或MYS-6ULX-IND上安装MYB-6ULX扩展板，同时使用支持MYB-6ULX的dtb文件启动Linux系统
-
-本例程演示使用Linux socket CAN API，使用MYB-6ULX扩展板上的CAN总线接口发送和接收数据。将can_send和can_receive拷贝至开发板。执行以下步骤:
+本例程演示使用Linux socket CAN API，使用MYD-Y6ULX上的CAN总线接口发送和接收数据。将can_send和can_receive拷贝至开发板。执行以下步骤:
 
 ## 硬件连接
-MYB-6ULX开发板有一个CAN总线接口(J11)，将H，L信号线与另外的CAN通讯设备或USB CAN转换器相连接。
+MYD-Y6ULX开发板有一个CAN总线接口(J10)，将H，L信号线与另外的CAN通讯设备或USB CAN转换器相连接。
 
 ## 软件测试
 配置开发板上CAN0通信波特率都设置为 50kbps，并使能CAN0设备
 
-Linux上可以使用两种工具来配置CAN设备，canconfig和ip，MYS-6ULX附带的系统默认使用ip命令。
+Linux上可以使用两种工具来配置CAN设备，canconfig和ip，MYD-Y6ULX附带的系统默认使用ip命令。
 canconfig命令配置：
 ```
 canconfig can0 bitrate 50000 ctrlmode triple-sampling on
@@ -24,7 +22,7 @@ ifconfig can0 up
 
 CAN收发测试可以使用系统附带的cansend、candump命令，也可以使用资源包中CAN收发例程。
 
-- MYB-6ULX扩展板作为发送端：
+- MYD-Y6ULX作为发送端：
 
 使用cansend发送数据到CAN总线：
 ```
@@ -36,7 +34,7 @@ can_send例程运行后会一直发送数据，直到ctrl + c结束。
 ./can_send -d can0 -i 100 0x11 0x22 0x33 0x44 0x55 0x66 0x77 0x88
 ```
 
-- MYB-6ULX扩展板作为接收端：
+- 其他设备作为接收端：
 
 使用candump接收CAN数据：
 

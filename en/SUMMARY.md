@@ -22,6 +22,7 @@
     * [4.10 Test Audio](Chapter4-10.md)
     * [4.11 Test Camera](Chapter4-11.md)
     * [4.12 Test WiFi](Chapter4-12.md)
+    * [4.13 Test 4G](Chapter4-13.md)
 * [5 QT Application Development](Chapter5.md)
     * [Install QtCreator](Chapter5-1.md)
     * [Config QtCreator](Chapter5-2.md)
