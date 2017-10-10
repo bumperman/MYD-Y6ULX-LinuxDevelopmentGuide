@@ -13,7 +13,9 @@ MYD-Y6ULX开发板提供一个4G模块接口。
 #ls /dev/ttyUSB*
 
 ```
-* 拨号前的准备，移植pppd。
+拨号前的准备，移植pppd。
+
+
 ```
 tar -xvf ppp-2.4.5.tar.gz
 cd ppp-2.4.5
@@ -26,3 +28,4 @@ cd ppp-2.4.5
 * 拨号
 两种方式启动ppp拨号：
 一.
+二.
