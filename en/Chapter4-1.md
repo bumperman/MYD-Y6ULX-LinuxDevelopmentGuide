@@ -1,6 +1,6 @@
 # 4.1 Test LCD
 
-This example demonstrates the operation of the FrameBuffer of Linux, enabling color and color grid testing.You need connect the LCD to MYS6ULX board LCD interface(J8).We have two kinds LCD with touch panel, 7-inch capacitive screen is MY-TFT070CV2 and 4.3inch resistive screen is MY-TFT043RV2.
+This example demonstrates the operation of the FrameBuffer of Linux, enabling color and color grid testing.You need connect the LCD to MYS6ULX board LCD interface(J3).We have two kinds LCD with touch panel, 7-inch capacitive screen is MY-TFT070CV2 and 4.3inch resistive screen is MY-TFT043RV2.
 
 The LCD screen will display the corresponding color, the following is the terminal output information:
 
@@ -34,8 +34,7 @@ color: black   rgb_val: 00000000
 
 The Linux source of MYS-6ULX series board has alread support display and touch function.The MY-TFT070RV2 touch function through ADC type.You just enable the relative function in dts file.
 
-* MYS-6ULX-IND
-The first step, edit "arch/arm/boot/dts/mys-imx6ul-14x14-evk.dts" file, modify the status property of tsc node to okay value.
+The first step, edit "arch/arm/boot/dts/myb-y6ull-14x14.dts" file, modify the status property of tsc node to okay value.
 ```
 &tsc {
      pinctrl-names = "default";
@@ -84,15 +83,12 @@ The second step, comment the argument of 4.3 inch screen, and enable argument of
         };
 ```
 
-* MYS-6ULX-IoT
-The MYS-6ULX-IoT use same method with MYS-6ULX-IND, you just edit the "arch/arm/boot/dts/mys-imx6ull-14x14-evk.dts" file follow above step.
-
 ## Configure for MY-TFT070CV2 module
 
 The touch function of MY-TFT070CV2 module use I2C type.The slave device has already added to i2c2 controller node.You just disable tsc controller and enable argument of 7 inch screen.
 
 * MYS-6ULX-IND
-The first step, edit "arch/arm/boot/dts/mys-imx6ul-14x14-evk.dts" file, modify the status property of tsc node is disabled value.
+The first step, edit "arch/arm/boot/dts/myb-y6ull-14x14.dts" file, modify the status property of tsc node is disabled value.
 ```
 &tsc {
      pinctrl-names = "default";
@@ -140,7 +136,4 @@ The second step, comment the argument of 4.3 inch screen.And enable the argument
  
         };
 ```
-
-* MYS-6ULX-IoT
-The MYS-6ULX-IoT use same method with MYS-6ULX-IND.Follow above step to edit "arch/arm/boot/dts/mys-imx6ull-14x14-evk.dts"file.
 

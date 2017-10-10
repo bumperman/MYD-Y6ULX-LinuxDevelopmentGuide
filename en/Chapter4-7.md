@@ -1,12 +1,12 @@
 # 4.11 Test USB Device
 
-This example shows how to use USB device mode through the Micro USB interface(J7) on board.It will attach a specified file or device as a Gadget device. It works as a storage device connected to the HOST device.
+This example shows how to use USB device mode through the Micro USB interface(J26) on board.It will attach a specified file or device as a Gadget device. It works as a storage device connected to the HOST device.
 
 - Operation steps on board:
 
 ```
 mkfs.vfat /dev/ram1
-insmod g_mass_storage.ko file=/dev/ram1 removable=1 \
+insmod g_mass_storage file=/dev/ram1 removable=1 \
 iSerialNumber="1234"
 
 [ 3048.950498] Mass Storage Function, version: 2009/09/11
