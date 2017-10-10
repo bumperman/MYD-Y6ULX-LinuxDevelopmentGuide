@@ -27,6 +27,7 @@ And also use ls to confirm it.
 After compilation is complete,copy the executable program pppd、pppdump、pppstatus、chat to the development board.
 
 * dial-up connection
+Use the quectel-pppd.sh script to dial.
 ```
 ./quectel-pppd.sh // device name (/dev/ttyUSB3)
 ```
