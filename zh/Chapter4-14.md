@@ -15,9 +15,9 @@ MYD-Y6ULX开发板提供一个4G模块接口。
 ```
 * 拨号前的准备，移植pppd。
 ```
-#tar -xvf ppp-2.4.5.tar.gz
-#cd ppp-2.4.5
-#./configure
+tar -xvf ppp-2.4.5.tar.gz
+cd ppp-2.4.5
+./configure
 #make CC=arm-linux-gnueabihf-gcc
 
 ```
