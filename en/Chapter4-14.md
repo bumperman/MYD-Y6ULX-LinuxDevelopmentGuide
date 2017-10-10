@@ -7,9 +7,36 @@ The MYD-Y6ULX board has a 4G module.
 
 Use I-PEX interface of wireless antenna connect with J24 position of board.
 
-## Client Mode
 
-The Client mode means WiFi module as client device connect to your route or other AccessPoint device.
 
-Our Linux prebuilt system has added driver of WiFi module.It will be auto loaded when system startup.
-And also use lsmod to confirm it.The wlan0 network device has exist when driver loaded success.The ifconfig command can be used confirm it.
+Our Linux prebuilt system has added driver of 4G module.It will be auto loaded when system startup.
+And also use ls to confirm it.
+```
+#ls /dev/ttyUSB*
+/dev/ttyUSB1 /dev/ttyUSB2 /dev/ttyUSB3 /dev/ttyUSB4
+```
+* pppd porting 
+```
+#tar -zxvf ppp-2.4.5.tar.gz
+#cd ppp-2.4.5
+#./configure
+#make CC=arm-linux-gnueabihf-gcc
+#cd chat
+#make CC=arm-linux-gnueabihf-gcc
+```
+After compilation is complete,copy the executable program pppd、pppdump、pppstatus、chat to the development board.
+
+* dial-up connection
+```
+./quectel-pppd.sh // device name (/dev/ttyUSB3)
+```
+Get ip and dns, set the system DNS.
+Dial success,you can access the Internet.
+* Disconnect dialing
+You must use quectel-ppp-kill to disconnect the dialing, otherwise it may go wrong.
+```
+./quectel-ppp-kill
+```
+
+
+
