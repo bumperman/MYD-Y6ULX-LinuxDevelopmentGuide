@@ -33,7 +33,7 @@ color: black   rgb_val: 00000000
 
 MYD-Y6ULX开发板中提供的Linux代码已经支持该模块的显示和触摸功能。MY-TFT070RV2的触摸功能是通过ADC采样方式，dts代码中已配置好,只需要启用相应功能即要可。
 
-第一步，编辑"arch/arm/boot/dts/mys-imx6ul-14x14-evk.dts"文件，修改tsc的status属性为okay。
+第一步，编辑"arch/arm/boot/dts/myb-y6ull-14x14.dts"文件，修改tsc的status属性为okay。
 
   ```
   &tsc {
@@ -89,7 +89,7 @@ MYD-Y6ULX开发板中提供的Linux代码已经支持该模块的显示和触摸
 
 MY-TFT070CV2模块的触摸使用的是I2C方式通讯，丛设备已添加到i2c2控制器上。使用前禁用tsc控制器，再启用7寸屏的配置参数即可。
 
-第一步，编辑"arch/arm/boot/dts/mys-imx6ul-14x14-evk.dts"文件，修改tsc的status属性为disabled。
+第一步，编辑"arch/arm/boot/dts/myb-y6ull-14x14.dts"文件，修改tsc的status属性为disabled。
 
   ```
   &tsc {

@@ -34,7 +34,7 @@ color: black   rgb_val: 00000000
 
 The Linux source of MYS-6ULX series board has alread support display and touch function.The MY-TFT070RV2 touch function through ADC type.You just enable the relative function in dts file.
 
-The first step, edit "arch/arm/boot/dts/mys-imx6ul-14x14-evk.dts" file, modify the status property of tsc node to okay value.
+The first step, edit "arch/arm/boot/dts/myb-y6ull-14x14.dts" file, modify the status property of tsc node to okay value.
 ```
 &tsc {
      pinctrl-names = "default";
@@ -88,7 +88,7 @@ The second step, comment the argument of 4.3 inch screen, and enable argument of
 The touch function of MY-TFT070CV2 module use I2C type.The slave device has already added to i2c2 controller node.You just disable tsc controller and enable argument of 7 inch screen.
 
 * MYS-6ULX-IND
-The first step, edit "arch/arm/boot/dts/mys-imx6ul-14x14-evk.dts" file, modify the status property of tsc node is disabled value.
+The first step, edit "arch/arm/boot/dts/myb-y6ull-14x14.dts" file, modify the status property of tsc node is disabled value.
 ```
 &tsc {
      pinctrl-names = "default";
