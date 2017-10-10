@@ -1,23 +1,16 @@
 # 3.3.1 Yocto构建Linux系统
 
-本节适合需要对文件系统进行深度定制的开发者，希望从Yocto构建出符合MYS-6ULX系列开发板的文件系统，同时基于它的定制需求。初次体验使用或无特殊需要的开发者可以直接使用MYS-6ULX已经提供的文件系统。
+本节适合需要对文件系统进行深度定制的开发者，希望从Yocto构建出符合MYD-Y6ULX系列开发板的文件系统，同时基于它的定制需求。初次体验使用或无特殊需要的开发者可以直接使用MYD-Y6ULX已经提供的文件系统。
 
-由于Yocto构建前需要下载文件系统中所有软件包到本地，为了快速构建，MYS-6ULX已经把相关的软件打包好，可以直接解压使用，减少重复下载的时间。
-
-这里提供了两种方式使用Yocto:
-
-* 使用由MYS-6ULX资源包中的Yocto和相关文件
-* 从NXP官网下载Yocto
-
-初次使用Yocto的用户，推荐使用第一种方式。
+由于Yocto构建前需要下载文件系统中所有软件包到本地，为了快速构建，MYD-Y6ULX已经把相关的软件打包好，可以直接解压使用，减少重复下载的时间。
 
 注意：构建Yocto不需要加载工具链环境变量，请创建新shell或打开新的终端窗口。
 
-## MYS-6ULX提供的Yocto
+## MYD-Y6ULX提供的Yocto
 
-解压Yocto源码包，同时解压Yocto-downloads.tar.xz软件包至Yocto目录下。Yocto-downloads.tar.xz是把MYS-6ULX构建中用到的第三方软件包打包，免除用户再次下载。
+解压Yocto源码包，同时解压Yocto-downloads.tar.xz软件包至Yocto目录下。Yocto-downloads.tar.xz是把Yocto构建中用到的第三方软件包打包，免除用户再次下载花费的时间。
 
-注意：由于Yocto-downloads.tar.xz文件较大，无法与MYS-6ULX打包在同一文件内，请访问网页下载: http://down.myir-tech.com/MYS-6ULX/。
+注意：由于Yocto-downloads.tar.xz文件较大，无法与MYD-Y6ULX打包在同一文件内，请访问网页下载: http://down.myir-tech.com/MYD-Y6ULX/。
 
 ```
 cd $DEV_ROOT
@@ -30,45 +23,6 @@ cd fsl-release-bsp
 
 ```
 cd $DEV_ROOT
-tar xvf $DEV_ROOT/04-Source/linux-4.1.15.tar.gz -C ~/
-tar xvf $DEV_ROOT/04-Source/uboot.tar.gz -C ~/
-```
-
-## NXP官方提供的Yocto
-
-Yocto下的项目比较多，为了便于管理使用与Android相同的代码管理工具repo。通过repo下载代码前，需要配置好git的用户名和邮箱地址。然后使用repo的命令从NXP官方仓库下载代码
-
-* 设置repo
-
-```
-mkdir -p ~/bin
-curl http://commondatastorage.googleapis.com/git-repo-downloads/repo \
-> ~/bin/repo
-chmod a+x ~/bin/repo
-export PATH=~/bin:$PATH
-```
-
-* 设置Yocto
-
-```
-git config --global user.name "Your Name"
-git config --global user.email "Your email address"
-```
-
-```
-cd $DEV_ROOT
-mkdir fsl-release-bsp
-cd fsl-replease-bsp
-repo init -u git://git.freescale.com/imx/fsl-arm-yocto-bsp.git \
--b imx-4.1-krogoth
-repo sync
-```
-
-同步完成后，需要把meta-myir-imx6ulx拷贝到fsl-release-bsp/source目录下。同时，在后面的初始化构建目录后，还需要在conf/bblayers.conf中添加BBLAYERS += " ${BSPDIR}/sources/meta-myir-imx6ulx "到最后行。
-
-也需要将Linux内核和U-Boot代码放在用户家目录下，方便开发和Yocto编译。
-
-```
 tar xvf $DEV_ROOT/04-Source/MYiR-iMX-Linux.tar.gz -C ~/
 tar xvf $DEV_ROOT/04-Source/MYiR-iMX-uboot.tar.bz -C ~/
 ```
@@ -76,10 +30,10 @@ tar xvf $DEV_ROOT/04-Source/MYiR-iMX-uboot.tar.bz -C ~/
 ## 初始化Yocto构建目录
 
 使用NXP提供的fsl-setup-release.sh脚本，会创建一个工作空间，然后在此空间下构建镜像。执行脚本后会先要求阅读并同意版权声明后才会进入构盡过目录。同时，脚本会默认创建并进入build目录。如果需要特定目录名称，可以使用-b参数，如"-b myir"。
-这里的MACHINE参数有两种设备，"mys6ull14x14"对应于MYS-6ULX-IoT和"mys6ul14x14"对应于MYS-6ULX-IND版本。
+这里的MACHINE参数为"myd-y6ull14x14"。
 
 ```
-DISTRO=myir-imx-fb MACHINE=mys6ul14x14 source fsl-setup-release.sh \
+DISTRO=myir-imx-fb MACHINE=myd-y6ull14x14 source fsl-setup-release.sh \
 -b build
 tree conf/
 conf/
@@ -92,7 +46,7 @@ conf/
 └── templateconf.cfg
 ```
 
-build/conf目录下是当前构建的配置文件。上面在初始化时，构建适合"mys6ul14x14"的镜像，也可以在local.conf文件中修改MACHINE变量来构建适合"mys6ull14x14"的镜像。Yocto支持在同一个构建任务下构建多个设备。
+build/conf目录下是当前构建的配置文件。上面在初始化后，就可以构建适合"myd-y6ull14x14"的镜像了。
 
 ## 构建GUI Qt5版的系统
 第一次构建时，会需要很长时间，请耐心等待。
@@ -111,7 +65,7 @@ bitbake core-image-base
 
 Image名称 | 描述 | 用途
 ---------- | ------ | -----------------
-core-image-minimal | minimal版本的文件系统 | 用于MYS-6ULX的升级或更新系统
+core-image-minimal | minimal版本的文件系统 | 用于MYD-Y6ULX的升级或更新系统
 core-image-base | base版本的终端更多功能的镜像 | 通用的文件系统
 fsl-image-qt5 | 构建基于Qt5的镜像 | 带Qt5的通用文件系统
 
@@ -119,23 +73,23 @@ fsl-image-qt5 | 构建基于Qt5的镜像 | 带Qt5的通用文件系统
 
 Yocto第一次构建会需要很长时间，取决于计算机的CPU核心数和硬件读写速度。Yocto建议可以使用八核和SSD硬盘可以加速构建速度。第一次构建完成后会生成缓存，后面修改的构建，时间会减少很多。
 
-檭建完成后在会"tmp/deploy/images/mys6ul14x14/"或"tmp/deploy/images/mys6ull14x14/"目录下生成不同的文件，以下是构建后的一个例子：
+檭建完成后在会"tmp/deploy/images/myd-y6ull14x14/"目录下生成不同的文件，以下是构建后的一个例子：
 ```
-ls -lh tmp/deploy/images/mys6ul14x14/
+ls -lh tmp/deploy/images/myd-y6ull14x14/
 total 1.8G
 -rw-r--r-- 1 kevinchen kevinchen  56M Apr 16 23:05 
-core-image-minimal-mys6ul14x14-20170416150516.rootfs.ext4
+core-image-minimal-myd-y6ul14x14-20170416150516.rootfs.ext4
 -rw-r--r-- 1 kevinchen kevinchen 2.1K Apr 16 23:05 
-core-image-minimal-mys6ul14x14-20170416150516.rootfs.manifest
+core-image-minimal-myd-y6ul14x14-20170416150516.rootfs.manifest
 -rw-r--r-- 1 kevinchen kevinchen  72M Apr 16 23:05 
-core-image-minimal-mys6ul14x14-20170416150516.rootfs.sdcard
+core-image-minimal-myd-y6ul14x14-20170416150516.rootfs.sdcard
 -rw-r--r-- 1 kevinchen kevinchen  11M Apr 16 23:05 
-core-image-minimal-mys6ul14x14-20170416150516.rootfs.tar.bz2
+core-image-minimal-myd-y6ul14x14-20170416150516.rootfs.tar.bz2
 -rw-r--r-- 1 kevinchen kevinchen 7.3M Apr 16 23:05 
-core-image-minimal-mys6ul14x14-20170416150516.rootfs.tar.xz
+core-image-minimal-myd-y6ul14x14-20170416150516.rootfs.tar.xz
 lrwxrwxrwx 1 kevinchen kevinchen   57 Apr 16 23:05 
-core-image-minimal-mys6ul14x14.ext4 -> core-image-minimal-
-mys6ul14x14-20170416150516.rootfs.ext4
+core-image-minimal-myd-y6ul14x14.ext4 -> core-image-minimal-
+myd-y6ul14x14-20170416150516.rootfs.ext4
 lrwxrwxrwx 1 kevinchen kevinchen   61 Apr 16 23:05 
 core-image-minimal-mys6ul14x14.manifest -> core-image-minimal-
 mys6ul14x14-20170416150516.rootfs.manifest
