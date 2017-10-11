@@ -12,14 +12,9 @@ bitbake meta-toolchain
 
 ```
 ls tmp/deploy/sdk/ -lh
--rw-r--r-- 1 kevinchen kevinchen 9.5K Apr 17 00:00 myir-imx6ulx-fb-
-glibc-x86_64-meta-toolchain-cortexa7hf-neon-toolchain-4.1.15-2.0.1.
-host.manifest
--rwxr-xr-x 1 kevinchen kevinchen  76M Apr 17 00:01 myir-imx6ulx-fb-
-glibc-x86_64-meta-toolchain-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh
--rw-r--r-- 1 kevinchen kevinchen 1.6K Apr 17 00:00 myir-imx6ulx-fb-
-glibc-x86_64-meta-toolchain-cortexa7hf-neon-toolchain-4.1.15-2.0.1.
-target.manifest
+myir-imx-fb-glibc-x86_64-meta-toolchain-cortexa7hf-neon-toolchain-4.1.15-2.0.1.host.manifest
+myir-imx-fb-glibc-x86_64-meta-toolchain-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh
+myir-imx-fb-glibc-x86_64-meta-toolchain-cortexa7hf-neon-toolchain-4.1.15-2.0.1.target.manifest
 ```
 这里有两个manifest文件，host.manifest是工具链中包含主机端的软件包的列表，target.manifest是包含目标设备端的软件包列表。
 
@@ -32,18 +27,16 @@ target.manifest
 bitbake -c populate_sdk <image name>
 ```
 
-构建完成后，同样在"tmp/deploy/sdk/"目录下有三个文件：
+构建完成后，同样在"tmp/deploy/sdk/"目录下有六个文件：
 
 ```
 ls tmp/deploy/sdk/ -lh
--rw-r--r-- 1 kevinchen kevinchen 9.5K Apr 17 07:54 myir-imx6ulx-fb-
-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.
-host.manifest
--rwxr-xr-x 1 kevinchen kevinchen 587M Apr 17 07:59 myir-imx6ulx-fb-
-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh
--rw-r--r-- 1 kevinchen kevinchen  70K Apr 17 07:54 myir-imx6ulx-fb-
-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.
-target.manifest
+myir-imx-fb-glibc-x86_64-core-image-base-cortexa7hf-neon-toolchain-4.1.15-2.0.1.host.manifest
+myir-imx-fb-glibc-x86_64-core-image-base-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh
+myir-imx-fb-glibc-x86_64-core-image-base-cortexa7hf-neon-toolchain-4.1.15-2.0.1.target.manifest
+myir-imx-fb-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.host.manifest
+myir-imx-fb-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh
+myir-imx-fb-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.target.manifest
 ```
 
-"*.host.manifest"文件表示工具链中包含主机端的软件包列表，"*.target.manifest"表示工具链中包含目标设德端的软件包列表。"myir-imx6ulx-fb-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh"文件是构建出的SDK工具链，可以直接安装在其他Linux系统中，开发和编译目标端设备的二进制程序。
+"*.host.manifest"文件表示工具链中包含主机端的软件包列表，"*.target.manifest"表示工具链中包含目标设德端的软件包列表。"myir-imx-fb-glibc-x86_64-fsl-image-qt5-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh"文件是构建出的fsl-image-qt5镜像对应的SDK工具链，"myir-imx-fb-glibc-x86_64-core-image-base-cortexa7hf-neon-toolchain-4.1.15-2.0.1.sh"文件是构建出的core-image-base镜像对应的SDK工具链。可以直接安装在其他Linux系统中，开发和编译目标端设备的二进制程序。
