@@ -11,7 +11,7 @@ MYD-Y6ULX开发板提供一个4G模块接口。
 系统中已经加入4G模块的驱动，启动后会自动加载相应驱动,驱动加载成功后会出现对应的/dev/ttyUSB*设备，查看：
 ```
 #ls /dev/ttyUSB*
-/dev/ttyUSB1 /dev/ttyUSB2 /dev/ttyUSB3 /dev/ttyUSB4
+/dev/ttyUSB0 /dev/ttyUSB1 /dev/ttyUSB2 /dev/ttyUSB3 /dev/ttyUSB4
 ```
 * 移植pppd。
 

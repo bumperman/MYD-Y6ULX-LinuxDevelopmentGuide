@@ -13,7 +13,7 @@ Our Linux prebuilt system has added driver of 4G module.It will be auto loaded w
 And also use ls to confirm it.
 ```
 #ls /dev/ttyUSB*
-/dev/ttyUSB1 /dev/ttyUSB2 /dev/ttyUSB3 /dev/ttyUSB4
+/dev/ttyUSB0 /dev/ttyUSB1 /dev/ttyUSB2 /dev/ttyUSB3 /dev/ttyUSB4
 ```
 * pppd porting 
 ```
