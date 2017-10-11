@@ -5,7 +5,7 @@ The MYS-6ULX-IOT board has a WiFi module (J11)  on back.It's supports Client and
 
 ## Hardware Connective
 
-Use I-PEX interface of wireless antenna connect with J11 position of board.
+Use SMA interface of wireless antenna connect with J11 position of board.
 
 ## Client Mode
 
