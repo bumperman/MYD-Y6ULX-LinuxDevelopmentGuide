@@ -1,7 +1,7 @@
 # 4.13 WiFi Test
 
 
-The MYS-6ULX-IOT board has a WiFi module (J11)  on back.It's supports Client and AP mode.
+The MYD-Y6ULX board has a WiFi module (J11)  on back.It's supports Client and AP mode.
 
 ## Hardware Connective
 
@@ -66,7 +66,7 @@ wlan0     Link encap:Ethernet  HWaddr a0:2c:36:60:ee:e0
 
 ## AP Mode
 
-AccessPoint mode needs software and hardware to suporrt AP feature. The WiFi module of MYS-6ULX-IOT  hs support AP mode.It use Hostapd to support AP function.
+AccessPoint mode needs software and hardware to suporrt AP feature. The WiFi module of MYD-Y6ULX  has support AP mode.It use Hostapd to support AP function.
 
 ### Compile Hostapd
 

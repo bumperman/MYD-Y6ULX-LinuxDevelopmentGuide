@@ -9,7 +9,7 @@ MYD-Y6ULX board has an CAN bus interface(J10).You need connect the H, L data sig
 
 Configure the CAN0 bitrate is 50kbps and enable it.
 
-Linux has two commands to configure CAN device, canconfig and ip. The MYS-6ULX use ip as default.
+Linux has two commands to configure CAN device, canconfig and ip. The MYD-Y6ULX use ip as default.
 canconfig command usage:
 ```
 # canconfig can0 bitrate 50000 ctrlmode triple-sampling on
