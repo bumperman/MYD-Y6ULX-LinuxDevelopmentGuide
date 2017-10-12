@@ -11,7 +11,7 @@ MYD-Y6ULX board have an RS232 interface(J10).You need connect the TXD,RXD signal
 Copy and run the program on MYD-Y6ULX Linux system.Below is MYD-Y6ULX as the sender:
 
 ```
-./uart_test -d /dev/ttymxc1 -b 115200
+# ./uart_test -d /dev/ttymxc1 -b 115200
 /dev/ttymxc1 RECV 10 total
 /dev/ttymxc1  RECV: 1234567890
 /dev/ttymxc1  RECV 10 total

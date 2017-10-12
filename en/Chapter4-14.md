@@ -13,7 +13,7 @@ Our Linux prebuilt system has added driver of 4G module.It will be auto loaded w
 And also use ls to confirm it.
 ```
 #ls /dev/ttyUSB*
-/dev/ttyUSB1 /dev/ttyUSB2 /dev/ttyUSB3 /dev/ttyUSB4
+/dev/ttyUSB0 /dev/ttyUSB1 /dev/ttyUSB2 /dev/ttyUSB3 /dev/ttyUSB4
 ```
 * pppd porting 
 ```
@@ -29,14 +29,14 @@ After compilation is complete,copy the executable program pppd、pppdump、pppst
 * dial-up connection
 Use the quectel-pppd.sh script to dial.
 ```
-./quectel-pppd.sh // device name (/dev/ttyUSB3)
+# ./quectel-pppd.sh // device name (/dev/ttyUSB3)
 ```
 Get ip and dns, set the system DNS.
 Dial success,you can access the Internet.
 * Disconnect dialing
 You must use quectel-ppp-kill to disconnect the dialing, otherwise it may go wrong.
 ```
-./quectel-ppp-kill
+# ./quectel-ppp-kill
 ```
 
 

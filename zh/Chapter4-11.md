@@ -8,11 +8,11 @@
 
 在电脑中播放音频文件，执行arecord命令会先将LINE IN中的音频录制并保存为test.wav文件。运行一分钟后再按ctrl + c来停止。
 ```
-arecord -f cd test.wav
+# arecord -f cd test.wav
 ```
 
 执行aplay命令来播放上面录制好的音频文件。
 ```
-aplay test.wav
+# aplay test.wav
 ```
 

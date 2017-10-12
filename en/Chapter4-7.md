@@ -5,8 +5,8 @@ This example shows how to use USB device mode through the Micro USB interface(J2
 - Operation steps on board:
 
 ```
-mkfs.vfat /dev/ram1
-insmod g_mass_storage file=/dev/ram1 removable=1 \
+#mkfs.vfat /dev/ram1
+#modprobe g_mass_storage file=/dev/ram1 removable=1 \
 iSerialNumber="1234"
 
 [ 3048.950498] Mass Storage Function, version: 2009/09/11
@@ -24,7 +24,7 @@ Linux File-Backed Storage
 - The host PC display a USB device connected and SerialNumber is "1234":
 
 ```
-dmesg | tail -n 20
+#dmesg | tail -n 20
 [2872436.778616] usb 1-1: USB disconnect, device number 102
 [2872436.779156] sd 3:0:0:0: [sdb] Synchronizing SCSI cache
 [2872436.779201] sd 3:0:0:0: [sdb] Synchronize Cache(10) failed:

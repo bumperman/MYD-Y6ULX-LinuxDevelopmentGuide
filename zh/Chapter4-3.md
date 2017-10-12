@@ -5,8 +5,8 @@
 在 PC 上配置IP并运行服务程序:
 
 ```
-# sudo ifconfig eth0 192.168.1.111
-# ./pc_server
+$ sudo ifconfig eth0 192.168.1.111
+$ ./pc_server
 REC FROM: 192.168.1.222
 ```
 

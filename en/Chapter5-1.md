@@ -15,8 +15,7 @@ In order to QtCreator use Yocto SDK, we need add environment to QtCreator, modif
 
 ```
 $ vi /opt/qtcreator-4.1.0/bin/qtcreator.sh
-source /opt/myir-imx6ulx-fb/4.1.15-2.0.1/environment-setup-\
-cortexa7hf-neon-poky-linux-gnueabi
+source /opt/myir-imx6ulx-fb/4.1.15-2.0.1/environment-setup-cortexa7hf-neon-poky-linux-gnueabi
 #! /bin/sh
 
 # Use this script if you add paths to LD_LIBRARY_PATH

@@ -5,7 +5,7 @@ MYD-Y6ULX开发板提供一个WiFi模块(J11)，支持Client和AP模式，本节
 
 ## 硬件连接
 
-将附带I-PEX接口的天线安装在开发板的J12位置。
+将附带SMA接口的天线安装在开发板的J12位置。
 
 ## Client模式
 
@@ -74,7 +74,7 @@ AP模式是由软件和硬件同时支持才可以实现，MYD-Y6ULX板上的WiF
 #tar xvf RTL8188-hostapd-2.0.tar.gz
 #cd RTL8188-hostapd-2.0/hostapd
 #make
-mkdir ~/hostapd-armhf
+#mkdir ~/hostapd-armhf
 #make install DESTDIR=~/hostapd-armhf
 ```
 

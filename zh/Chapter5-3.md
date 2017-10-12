@@ -4,7 +4,7 @@
 
 第一步，在菜单栏选择"File"->"Open File or Project"，在打开的对话框中，浏览到"helloword"例程的目录下，选择"helloworld.pro"文件，点击"Open"按钮。
 
-第二步，项目打开后，在左侧菜单列中，选择"Projects"图标，右侧界面切换为"helloworld"项目的"Build & Run"标签下，点击"Add kit"下拉列表，选择"MYS6ULx-dev-kit"选项，这样"helloworld"项目就会使用"MYS6ULx-dev-kit"的相关配置构建应用。
+第二步，项目打开后，选择"MYDY6ULx-dev-kit"选项，这样"helloworld"项目就会使用"MYDY6ULx-dev-kit"的相关配置构建应用。
 
 ![](image/5-3-1.png)
 图5-3-1 选择构建配置
@@ -14,11 +14,11 @@
 ![](image/5-3-2.png)
 图5-3-2 编译输出结果
 
-QtCreator 构建 helloworld 项目后，编译好的二进制文件存放在"~/build-helloworld-MYS6ULx_dev_kit-Debug/"目录下，可以使用 file 命令查看，是否编译为 ARM 架构。
+QtCreator 构建 helloworld 项目后，编译好的二进制文件存放在"~/build-helloworld-MYDY6ULx_dev_kit-Debug/"目录下，可以使用 file 命令查看，是否编译为 ARM 架构。
 
 ```
-file ~/build-helloworld-MYS6ULx_dev_kit-Debug/helloworld
-/home/kevinchen/build-helloworld-MYS6ULx_dev_kit-Debug/helloworld: 
+file ~/build-helloworld-MYDY6ULx_dev_kit-Debug/helloworld
+/home/kevinchen/build-helloworld-MYDY6ULx_dev_kit-Debug/helloworld: 
 ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), 
 dynamically linked, interpreter /lib/ld-linux-armhf.so.3, 
 for GNU/Linux 2.6.32, 

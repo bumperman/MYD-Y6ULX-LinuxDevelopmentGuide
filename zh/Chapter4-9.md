@@ -10,7 +10,7 @@ MYD-Y6ULX上有一个RS232接口(J10)，可以将TXD，RXD信号线与另外的R
 将编译出来的可执行程序拷贝至MYD-Y6ULX开发板系统内。MYD-Y6ULX作为发送端执行以下命令，PC端接收数据。
 
 ```
-./uart_test -d /dev/ttymxc1 -b 115200
+# ./uart_test -d /dev/ttymxc1 -b 115200
 /dev/ttyS1 RECV 10 total
 /dev/ttyS1 RECV: 1234567890
 /dev/ttyS1 RECV 10 total

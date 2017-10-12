@@ -5,8 +5,8 @@
 - 开发板上使用modprobe加载驱动:
 
 ```
-mkfs.vfat /dev/ram1
-modprobe g_mass_storage file=/dev/ram1 removable=1 \
+#mkfs.vfat /dev/ram1
+#modprobe g_mass_storage file=/dev/ram1 removable=1 \
 iSerialNumber="1234"
 
 [ 3048.950498] Mass Storage Function, version: 2009/09/11
@@ -25,7 +25,7 @@ version: 2009/09/11
 - Linux PC机上查看到有USB设备接入，SerialNumber为"1234"，Manufacturer是内核构建版本号:
 
 ```
-dmesg | tail -n 20
+#dmesg | tail -n 20
 [2872436.778616] usb 1-1: USB disconnect, device number 102
 [2872436.779156] sd 3:0:0:0: [sdb] Synchronizing SCSI cache
 [2872436.779201] sd 3:0:0:0: [sdb] Synchronize Cache(10) 
