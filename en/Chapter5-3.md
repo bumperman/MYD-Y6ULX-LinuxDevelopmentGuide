@@ -4,7 +4,7 @@ In order to test previous configure is correct, we support a Qt example.You just
 
 The first step, in the menu bar, select "File" -> "Open File or Project", in the open dialog box, browse and select "hellowrold" example project, choose "helloworld.pro" file,  click "Open" button.
 
-The second step, choose "Projects" icon in left panel.The right panel will switch to "Build & Run" tab of "helloworld" project, click "Add kit" pop-down list, and choose "MYDY6ULx-dev-kit" option.Then the "helloworld" project will use "MYDY6ULx-dev-kit" option to build it. 
+The second step,choose "MYDY6ULx-dev-kit" option.Then the "helloworld" project will use "MYDY6ULx-dev-kit" option to build it. 
 
 ![](image/5-3-1.png)
 Figure5-3-1 config building option
