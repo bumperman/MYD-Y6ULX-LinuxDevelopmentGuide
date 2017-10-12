@@ -74,7 +74,7 @@ AP模式是由软件和硬件同时支持才可以实现，MYD-Y6ULX板上的WiF
 #tar xvf RTL8188-hostapd-2.0.tar.gz
 #cd RTL8188-hostapd-2.0/hostapd
 #make
-mkdir ~/hostapd-armhf
+#mkdir ~/hostapd-armhf
 #make install DESTDIR=~/hostapd-armhf
 ```
 
