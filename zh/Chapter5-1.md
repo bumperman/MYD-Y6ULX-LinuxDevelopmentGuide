@@ -12,8 +12,7 @@ sudo 03-Tools/Qt/qt-creator-opensource-linux-x86_64-4.1.0.run
 安装完成后，为了让QtCreator使用Yocto的SDK工具，需要对QtCreator加入环境变量。修改"/opt/qtcreator-4.1.0/bin/qtcreator.sh"文件，在"#! /bin/sh"前加入Yocto的环境配置即可，参考如下：
 
 ```
-source /opt/myir-imx6ulx-fb/4.1.15-2.0.1/\
-environment-setup-cortexa7hf-neon-poky-linux-gnueabi
+source /opt/myir-imx6ulx-fb/4.1.15-2.0.1/environment-setup-cortexa7hf-neon-poky-linux-gnueabi
 #! /bin/sh
 
 # Use this script if you add paths to LD_LIBRARY_PATH
