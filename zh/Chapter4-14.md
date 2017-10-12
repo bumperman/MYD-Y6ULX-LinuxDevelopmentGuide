@@ -26,12 +26,12 @@ MYD-Y6ULX开发板提供一个4G模块接口。
 * 拨号
 使用quectel-pppd.sh脚本拨号
 ```
-./quectel-pppd.sh  //串口设备名(比如/dev/ttyUSB3) 
+#./quectel-pppd.sh  //串口设备名(比如/dev/ttyUSB3) 
 ```
 ip-up：pppd 在获取 ip 和 dns 之后，会自动调用这个脚本文件来设置系统的 DNS。
 拨号成功后就可以联网了。
 
  使用quectel-ppp-kill来挂断拨号，pppd必须被正常挂断，否者可能会导致你下次ppp拨号失败。
 ```
-./quectel-ppp-kill
+#./quectel-ppp-kill
 ```

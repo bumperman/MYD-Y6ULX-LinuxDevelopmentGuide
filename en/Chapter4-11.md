@@ -12,12 +12,12 @@ This example demonstrates the development onboard audio interface using the arec
 
 The PC plays the audio file and execute arecord command on board.It will recored data and save to test.wav file.You can use "ctrl + c" stop it after one minute.
 ```
-arecord -f cd test.wav
+# arecord -f cd test.wav
 ```
 
 Use aplay command to play file that previous step recoreded.
 ```
-aplay test.wav
+# aplay test.wav
 ```
 
 
