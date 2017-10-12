@@ -33,6 +33,5 @@ tftpboot 0x83000000 zImage
 tftpboot 0x84000000 myd-y6ull-gpmi-weim.dtb
 bootz 0x83000000 - 0x84000000
 
-./tool/mkimage -A arm -T script -O linux -d \
-myd-y6ull-boot-mmc0-tftp.txt boot.scr
+./tool/mkimage -A arm -T script -O linux -d myd-y6ull-boot-mmc0-tftp.txt boot.scr
 ```
