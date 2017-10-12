@@ -22,7 +22,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 
 ```
-
+Compile the sample code:
 ```
 $cd $DEV_ROOT/04-Sources
 $tar xvf example.tar.bz2
