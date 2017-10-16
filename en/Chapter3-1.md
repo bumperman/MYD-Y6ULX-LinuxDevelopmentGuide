@@ -16,28 +16,22 @@ make <config>
 make
 ```
 
-The <config> option value is different boot mode. The MYS-6ULX supports four boot modes.
+The <config> option value is different boot mode. The MYD-Y6ULX supports two boot modes.
 
 Boot Mode | Config file
 -------- | --------
-MYS-6ULX-IND NAND Flash | mys_imx6ul_14x14_nand_defconfig
-MYS-6ULX-IND eMMC Flash | mys_imx6ul_14x14_emmc_defconfig
-MYS-6ULX-IoT NAND Flash | mys_imx6ull_14x14_nand_defconfig
-MYS-6ULX-IoT eMMC Flash | mys_imx6ull_14x14_emmc_defconfig
+MYD-Y6ULX NAND Flash | myd_y6ull_14x14_nand_defconfig
+MYD-Y6ULX SD Card | myd_y6ull_14x14_sd_defconfig
 
-U-Boot will search and execute a script file "boot.scr" when U-Boot booting up. It used to change boot type in temporary.Next is use "mys-imx6ul-boot-sdcard.txt" to generate the "boot.scr" file as example. The mkimage tool source code is locate in "U-Boot/tools" directory. It will be compiled after U-Boot compiled.
+U-Boot SD boot mode will search and execute a script file "boot.scr" when U-Boot booting up. It used to change boot type in temporary.Next is use TFTP to download zImage and dtb to boot system as example. Using mkimage tool through "myd-y6ull-boot-mmc0-tftp.txt" to generate the "boot.scr" file as example. The mkimage tool source code is locate in "U-Boot/tools" directory. It will be compiled after U-Boot compiled.
 
 ```
-cat mys-imx6ul-boot-sdcard.txt
+cat myd-y6ull-boot-mmc0-tftp.txt
 setenv mmcroot '/dev/mmcblk0p2 rootwait rw rootdelay=5 mem=256M'
-setenv mmcargs 'setenv bootargs console=${console},${baudrate} \
-root=${mmcroot} mtdparts=gpmi-nand:5m(boot),10m(kernel),\
-1m(dtb),-(rootfs)'
 run mmcargs
-fatload mmc 0 0x83000000 zImage
-fatload mmc 0 0x84000000 mys-imx6ul-14x14-evk-emmc.dtb
+tftpboot 0x83000000 zImage
+tftpboot 0x84000000 myd-y6ull-gpmi-weim.dtb
 bootz 0x83000000 - 0x84000000
 
-./tool/mkimage -A arm -T script -O linux \
--d mys-imx6ul-boot-sdcard.txt boot.scr
+./tool/mkimage -A arm -T script -O linux -d myd-y6ull-boot-mmc0-tftp.txt boot.scr
 ```

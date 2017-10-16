@@ -1,8 +1,8 @@
 # 1 Software Resource
 
-MYS-6ULX series boards support the Linux kernel version 4.1.15, and provided with rich hardware resource and software resource. Some functions needs MYB-6ULX board installed on MYS-6ULX board.
+MYD-Y6ULX series boards support the Linux kernel version 4.1.15, and provided with rich hardware resource and software resource. Some functions needs MYB-6ULX board installed on MYD-Y6ULX board.
 
-Below is MYS-6ULX software resource table:
+Below is MYD-Y6ULX software resource table:
 
 Categary | Name | Description | Source
 ---- | ---- | ---- | ----
@@ -23,7 +23,8 @@ Driver | Audio | WM8904 codec driver | YES
 Driver | CAN bus | CANb bus driver | YES
 Driver | RS485 | RS485 bus driver | YES
 Driver | Camera | ov2659 driver | YES
-FileSystem | Debian rootfs | Based on Debian build filesystem(include X11 package) | BINARY
+Driver | WiFi | BCM43362 driver | YES
+Driver | LTE module | Quectl USB driver | YES
 FileSystem | Yotcto rootfs | Based Yocto build filesystem(include Qt 5.6 package) | YES
 FileSystem | Yotcto rootfs | Based Yocto build filesystem(Full command line package) | YES
 Application | GPIO KEY | Reads the GPIO key code value demo  | YES

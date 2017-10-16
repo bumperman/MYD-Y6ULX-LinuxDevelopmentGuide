@@ -6,7 +6,7 @@ Yocto not only a build tool for file system, it also has full workflow to build 
 
 Yocto is a open source "umbrella" project.It means has more sub-projects.Yocto just containe all other projects  and support an reference build system "Poky". The Poky project will guid developer how to use, build, embedded Linux system.It has Bitbake, OpenEmbedded-Core, BSP package and more kinds of software packages and config files.Through Poky to build difference requirment system, eg: the minimal system core-image-minimal, include GUI system fsl-image-gui, include Qt5 graphics system fsl-image-qt5.
 
-NXP i.MX6UL/i.MX6ULL support build file to apply on Yocto project.These files will build  a customize system by NXP.We also support config files to support MYS-6ULX series boards.This will help developer to build Linux system that can be programming to MYS-6ULX series boards.
+NXP i.MX6UL/i.MX6ULL support build file to apply on Yocto project.These files will build  a customize system by NXP.We also support config files to support MYD-Y6ULX series boards.This will help developer to build Linux system that can be programming to MYD-Y6ULX series boards.
 
 Yocto has more rich development resource, help engineers to learn and customize the system. This document can't cover full usage on Yocto.We recommend developer to build system after read these documents.
 

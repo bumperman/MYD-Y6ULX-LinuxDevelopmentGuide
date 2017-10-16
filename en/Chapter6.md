@@ -1,6 +1,6 @@
 # 6 System update
 
-MYS-6ULX series board use two methods to update system to NAND flash on board, MfgTool and SD card.
+MYD-Y6ULX series board use two methods to update system to NAND flash on board, MfgTool and SD card.
 
 ## MfgTool update method
 
@@ -10,48 +10,36 @@ The NXP supports a manufacture tool called MfgTool, we use MfgTool 2.7.0 version
 
 ### Update steps(follow the sequence):
 
-Attention: Please do not both plugin DV 5V(J1) and micro usb(J7) at the same time
-
-* Change third bit as ON, four bit as OFF on toggle switch(SW1).
+* Change third bit as OFF, four bit as ON on toggle switch(SW1).
 * Use USB cable(Type-A to Micro-B) connect to micro usb port(J7) with PC USB port.
-* Double click file "mfgtool2-yocto-mx6ul-evk-nand.vbs" under MfgTool directory, then the MfgTool will show the HID device on reconigz.
+* Use DC 12 power supply connect with power jack(J22).
+* Double click file "mfgtool2-yocto-myd-y6ull-nand.vbs" under MfgTool directory, then the MfgTool will show the HID device on reconigz.
 * Click the "Start" button on MfgTool GUI, it will auto download system image to storage of board.
 
 The progress bar will show as green when update finish. While it will show as red if failed.In this case you can view "MfgTool.log" file to get more information.Another way is use USB to TTL cable connect to Debug port(JP1), you can view the serial port output to analysis failed reason after update again.
 
 ### Update files on MfgTool
 
-MfgTool update files has two directories, firmware and files.The files directory store files for burn into flash of MYS-6ULX board. It's locate in "MYS-6ULX-mfgtools/Profiles/Linux/OS Firmware/files/".
-The firmware directory store files for burn system.It's locate in "MYS-6ULX-mfgtools/Profiles/Linux/OS Firmware/firmware/".You need to update those files when you change flash size or partition offset.
+MfgTool update files has two directories, firmware and files.The files directory store files for burn into flash of MYD-Y6ULX board. It's locate in "MYD-Y6ULX-mfgtools/Profiles/Linux/OS Firmware/files/".
+The firmware directory store files for burn system.It's locate in "MYD-Y6ULX-mfgtools/Profiles/Linux/OS Firmware/firmware/".You need to update those files when you change flash size or partition offset.
 
 list of files directory:
 
 FileName | Description
 ---- | -----
-core-image-base-mys6ul14x14.rootfs.tar.bz2 | MYS-6ULX-IND file system
-core-image-base-mys6ull14x14.rootfs.tar.bz2 | MYS-6ULX-IoT file system
-u-boot-imx6ul14x14evk_emmc.imx | support eMMC of uboot for MYS-6ULX-IND
-u-boot-imx6ul14x14evk_nand.imx | support NAND of uboot for MYS-6ULX-IND
-u-boot-imx6ull14x14evk_emmc.imx | support eMMC of uboot for MYS-6ULX-IoT
-u-boot-imx6ull14x14evk_nand.imx | support NAND of uboot for MYS-6ULX-IoT
-zImage-imx6ul | Linux kernel image for MYS-6ULX-IND
-zImage-imx6ull | Linux kernel image for MYS-6ULX-IoT
-zImage-imx6ul-14x14-evk-emmc.dtb | support eMMC of DeviceTree file for MYS-6ULX-IND
-zImage-imx6ul-14x14-evk-gpmi-weim.dtb | support NAND of DeviceTree file for MYS-6ULX-IND
-zImage-imx6ull-14x14-evk-emmc.dtb | support eMMC of DeviceTree file for MYS-6ULX-IoT
-zImage-imx6ull-14x14-evk-gpmi-weim.dtb | support NAND of DeviceTree file for MYS-6ULX-IoT
+core-image-base-myd-y6ull14x14.rootfs.tar.bz2 | core-image-base file system
+u-boot-myd-y6ull14x14evk_nand.imx | support NAND of uboot for MYD-Y6ULX
+zImage-myd-y6ull | Linux kernel image for MYD-Y6ULX
+zImage-myd-y6ull-14x14-evk-gpmi-weim.dtb | support NAND of DeviceTree file for MYD-Y6ULX
 
 ## Micro SD card update method
-
-Because i.MX6ULL/i.MX6UL chip need kobs-ng to add some header data to bootloader, so it needs read or write under system.
-In this case, we support two suffix as sdcard image files, correspond to each board.Theee sdcard image file contains partition table info and data.It has two partitions, one is format as FAT and contain minimal system bootloader,kernel and be programming files.Another partition is a minimal file system, includes programming tool and update script.
 
 The sdcard image file needs special tool to write Micro SD storage card.The linux user can directly use dd command.The windows user need "Win32ImageWriter" tool.
 
 ### Build updatable SD Card system image
 
 If you modify the Linux kernel, U-Boot or Yocto, then you need a tool for update those files into the board.
-The MYS-6ULX board support a tool MYS-6ULX-mkupdate-sdcard that builds updatable SD Card image.It locates in '04-Tools/ManufactoryTool' directory.
+The MYD-Y6ULX board support a tool MYD-Y6ULX-mkupdate-sdcard that builds updatable SD Card image.It locates in '04-Tools/ManufactoryTool' directory.
 
 The build-sdcard.sh script used to generate a system image that contains update system and update target files.
 The firmware directory used for the system of the update.Generally, you do not modify it otherwise your NAND flash or other BSP code changed.
@@ -60,30 +48,29 @@ The "mfgimages-*" directory store need update files.Those name of files are defi
 
 ```
 ubootfile="u-boot.imx"
-envfile="boot.scr"
 kernelfile="zImage"
-dtbfile="mys-imx6ull-14x14-evk-emmc.dtb"
+dtbfile="myd-y6ull-14x14-gpmi-weim.dtb"
 rootfsfile="core-image-base.rootfs.tar.xz"
 ```
 The 'envfile' variable only used for eMMC flash type.
 The update program will read the Manifest file and load those files be written into flash.
 
 ```
-sudo ./build-sdcard.sh -p mys6ull -n -d mfgimages-mys-imx6ul-ddr256m-nand256m
+sudo ./build-sdcard.sh -p myd-y6ull -n -d mfgimages-myd-y6ull-ddr256m-nand256m
 ```
 The tool support four arguments.
-'-p' stands for a platform, only two option 'mys6ull' and 'mys6ul'.
+'-p' stands for a platform, the value is 'myd-y6ull'.
 '-n' stands for the storage device of NAND flash.
 '-e' stands for the storage  device of eMMC flash.
 '-d' stands for target files directory.
 
 Attention: the '-n' and '-e' do not both exist in the argument.
 
-After builds complete, a sdcard suffix file in current directory, 'mys6ull-update-nand-20170825150819.rootfs.sdcard'.
+After builds complete, a sdcard suffix file in current directory, 'myd-y6ull-update-nand-20170825150819.rootfs.sdcard'.
 
 ### Build updatable Micro SD
 
-Recommend insert Micro SD card to Card Reader, and plug into PC USB port.MYS-6ULX resource package support some prebuilt sdcard files.You can throught tool to write it into your SD card.Those files locate in 02-Images direcory of resource package.
+Recommend insert Micro SD card to Card Reader, and plug into PC USB port.MYD-Y6ULX resource package support some prebuilt sdcard files.You can throught tool to write it into your SD card.Those files locate in 02-Images direcory of resource package.
 
 Attention: The date tag of file name is always changed, please follow the real in 02-Images directory.
 
@@ -94,7 +81,7 @@ Generally, linux use "sd[x][n]" format to naming a storage device.The x means wh
 Attention: the "/dev/sdb" do not append any digit
 
 ```
-sudo dd if=mys6ull-update-nand-20190919090957.sdcard of=/dev/sdb conv=fsync
+sudo dd if=myd-y6ull-update-nand-20190919090957.sdcard of=/dev/sdb conv=fsync
 ```
 
 The write speed is relative with USB host version and Micro SD card write speed. We recommend use higher speed class Micro SD storage card.
@@ -112,14 +99,14 @@ In this case, "D:" is the Card Reader device.
 
 You can plug out Card Reader after progress bard finish.
 
-Take the Micro SD card insert into card slot(J5) on MYS-6ULX series boards.Then change boot toggle switch as SDCARD type: 
+Take the Micro SD card insert into card slot(J5) on MYd-Y6ULX series boards.Then change boot toggle switch as SDCARD type: 
 
 Boot bit | Status
 --- | ----
-Bit1 | OFF
-Bit2 | ON
-Bit3 | OFF
-Bit4 | ON
+Bit1 | ON
+Bit2 | OFF
+Bit3 | ON
+Bit4 | OFF
 
 Use USB to TTL cable connect to Debug port(JP1), configure your serial terminal software.Use USB Micro B cable as power plug into USB OTG port(J7) on board(or use DC adapter plug into J1 interface).You can view update progress in serial terminal software.
 
@@ -131,9 +118,9 @@ You need power down and change the toggle switch(SW1) to NAND boot type when you
 
 Boot bit | Status
 --- | ----
-Bit1 | ON
-Bit2 | OFF
-Bit3 | OFF
-Bit4 | ON
+Bit1 | OFF
+Bit2 | ON
+Bit3 | ON
+Bit4 | OFF
 
 Reconnect the power adapter, the board will boot into linux on NAND flash。
