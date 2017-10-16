@@ -33,8 +33,7 @@ tar xvf $DEV_ROOT/04-Source/MYiR-iMX-uboot.tar.bz -C ~/
 这里的MACHINE参数为"myd-y6ull14x14"。
 
 ```
-DISTRO=myir-imx-fb MACHINE=myd-y6ull14x14 source fsl-setup-release.sh \
--b build
+DISTRO=myir-imx-fb MACHINE=myd-y6ull14x14 source fsl-setup-release.sh -b build
 tree conf/
 conf/
 ├── bblayers.conf
