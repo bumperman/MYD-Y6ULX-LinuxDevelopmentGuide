@@ -1,19 +1,15 @@
-# MYS-6ULX Linux Development Guide
+# MYD-Y6ULX Linux Development Guide
 
-This document introduce the MYS-6ULX and MYB-6ULX development board about Linux compile and deploy, interface usage on baseboard, Qt application development etc.
+This document introduce the MYD-Y6ULX development board about Linux compile and deploy, interface usage on baseboard, Qt application development etc.
 
 ## Version History
 
 Version | Description | Date
 ---- | ---- | ----
-V1.0 | Init version | 2017.04.20
-V1.1 | add support MYB-6ULX board | 2017.07.11
-V1.2 | add support 7.0 inch LCD screen | 2017.08.03
+V1.0 | Initialization version | 2017.10.09
 
 ## Hardware Version
 
 This document suit for below boards:
 
-* MYS-6ULX-IND
-* MYS-6ULX-IoT
-* MYB-6ULX
+* MYD-Y6ULX
