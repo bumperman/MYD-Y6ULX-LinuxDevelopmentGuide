@@ -30,7 +30,7 @@ FileName | Description
 core-image-base-myd-y6ull14x14.rootfs.tar.bz2 | core-image-base file system
 u-boot-myd-y6ull14x14evk_nand.imx | support NAND of uboot for MYD-Y6ULX
 zImage-myd-y6ull | Linux kernel image for MYD-Y6ULX
-zImage-myd-y6ull-14x14-evk-gpmi-weim.dtb | support NAND of DeviceTree file for MYD-Y6ULX
+zImage-myd-y6ull-14x14-gpmi-weim.dtb | support NAND of DeviceTree file for MYD-Y6ULX
 
 ## Micro SD card update method
 

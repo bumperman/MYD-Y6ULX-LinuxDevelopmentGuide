@@ -30,7 +30,7 @@ files目录下的文件说明：
 core-image-base-myd-y6ull14x14.rootfs.tar.bz2 | MYD-Y6ULL 文件系统
 u-boot-myd-y6ull14x14_nand.imx | MYD-Y6ULX 支持NAND的uboot
 zImage-myd-y6ull | MYD-Y6ULX 的内核镜像
-zImage-myd-y6ull-14x14-evk-gpmi-weim.dtb | MYD-Y6ULX 支持NAND的设备树文件
+zImage-myd-y6ull-14x14-gpmi-weim.dtb | MYD-Y6ULX 支持NAND的设备树文件
 
 
 ## Micro SD卡更新系统
