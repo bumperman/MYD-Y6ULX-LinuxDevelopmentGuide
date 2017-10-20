@@ -13,7 +13,7 @@ MYD-Y6ULX系列板的系统更新使用两种方法，MfgTool更新和SD卡更�
 * 拨动启动拨码开关(SW1)的第3位为OFF，第4位为ON。
 * 使用USB转接线(Type-A转Micro-B)连接PC机USB端口与开发板Micro USB OTG端口(J26)
 * 使用DC 12V电源适配器连接至开发板的电源端(J22)
-* 双击MfgTool目录下的"mfgtool2-yocto-myd-y6ulx-nand.vbs"文件，此时可以看到MfgTool界面已识别到开发板。
+* 双击MfgTool目录下的"core-image-base-myd-y6ulx-nand.vbs"文件，此时可以看到MfgTool界面已识别到开发板。
 * 点击MfgTool界面上的"Start"按钮，MfgTool就开始自动更新系统至板载NAND存储芯片。
 
 更新成功后底部的总进度条会显示为绿色。若失败则为红色时，可以查看"MfgTool.log"文件的错误提示信息。或者使用USB转TTL串口线连接至JP1，再重新更新系统，就可以从串口查看更新过程并分析失败的原因。

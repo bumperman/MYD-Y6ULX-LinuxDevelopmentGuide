@@ -13,7 +13,7 @@ The NXP supports a manufacture tool called MfgTool, we use MfgTool 2.7.0 version
 * Change third bit as OFF, four bit as ON on toggle switch(SW1).
 * Use USB cable(Type-A to Micro-B) connect to micro usb port(J7) with PC USB port.
 * Use DC 12 power supply connect with power jack(J22).
-* Double click file "mfgtool2-yocto-myd-y6ull-nand.vbs" under MfgTool directory, then the MfgTool will show the HID device on reconigz.
+* Double click file "core-image-base-myd-y6ull-nand.vbs" under MfgTool directory, then the MfgTool will show the HID device on reconigz.
 * Click the "Start" button on MfgTool GUI, it will auto download system image to storage of board.
 
 The progress bar will show as green when update finish. While it will show as red if failed.In this case you can view "MfgTool.log" file to get more information.Another way is use USB to TTL cable connect to Debug port(JP1), you can view the serial port output to analysis failed reason after update again.
