@@ -17,19 +17,11 @@ PC serial port configure parameters:
 
 ![](image/2-1.png)
 
-Figure2-1 MYS-6ULX-IND connection diagram
+Figure2-1 MYC-Y6ULX top view
 
 ![](image/2-2.png)
 
-Figure2-2 MYS-6ULX-IoT connection diagram
-
-![](image/2-3.png)
-
-Figure2-3 MYB-6ULX interface diagram
-
-![](image/2-4.png)
-
-Figure2-4 MYS-6ULX install MYB-6ULX diagram
+Figure2-2 MYD-Y6ULX top view
 
 ## Install Necessary Software Packages
 
