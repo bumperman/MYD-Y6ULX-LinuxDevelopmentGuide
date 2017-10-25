@@ -26,7 +26,7 @@ The MYD-Y6ULX Micro SD slot is connected to mmc0 controller.So, all dtb files is
 
 About SD card boot mode, the U-Boot default find the myd-y6ull-14x14-evk-gpmi-weim.dtb file.
 
-When you build kernel completation, the version tag will changed automatic.If you driver load with module type, you should recompile driver module.
+When you build kernel complete, the version tag will changed automatically.If you driver load with module type, you should recompile driver module.
 
 ```
 make modules
@@ -36,4 +36,4 @@ After compile completation, it will be installed specify path:
 mkdir ../target-kernel
 make INSTALL_MOD_PATH=../target-kernel modules_install
 ```
-Then you can package the target-kernel directory and extrat it into /lib directory on file system of MYD-Y6ULX board.
+Then you can package the target-kernel directory and extract it into /lib directory on file system of MYD-Y6ULX board.

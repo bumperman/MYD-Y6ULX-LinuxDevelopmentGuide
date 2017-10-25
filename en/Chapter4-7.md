@@ -1,4 +1,4 @@
-# 4.11 Test USB Device
+# 4.7 Test USB Device
 
 This example shows how to use USB device mode through the Micro USB interface(J26) on board.It will attach a specified file or device as a Gadget device. It works as a storage device connected to the HOST device.
 
@@ -21,7 +21,7 @@ version: 2009/09/11
 Linux File-Backed Storage
 
 ```
-- The host PC display a USB device connected and SerialNumber is "1234":
+- The host PC display an USB device connected and SerialNumber is "1234":
 
 ```
 #dmesg | tail -n 20

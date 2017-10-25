@@ -4,7 +4,7 @@ This example demonstrates how to use the Linux serial API to configure the RS485
 
 
 ## Hardware
-MYD-Y6ULX board have an RS485 interface(J10).You need connect the A，B signal wire to another RS485 device or USB to RS485 converter.
+MYD-Y6ULX board have a RS485 interface(J10.3 for RS485-A, J10.4 for RS485-B).You need connect the A，B signal wire to another RS485 device or USB to RS485 converter.
 
 ## Software
 
@@ -18,7 +18,7 @@ SEND[20]: 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 
 SEND[20]: 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14
 ```
 
-other devices as recevier：
+Other device as recevier：
 
 ```
 # ./rs485_read -d /dev/ttymxc3 -b 4800 -e 1

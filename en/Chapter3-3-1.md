@@ -1,16 +1,16 @@
 # 3.3.1 Yocto build Linux system
 
-This section suite for developer on customize file system.If you just want to use it, please use the prebuilt file system.
+This section suit for developer on customization file system.If you just want to use it, please use the prebuilt file system.
 
-The Yocto needs download all third software packages from internet.In order to build more speedly, MYD-Y6ULX also support a full package, you could not download again.
+The Yocto needs download all third-party software packages from internet.In order to build more speedly, MYD-Y6ULX also support a full package, you desn't need download again.
 
-Attention: building Yocto does not use previous toolchain, please open new tab for shell or new terminal window.
+Attention: Building Yocto does not use previous toolchain, please open new tab for shell or new terminal window.
 
 ## MYD-Y6ULX support full Yocto package
 
 Extract Yocto source package, and extract the Yocto-downloads.tar.xz into Yocto source direcotry.The Yocto-downloads.tar.xz includes all packages when building MYD-Y6ULX from Yocto.
 
-Attention: The Yocto-downloads.tar.xz file is more large, it does not include in MYD-Y6ULX iso file.Please visit and download it from http://d.myirtech.com/MYD-Y6ULX.
+Attention: The Yocto-downloads.tar.xz file is more large, it is not include in MYD-Y6ULX iso file.Please visit and download it from http://d.myirtech.com/MYD-Y6ULX.
 
 ```
 cd $DEV_ROOT
@@ -19,7 +19,7 @@ tar xvf 04-Source/Yocto-downloads.tar.xz -C fsl-release-bsp
 cd fsl-release-bsp
 ```
 
-Last, also needs put the kernel and u-boot source into your home directory in linux.It will be fetch with Yocto.
+Last, also needs put the kernel and u-boot source into your home directory in linux.It will be fetched with Yocto.
 
 ```
 cd $DEV_ROOT
@@ -50,7 +50,7 @@ The first build will cost more time, please take a coffee and wait it completion
 bitbake fsl-image-qt5
 ```
 
-## Build system iamge with full command line packages
+## Build system image with full command line packages
 You doesn't need to modify any file, just let Yocto to build it.
 
 ```
@@ -65,7 +65,7 @@ fsl-image-qt5 | system use Qt5 as GUI | used for graphics requirment
 
 After build process finish, it will output manifest file.This file has each package name and version be installed to target file system.
 
-The first build process of Yocto will take more time, this depend on your PC cpu core number and RAM size. The Yocto recommend use eight core CPU and SSD hardware to impove build speed. Another way, the Yocto will generate cache after first build, the next build process also save more time for you.
+The first build process of Yocto will take more time, this depend on your PC cpu core number and RAM size. The Yocto recommend use eight core CPU and SSD hardware to impove build speed. Additionally, the Yocto will generate cache after first build, the next build process also save more time for you.
 
 All output files are in "tmp/deploy/images/myd-y6ul14x14/" directory after build complete. Below as example:
 
@@ -125,9 +125,9 @@ File Name | Usage
 *.rootfs.sdcard | Image can be write to SD card and boot from SD card
 *.rootfs.tar.bz2 | File system package to tar.bz2
 *.rootfs.tar.xz | File system package to tar.xz
-u-boot-emmc-2016.03-r0.imx | u-boot used for boot from  eMMC
-u-boot-nand-2016.03-r0.imx | u-boot used for boot from NAND
-u-boot-sd-2016.03-r0.imx | u-boot used for boot SD card
+u-boot-emmc-2016.03-r0.imx | u-boot used for booting from  eMMC
+u-boot-nand-2016.03-r0.imx | u-boot used for booting from NAND
+u-boot-sd-2016.03-r0.imx | u-boot used for booting SD card
 
 ## Bitbake common usage
 

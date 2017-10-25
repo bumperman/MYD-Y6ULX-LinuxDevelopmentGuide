@@ -1,9 +1,9 @@
 # 4.10 Test CAN Bus
 
-This example demonstrates the use of the Linux API, which uses the CAN bus interface on the development board to send and receive data. Copy can_send and can_receive to the development board. Perform the following steps
+This example demonstrates the use of the Linux API, which uses the CAN bus interface on the development board to send and receive data. Copy can_send and can_receive to the development board. 
 
-## Hareware connect
-MYD-Y6ULX board has an CAN bus interface(J10).You need connect the H, L data signal to another CAN device or USB to CAN converter.
+## Hareware
+MYD-Y6ULX board has a CAN bus interface(J10.6 for CAN-L, J10.7 for CAN-H).You need connect the H, L data signal to another CAN device or USB to CAN converter.
 
 ## Software
 

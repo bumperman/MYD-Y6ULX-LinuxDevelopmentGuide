@@ -6,10 +6,10 @@ This document introduce the MYD-Y6ULX development board about Linux compile and 
 
 Version | Description | Date
 ---- | ---- | ----
-V1.0 | Initialization version | 2017.10.09
+V1.0 | Initialize version | 2017.10.09
 
 ## Hardware Version
 
-This document suit for below boards:
+This document suit list:
 
-* MYD-Y6ULX
+* MYD-Y6ULX series board

@@ -1,6 +1,8 @@
-# 4.3 Ethernet(CN1)
+# 4.3 Ethernet
 
-This example uses the TCP / IP socket API to implement a simple C/S structure of the program. Copy the executable program arm_client to the development board, pc_server copy to the PC, the development board and PC access network.
+This example uses the TCP/IP socket API to implement a simple C/S structure of the program. Copy the executable program arm_client to the development board, pc_server copy to the PC, the development board and PC access network.
+
+The MYD-Y6ULX has two ethernet interfaces, CN1 and CN2.
 
 Configure IP of PC machine and run server program:
 

@@ -23,7 +23,7 @@ Figure2-1 MYC-Y6ULX top view
 
 Figure2-2 MYD-Y6ULX top view
 
-## Install Necessary Software Packages
+## Install necessary software packages
 
 ```
 sudo apt-get install build-essential git-core libncurses5-dev flex bison \
@@ -47,7 +47,7 @@ cp -r <DVDROM>/04-Source $DEV_ROOT
 - Linaro toolchain : gcc version 4.9.3 20141031 (prerelease) (Linaro GCC 2014.11)
 - Yocto toolchain: gcc version 5.3.0 (GCC)
 
-There are two cross compile toolchinas, one is support by Linaro.Another built by Yocto.Recommend you use Yocto toolchaain to build all source code.
+There are two cross compile toolchains, one is support by Linaro.Another built by Yocto.Recommend you use Yocto toolchain to build all source code.
 
 ### Linaro Toolchain
 
@@ -59,7 +59,7 @@ export CROSS_COMPILE=arm-linux-gnueabihf-
 export ARCH=arm
 ```
 
-Check the toolchain is correct using below command.You have setup correct environment on current SHELL when you get version infomation.If you want it always available, you need to modify your shell config file.
+Check if the toolchain is correct using below command.You have setup correct environment on current SHELL when you get version infomation.If you want it always available, you need to modify your shell config file.
 
 ```
 $ arm-linux-gnueabihf-gcc --version
@@ -72,7 +72,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 ### Yocto Toolchain
 
-Yocto supports two kinds toolchain, one is low-level development toolchain meta-toolchain, another is application development toolchain.The low-level toolchain likes Linaro.The another used for application development, include more third libaries and header files.The MYD-Y6ULX also supports two kinds, those files are list below.
+Yocto provide two kinds toolchain, one is low-level development toolchain meta-toolchain, another is application development toolchain.The low-level toolchain likes Linaro.The another used for application development, include more third libaries and header files.The MYD-Y6ULX also supports two kinds, those files are list below.
 
 Toolchain file name | Description
 ------------ | -----
@@ -117,4 +117,4 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 
-According the steps, you can install the low-level toolchain meta-toolcahin.Please input differenct directory to store the toolchian, otherwize it will cover exist files in same directory.
+According the steps, you can install the low-level toolchain meta-toolcahin.Please input different directory to store the toolchian, otherwize it will cover existing files in same directory.

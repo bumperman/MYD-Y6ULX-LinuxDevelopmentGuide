@@ -4,7 +4,7 @@ This example demonstrates how to use the Linux serial API to configure the RS232
 
 
 ## Hardware
-MYD-Y6ULX board have an RS232 interface(J10).You need connect the TXD,RXD signal wire to another RS232 device or USB to RS232 converter.
+MYD-Y6ULX board have a RS232 interface(J10.9 for RS232-TX, J10.10 for RS232-RX).You need connect the TXD,RXD signal wire to another RS232 device or USB to RS232 converter.
 
 ## Software
 

@@ -25,9 +25,9 @@
     * [4.13 Test WiFi](Chapter4-13.md)
     * [4.14 Test 4G](Chapter4-14.md)
 * [5 QT Application Development](Chapter5.md)
-    * [Install QtCreator](Chapter5-1.md)
-    * [Config QtCreator](Chapter5-2.md)
-    * [Test Qt exapmle](Chapter5-3.md)
+    * [5.1 Install QtCreator](Chapter5-1.md)
+    * [5.2 Config QtCreator](Chapter5-2.md)
+    * [5.3 Test Qt exapmle](Chapter5-3.md)
 * [6 Update System](Chapter6.md)
 * [AppendixA](Appendixa.md)
 
