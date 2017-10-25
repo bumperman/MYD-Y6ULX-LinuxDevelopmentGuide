@@ -29,5 +29,7 @@
     * [5.2 Config QtCreator](Chapter5-2.md)
     * [5.3 Test Qt exapmle](Chapter5-3.md)
 * [6 Update System](Chapter6.md)
+    * [6.1 USB Update Method](Chapter6-1.md)
+    * [6.2 SD Card Method](Chapter6-2.md)
 * [AppendixA](Appendixa.md)
 
