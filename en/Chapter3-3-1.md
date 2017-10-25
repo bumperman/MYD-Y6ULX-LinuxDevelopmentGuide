@@ -32,7 +32,7 @@ Use script by NXP supported, create a build directory, and Yocto will build all 
 The MACHINE value is "myd-y6ull14x14".
 
 ```
-DISTRO=myir-imx-fb MACHINE=myd-y6ul14x14 source fsl-setup-release.sh -b build
+DISTRO=myir-imx-fb MACHINE=myd-y6ull14x14 source fsl-setup-release.sh -b build
 tree conf/
 conf/
 ├── bblayers.conf
