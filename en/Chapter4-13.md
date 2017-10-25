@@ -1,4 +1,4 @@
-# 4.13 WiFi Test
+# 4.13 Test WiFi
 
 
 The MYD-Y6ULX board has a WiFi module (J11).It's supports Client mode.

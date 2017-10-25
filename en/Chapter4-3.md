@@ -12,7 +12,7 @@ $ ./pc_server
 REC FROM: 192.168.1.222
 ```
 
-Run client program on board:
+Configure IP of CN2 and run client program on board:
 
 ```
 # ifconfig eth0 192.168.1.222

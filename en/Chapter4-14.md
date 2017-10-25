@@ -1,4 +1,4 @@
-# 4.14 4G LTE module Test
+# 4.14 Test 4G LTE
 
 The MYD-Y6ULX board support LTE module through PCI-E slot with USB data line.Currently, the MYD-Y6ULX boards only support EC20 model from Quectl.
 
@@ -6,6 +6,7 @@ Attention: The module not default accessory part.You need buy it from MYiR.
 
 ## Hardware
 
+* Install Quectl EC20 module into PCI-E slot(U12).
 * Use I-PEX interface wire connect LTE module and J25 position of board.
 * Install SMA wireless antenna to J24 position.
 
