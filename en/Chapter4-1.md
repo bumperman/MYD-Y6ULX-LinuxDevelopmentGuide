@@ -2,7 +2,7 @@
 
 This example demonstrates the operation of the FrameBuffer of Linux, enabling color and color grid testing.You need connect the LCD to MYD-Y6ULX board LCD interface(J3).
 
-We have three kinds LCD with touch panel.
+We have three kinds LCD with touch panel.The MY-TFT043RV2 is default on.
 
 Model | Descritpion
 ----- | -----------
