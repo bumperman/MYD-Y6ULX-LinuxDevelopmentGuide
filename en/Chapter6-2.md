@@ -1,4 +1,4 @@
-# 6 SD Card Update
+# 6.2 SD Card Update
 
 The sdcard image file needs special tool to write Micro SD storage card.The linux user can directly use dd command.The windows user need "Win32ImageWriter" tool.
 

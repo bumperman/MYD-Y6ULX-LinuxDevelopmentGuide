@@ -72,7 +72,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 ### Yocto Toolchain
 
-Yocto provide two kinds toolchain, one is low-level development toolchain meta-toolchain, another is application development toolchain.The low-level toolchain likes Linaro.The another used for application development, include more third libaries and header files.The MYD-Y6ULX also supports two kinds, those files are list below.
+Yocto provide two kinds toolchain, one is low-level development toolchain meta-toolchain, another is application development toolchain.The low-level toolchain likes Linaro.The another used for application development, include more third-party libaries and header files.The MYD-Y6ULX also supports two kinds, those files are list below.
 
 Toolchain file name | Description
 ------------ | -----
@@ -117,4 +117,4 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 
-According the steps, you can install the low-level toolchain meta-toolcahin.Please input different directory to store the toolchian, otherwize it will cover existing files in same directory.
+According the steps, you can install the low-level toolchain meta-toolcahin.Please input different path to store the toolchain, otherwize it will cover existing files in same directory.

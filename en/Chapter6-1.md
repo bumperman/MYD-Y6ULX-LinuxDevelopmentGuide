@@ -1,4 +1,4 @@
-# 6 USB Update Method
+# 6.1 USB Update Method
 
 ## Install tool
 
