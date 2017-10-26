@@ -29,6 +29,8 @@
     * [5.2 配置QtCreator](Chapter5-2.md)
     * [5.3 测试Qt应用](Chapter5-3.md)
 * [6 系统更新](Chapter6.md)
+    * [6.1 USB更新](Chapter6-1.md)
+    * [6.2 SD卡更新](Chapter6-2.md)
 * [附录A](Appendixa.md)
 * [际录B](Appendixb.md)
 
