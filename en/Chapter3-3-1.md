@@ -16,13 +16,11 @@ Attention: The Yocto-downloads.tar.xz file is more large, it is not include in M
 cd $DEV_ROOT
 tar xvf 04-Source/fsl-release-yocto.tar.xz
 tar xvf 04-Source/Yocto-downloads.tar.xz -C fsl-release-bsp
-cd fsl-release-bsp
 ```
 
 Last, also needs put the kernel and u-boot source into your home directory in linux.It will be fetched with Yocto.
 
 ```
-cd $DEV_ROOT
 tar xvf 04-Source/MYiR-iMX-Linux.tar.gz -C ~/
 tar xvf 04-Source/MYiR-iMX-uboot.tar.bz -C ~/
 ```
@@ -32,6 +30,7 @@ Use script by NXP supported, create a build directory, and Yocto will build all 
 The MACHINE value is "myd-y6ull14x14".
 
 ```
+cd fsl-release-bsp
 DISTRO=myir-imx-fb MACHINE=myd-y6ull14x14 source fsl-setup-release.sh -b build
 tree conf/
 conf/

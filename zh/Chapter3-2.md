@@ -3,8 +3,8 @@
 进入Kernel目录，解压内核源码：
 
 ```
-cd $DEV_ROOT/Kernel
-tar -xvf MYiR-iMX-Linux.tar.bz2
+cd $DEV_ROOT/04-Source
+tar -xvf MYiR-iMX-Linux.tar.gz
 cd MYiR-iMX-Linux
 ```
 

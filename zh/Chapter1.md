@@ -20,9 +20,9 @@ Linux内核 |	Linux 4.1.15 | 基于官方imx_4.1.15_2.0.0_ga版本 | YES
 设备驱动 | Audio | WM8904驱动 | YES
 设备驱动 | CAN bus | CAN总线驱动 | YES
 设备驱动 | RS485 | RS485总线驱动 | YES
-设备驱动 | Camera | ov2659驱动 | YES
-设备驱动 | WiFi | BCM43362驱动 | YES
-设备驱动 | LTE模块 | 移远USB驱动 | YES
+设备驱动 | Camera | OV2659驱动 | YES
+设备驱动 | WiFi | USI WM-N-BM-02(BCM43362)，使用MMC驱动 | YES
+设备驱动 | LTE模块 | 仅支持移远EC20，使用USB驱动 | YES
 文件系统 | Yotcto rootfs | 基于Yocto构建带Qt 5.6的文件系统 | YES
 文件系统 | Yotcto rootfs | 基于Yocto构建终端型的通用文件系统 | YES
 应用程序 | GPIO KEY | GPIO按键指示例程 | YES

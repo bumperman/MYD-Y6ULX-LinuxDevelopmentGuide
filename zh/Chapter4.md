@@ -20,7 +20,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 编译示例代码：
 ```
 $cd $DEV_ROOT/04-Sources
-$tar xvf example.tar.bz2
+$tar xvf example.tar.gz
 $cd example
 $make
 ```

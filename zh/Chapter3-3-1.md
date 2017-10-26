@@ -10,21 +10,19 @@
 
 解压Yocto源码包，同时解压Yocto-downloads.tar.xz软件包至Yocto目录下。Yocto-downloads.tar.xz是把Yocto构建中用到的第三方软件包打包，免除开发者再次下载花费的时间。
 
-注意：由于Yocto-downloads.tar.xz文件较大，无法与MYD-Y6ULX打包在同一文件内，请访问网页下载: http://down.myir-tech.com/MYD-Y6ULX/。文件名为Yocto-downloads.tar.xz。
+注意：由于Yocto-downloads.tar.xz文件较大，无法与MYD-Y6ULX打包在同一文件内，请访问网页下载: [http://down.myir-tech.com/MYD-Y6ULX/](http://down.myir-tech.com/MYD-Y6ULX/)。文件名为Yocto-downloads.tar.xz。
 
 ```
 cd $DEV_ROOT
 tar xvf 04-Source/fsl-release-yocto.tar.xz
 tar xvf 04-Source/Yocto-downloads.tar.xz -C fsl-release-bsp
-cd fsl-release-bsp
 ```
 
 还需要将Linux内核和U-Boot代码放在用户家目录下，方便开发和Yocto编译。
 
 ```
-cd $DEV_ROOT
-tar xvf $DEV_ROOT/04-Source/MYiR-iMX-Linux.tar.gz -C ~/
-tar xvf $DEV_ROOT/04-Source/MYiR-iMX-uboot.tar.bz -C ~/
+tar xvf 04-Source/MYiR-iMX-Linux.tar.gz -C ~/
+tar xvf 04-Source/MYiR-iMX-uboot.tar.bz -C ~/
 ```
 
 ## 初始化Yocto构建目录
@@ -33,6 +31,7 @@ tar xvf $DEV_ROOT/04-Source/MYiR-iMX-uboot.tar.bz -C ~/
 这里的MACHINE参数为"myd-y6ull14x14"。
 
 ```
+cd fsl-release-bsp
 DISTRO=myir-imx-fb MACHINE=myd-y6ull14x14 source fsl-setup-release.sh -b build
 tree conf/
 conf/

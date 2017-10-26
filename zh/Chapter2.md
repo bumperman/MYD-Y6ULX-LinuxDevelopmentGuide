@@ -1,6 +1,6 @@
 # 2 部署开发环境
 
-开发前需要安装好Linux操作系统，推荐使用Ubuntu 16.04 64bit发行版，连接网线并配置好网络，后续操作需要连接互联网安装或下载相关软件包。
+开发前需要PC安装好Linux操作系统，推荐使用Ubuntu 16.04 64bit发行版，连接网线并配置好网络，后续操作需要连接互联网安装或下载相关软件包。
 
 ## 开发板与计算机连接
 
@@ -39,7 +39,7 @@ export DEV_ROOT=~/MYD-Y6ULX-devel
 cp -r <DVDROM>/02-Images $DEV_ROOT
 cp -r <DVDROM>/03-Tools $DEV_ROOT
 cp -r <DVDROM>/04-Source $DEV_ROOT
-```  
+```
 
 ## 配置编译工具
 
