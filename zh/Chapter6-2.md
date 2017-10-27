@@ -59,7 +59,7 @@ MYD-Y6ULX资源包内提供了用于更新系统的sdcard镜像文件，可以�
 通常Linux下的存储设备名为"sd[x][n]"形式，x表示第几个存储设备，一般使用字母a~z表示。n表示存储设备的分区，一般使用数字，从1开始。插入后可以使用"dmesg | tail"命令查看新设备的设备名称。这里以"/dev/sdb"设备为例，sdb后面不写任务分区数字。
 
 ```
-sudo dd if=myd-y6ull-update-nand-20170919090957.rootfs.sdcard of=/dev/sdb conv=fsync
+sudo dd if=myd-y6ull-update-nand-base-20170919090957.rootfs.sdcard of=/dev/sdb conv=fsync
 ```
 
 写入的速度与USB和Micro SD卡的速率有关，如果对速度有要求，建议选用更高速度等级的Micro SD存储卡。
