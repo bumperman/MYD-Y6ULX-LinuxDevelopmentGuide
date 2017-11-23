@@ -15,8 +15,11 @@
 * 停止位：1bit
 * 流控：Disable
 
-![](image/2-1.png)
+
+<img src="image/2-1.png" width="640" height="640" />
+
 图2-1 MYC-Y6ULX 正面图
+
 ![](image/2-2.png)
 图2-2 MYD-Y6ULX 正面图
 
