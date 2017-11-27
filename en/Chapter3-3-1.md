@@ -22,7 +22,7 @@ Last, also needs put the kernel and u-boot source into your home directory in li
 
 ```
 tar xvf 04-Source/MYiR-iMX-Linux.tar.gz -C ~/
-tar xvf 04-Source/MYiR-iMX-uboot.tar.bz -C ~/
+tar xvf 04-Source/MYiR-iMX-uboot.tar.gz -C ~/
 ```
 
 ## Init Yocto build directory
