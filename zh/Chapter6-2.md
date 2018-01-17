@@ -6,8 +6,11 @@ MYD-Y6ULX的开发资源包内已包含两个sdcard文件，位置为02-Images�
 
 文件名 | 描述
 ------ | -----
-myd-y6ull-update-nand-base-20171026011019.rootfs.sdcard | 用于更新core-image-base
-myd-y6ull-update-nand-qt5-20171026011028.rootfs.sdcard | 用于更新fsl-image-qt5
+myd-y6ull-update-nand-base-20171026011019.rootfs.sdcard | 用于MYD-Y6ULL更新core-image-base
+myd-y6ull-update-nand-qt5-20171026011028.rootfs.sdcard | 用于MYD-Y6ULL更新fsl-image-qt5
+myd-y6ul-update-nand-base-20171026011019.rootfs.sdcard | 用于MYD-Y6UL更新core-image-base
+myd-y6ul-update-nand-qt5-20171026011028.rootfs.sdcard | 用于MYD-Y6UL更新fsl-image-qt5
+
 
 注意：rootfs.sdcard前面的时间为生成文件时的日期时间，请以实际文件为主。
 

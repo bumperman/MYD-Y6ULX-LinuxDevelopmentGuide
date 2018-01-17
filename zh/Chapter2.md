@@ -23,6 +23,8 @@
 ![](image/2-2.png)
 图2-2 MYD-Y6ULX 正面图
 
+MYD-Y6ULX系列开发板上的核心板有两种型号，MYC-Y6UL和MYC-6ULL。
+
 ## 安装必备软件包
 
 ```

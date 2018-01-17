@@ -28,7 +28,7 @@ tar xvf 04-Source/MYiR-iMX-uboot.tar.gz -C ~/
 ## 初始化Yocto构建目录
 
 使用NXP提供的fsl-setup-release.sh脚本，会创建一个工作空间，然后在此空间下构建镜像。执行脚本后会先要求阅读并同意版权声明后才会进入构盡过目录。同时，脚本会默认创建并进入build目录。如果需要特定目录名称，可以使用-b参数，如"-b myir"。
-这里的MACHINE参数为"myd-y6ull14x14"。
+MACHINE可选参数为"myd-y6ull14x14"或"myd-y6ul14x14"，分别对应MYD-Y6ULL和MYD-Y6UL开发板。
 
 ```
 cd fsl-release-bsp
@@ -63,7 +63,7 @@ bitbake core-image-base
 
 Image名称 | 描述 | 用途
 ---------- | ------ | -----------------
-core-image-minimal | minimal版本的文件系统 | 用于MYD-Y6ULX的升级或更新系统
+core-image-minimal | minimal版本的文件系统 | 用于MYD-Y6ULX的最小系统
 core-image-base | base版本的终端更多功能的镜像 | 通用的文件系统
 fsl-image-qt5 | 构建基于Qt5的镜像 | 带Qt5的通用文件系统
 

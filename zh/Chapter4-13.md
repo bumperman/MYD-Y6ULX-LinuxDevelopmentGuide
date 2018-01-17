@@ -1,5 +1,7 @@
 # 4.13 WiFi 测试
 
+注意：板载的WiFi功能，仅限于NAND版本。
+
 MYD-Y6ULX开发板提供一个WiFi模块(J11)，支持Client模式。
 
 ## 硬件连接

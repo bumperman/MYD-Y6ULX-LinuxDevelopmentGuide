@@ -20,7 +20,10 @@ make zImage dtbs
 
 DTB文件 | 备注
 ------- | ----
-myd-y6ull-gpmi-weim.dtb | MYD-Y6ULX NAND启动方式
+myd-y6ull-gpmi-weim.dtb | MYD-Y6ULL NAND启动方式
+myd-y6ull-emmc.dtb | MYD-Y6ULL eMMC启动方式
+myd-y6ul-gpmi-weim.dtb | MYD-Y6UL NAND启动方式
+myd-y6ul-emmc.dtb | MYD-Y6UL eMMC启动方式
 
 MYD-Y6ULX板上的Micro SD卡槽是连接mmc0控制器，所有的dtb文件都是默认启用mmc0控制器。
 
