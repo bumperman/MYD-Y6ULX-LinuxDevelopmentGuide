@@ -27,7 +27,7 @@ tar xvf 04-Source/MYiR-iMX-uboot.tar.gz -C ~/
 
 ## Init Yocto build directory
 Use script by NXP supported, create a build directory, and Yocto will build all under it.
-The MACHINE value is "myd-y6ull14x14".
+The MACHINE has two value, "myd-y6ull14x14" and "myd-y6ul14x14".
 
 ```
 cd fsl-release-bsp
@@ -58,7 +58,7 @@ bitbake core-image-base
 
 Image Name | Description | Used for
 ---------- | ------ | -----------------
-core-image-minimal | minimal file system | used for MYD-Y6ULX to update system
+core-image-minimal | minimal file system | used for MYD-Y6ULX to minimal system
 core-image-base | base file system has more command line feature | full commnand line system, no GUI
 fsl-image-qt5 | system use Qt5 as GUI | used for graphics requirment
 

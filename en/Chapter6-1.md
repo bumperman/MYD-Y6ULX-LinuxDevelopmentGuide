@@ -23,10 +23,14 @@ List of files directory:
 
 FileName | Description
 ---- | -----
-core-image-base-myd-y6ull14x14.rootfs.tar.bz2 | core-image-base file system
-u-boot-myd-y6ull14x14evk_nand.imx | Support NAND of uboot for MYD-Y6ULX
-zImage-myd-y6ull | Linux kernel image for MYD-Y6ULX
-zImage-myd-y6ull-14x14-gpmi-weim.dtb | Support NAND of DeviceTree file for MYD-Y6ULX
+core-image-base-myd-y6ull14x14.rootfs.tar.bz2 | core-image-base file system for MYD-Y6ULL
+u-boot-myd-y6ull14x14evk_nand.imx | Support NAND of uboot for MYD-Y6ULL
+zImage-myd-y6ull | Linux kernel image for MYD-Y6ULL
+zImage-myd-y6ull-14x14-gpmi-weim.dtb | Support NAND of DeviceTree file for MYD-Y6ULL
+core-image-base-myd-y6ul14x14.rootfs.tar.bz2 | core-image-base file system for MYD-Y6UL
+u-boot-myd-y6ul14x14evk_nand.imx | Support NAND of uboot for MYD-Y6UL
+zImage-myd-y6ul | Linux kernel image for MYD-Y6UL
+zImage-myd-y6ul-14x14-gpmi-weim.dtb | Support NAND of DeviceTree file for MYD-Y6UL
 
 ## Boot from NAND
 

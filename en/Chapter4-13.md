@@ -1,5 +1,6 @@
 # 4.13 Test WiFi
 
+Attention: The WiFi of carrier board only for NAND version of board.
 
 The MYD-Y6ULX board has a WiFi module (J11).It's supports Client mode.
 

@@ -23,6 +23,8 @@ Figure2-1 MYC-Y6ULX top view
 
 Figure2-2 MYD-Y6ULX top view
 
+The core moudle of MYD-Y6ULX series boards has two models, MYC-Y6UL and MYC-Y6ULL.
+
 ## Install necessary software packages
 
 ```
