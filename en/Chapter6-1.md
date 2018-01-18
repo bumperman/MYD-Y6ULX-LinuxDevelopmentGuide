@@ -4,12 +4,14 @@
 
 The NXP provide a manufacture tool called MfgTool, we use MfgTool 2.7.0 version.The MfgTool suppors Windows and Linux system.It is located in directory "03-Tools/ManufactoryTool" of resource package.You can copy and extract it to your work directory.
 
+The MYD-Y6ULX series board support NAND and eMMC flash.The MfgTool also support it on each vbs file.
+
 ## Update steps(follow the sequence):
 
 * Change third bit as OFF, four bit as ON on toggle switch(SW1).
 * Use USB cable(Type-A to Micro-B) connect to micro usb port(J7) with PC USB port.
 * Use DC 12 power supply connect with power jack(J22).
-* Double click file "core-image-base-myd-y6ull-nand.vbs" under MfgTool directory, then the MfgTool will show the HID device on recognize.
+* Double click file "core-image-base-myd-y6ull-nand.vbs" or "core-image-base-myd-y6ull-emmc.vbs" under MfgTool directory, then the MfgTool will show the HID device on recognize.
 * Click the "Start" button on MfgTool GUI, it will auto download system image to storage of board.
 
 The progress bar will show as green when update finish. While it will show as red if failed.In this case you can view "MfgTool.log" file to get more information.Another way is use USB to TTL cable connect to Debug port(JP1), you can view the serial port output to analysis failed reason after update again.
@@ -34,7 +36,9 @@ zImage-myd-y6ul-14x14-gpmi-weim.dtb | Support NAND of DeviceTree file for MYD-Y6
 
 ## Boot from NAND
 
-You need power down and change the toggle switch(SW1) to NAND boot type when you follow each way from two ways.
+You need power down and change the toggle switch(SW1) to NAND or eMMC boot type.
+
+### Boot NAND Flash
 
 Boot bit | Status
 --- | ----
@@ -43,4 +47,14 @@ Bit2 | ON
 Bit3 | ON
 Bit4 | OFF
 
-Reconnect the power adapter, the board will boot into linux on NAND flash。
+### Boot eMMC Flash
+
+Boot bit | Status
+--- | ----
+Bit1 | OFF
+Bit2 | OFF
+Bit3 | ON
+Bit4 | OFF
+
+
+Reconnect the power adapter, the board will boot into linux on NAND or eMMC flash。

@@ -2,12 +2,14 @@
 
 USB更新方法的烧写工具是由NXP公司提供的MfgTool 2.7.0版本，文件包名为MYD-Y6ULX-mfgtools-20171012.zip，光盘中路径"03-Tools/ManufactoryTool"目录下，支持Windows和Linux操作系统。解压后的目录中有vbs文件，这些是配置好的烧写脚本。执行后即可启动MfgTool程序。
 
+MYD-Y6ULX支持两种Flash类似，NAND和eMMC。MfgTool烧写时，选择不同vbs文件即可。
+
 ## 更新步骤如下(顺序不可颠倒):
 
 * 切换启动拨码开关(SW1)的第3位为OFF，第4位为ON。
 * 使用USB转接线(Type-A转Micro-B)连接PC机USB端口与开发板Micro USB OTG端口(J26)。
 * 使用DC 12V电源适配器连接至开发板的电源座(J22)。
-* 双击MfgTool目录下的"core-image-base-myd-y6ulx-nand.vbs"文件，此时可以看到MfgTool界面已识别到开发板。
+* 双击MfgTool目录下的"core-image-base-myd-y6ulx-nand.vbs"或"core-image-base-myd-y6ulx-emmc.vbs"文件，此时可以看到MfgTool界面已识别到开发板。
 * 点击MfgTool界面上的"Start"按钮，MfgTool就开始自动更新系统至板载NAND存储芯片。
 
 更新成功后底部的总进度条会显示为绿色。若失败则为红色时，可以查看"MfgTool.log"文件的错误提示信息。或者使用USB转TTL串口线连接至JP1，再重新更新系统，就可以从串口查看更新过程并分析失败的原因。
@@ -30,9 +32,11 @@ u-boot-myd-y6ul14x14_nand.imx | MYD-Y6UL 支持NAND的uboot
 zImage-myd-y6ul | MYD-Y6UL 的内核镜像
 zImage-myd-y6ul-14x14-gpmi-weim.dtb | MYD-Y6UL 支持NAND的设备树文件
 
-## 切换为NAND启动方式
+## 切换为板载Flash启动方式
 
-更新完成后断电，配置启动位拨码开关为NAND启动方式，如下：
+更新完成后断电，配置启动位拨码开关为NAND启动方式。板载不同类型Flash的启动位也不相同。
+
+### NAND版本
 
 启动位 | 状态 
 --- | ----
@@ -41,5 +45,14 @@ Bit2 | ON
 Bit3 | ON
 Bit4 | OFF
 
-重新连接电源，开发板即可以从NAND启动系统了。
+### eMMC版本
+
+启动位 | 状态 
+--- | ----
+Bit1 | OFF
+Bit2 | OFF
+Bit3 | ON
+Bit4 | OFF
+
+重新连接电源，开发板即可以从NAND或eMMC启动系统了。
 
