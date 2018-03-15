@@ -15,7 +15,7 @@
 ```
 cd $DEV_ROOT
 tar xvf 04-Source/fsl-release-yocto.tar.xz
-tar xvf 04-Source/Yocto-downloads.tar.xz -C fsl-release-bsp
+tar xvf 04-Source/Yocto-downloads.tar.xz -C fsl-release-yocto
 ```
 
 还需要将Linux内核和U-Boot代码放在用户家目录下，方便开发和Yocto编译。

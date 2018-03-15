@@ -88,8 +88,7 @@ Use USB to TTL cable connect to Debug port(JP1), configure your serial terminal 
 
 Also, you can view the LED(D12) to get the current update state.In updating is flashing.The update success is light on, the update fail is light off.
 
-## Boot from NAND
-
+## MYD-Y6ULX NAND flash
 You need power down and change the boot switch(SW1) to NAND boot type when you follow each way from two ways.
 
 Boot bit | Status
@@ -99,4 +98,16 @@ Bit2 | ON
 Bit3 | ON
 Bit4 | OFF
 
-Reconnect the power adapter, the board will boot into linux on NAND flash。
+Reconnect the power adapter, the board will boot into linux from NAND flash。
+
+## MYD-Y6ULX eMMC flash
+You need power down and change the boot switch(SW1) to eMMC boot type when you follow each way from two ways.
+
+Boot bit | Status
+--- | ----
+Bit1 | OFF
+Bit2 | OFF
+Bit3 | ON
+Bit4 | OFF
+
+Reconnect the power adapter, the board will boot into linux from eMMC flash。

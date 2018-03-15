@@ -15,7 +15,7 @@ Attention: The Yocto-downloads.tar.xz file is more large, it is not include in M
 ```
 cd $DEV_ROOT
 tar xvf 04-Source/fsl-release-yocto.tar.xz
-tar xvf 04-Source/Yocto-downloads.tar.xz -C fsl-release-bsp
+tar xvf 04-Source/Yocto-downloads.tar.xz -C fsl-release-yocto
 ```
 
 Last, also needs put the kernel and u-boot source into your home directory in linux.It will be fetched with Yocto.

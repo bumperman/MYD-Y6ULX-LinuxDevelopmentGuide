@@ -76,7 +76,9 @@ Windows用户可以使用Win32DiskImager工具把sdcard镜像写入Micro SD里�
 
 等待进度条结束后，就可以拔出USB读卡器。
 
-把制做好的Micro SD卡插入开发板的卡槽(J8)，配置启动位拨码开关(SW1)为SDCARD启动方式，如下：
+把制做好的Micro SD卡插入开发板的卡槽(J8)，配置启动位拨码开关(SW1)为SDCARD启动方式。MYD-Y6ULX的核心板有两种存储方式，NAND和eMMC，拨码开关配置分别如下：
+
+### MYD-Y6ULX NAND存储版本
 
 启动位 | 状态 
 --- | ----
@@ -85,13 +87,23 @@ Bit2 | OFF
 Bit3 | ON
 Bit4 | OFF
 
+### MYD-Y6ULX eMMC存储版本
+
+启动位 | 状态 
+--- | ----
+Bit1 | ON
+Bit2 | ON
+Bit3 | ON
+Bit4 | OFF
+
+
 连接USB转TTL串口线至调试串口(JP1)，配置好电脑端的串口终端软件。使用DC 12V电源适配器连接至开发板的电源接口(J22)。通过串口可以看到系统从Micro SD卡启动，并执行更新脚本，把Linux系统镜像文件写入NAND存储芯片内。
 
 也可以通过用户LED灯(D30)来判断当前更新状态，更新中为闪烁状态，更新成功后会常亮，失败则会熄灭。
 
-## 切换为NAND启动方式
+更新完成后断电，配置启动位拨码开关为板载的NAND或eMMC启动方式，配置分别如下：
 
-更新完成后断电，配置启动位拨码开关为NAND启动方式，如下：
+## MYD-Y6ULX NAND版本
 
 启动位 | 状态 
 --- | ----
@@ -101,4 +113,15 @@ Bit3 | ON
 Bit4 | OFF
 
 重新连接电源，开发板就可以从NAND启动系统了。
+
+## MYD-Y6ULX eMMC版本
+
+启动位 | 状态 
+--- | ----
+Bit1 | OFF
+Bit2 | OFF
+Bit3 | ON
+Bit4 | OFF
+
+重新连接电源，开发板就可以从eMMC启动系统了。
 
