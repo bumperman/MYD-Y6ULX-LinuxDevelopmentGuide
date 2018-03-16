@@ -38,7 +38,7 @@ zImage-myd-y6ul-14x14-gpmi-weim.dtb | Support NAND of DeviceTree file for MYD-Y6
 
 You need power down and change the toggle switch(SW1) to NAND or eMMC boot type.
 
-### Boot NAND Flash
+### MYD-Y6ULX boot NAND Flash
 
 Boot bit | Status
 --- | ----
@@ -47,7 +47,7 @@ Bit2 | ON
 Bit3 | ON
 Bit4 | OFF
 
-### Boot eMMC Flash
+### MYD-Y6ULX boot eMMC Flash
 
 Boot bit | Status
 --- | ----

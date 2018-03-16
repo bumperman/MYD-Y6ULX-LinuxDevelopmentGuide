@@ -34,9 +34,9 @@ zImage-myd-y6ul-14x14-gpmi-weim.dtb | MYD-Y6UL 支持NAND的设备树文件
 
 ## 切换为板载Flash启动方式
 
-更新完成后断电，配置启动位拨码开关为NAND启动方式。板载不同类型Flash的启动位也不相同。
+更新完成后断电，配置启动位拨码开关为板载Flash启动方式，不同存储器的启动位不相同。
 
-### NAND版本
+### MYD-Y6ULX NAND存储版本
 
 启动位 | 状态 
 --- | ----
@@ -45,7 +45,7 @@ Bit2 | ON
 Bit3 | ON
 Bit4 | OFF
 
-### eMMC版本
+### MYD-Y6ULX eMMC存储版本
 
 启动位 | 状态 
 --- | ----
