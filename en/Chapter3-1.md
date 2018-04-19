@@ -20,10 +20,10 @@ The <config> option value is different boot mode. The MYD-Y6ULX supports two boo
 
 Boot Mode | Config file
 -------- | --------
-MYD-Y6ULL NAND Flash | myd_y6ull_14x14_nand_defconfig
-MYD-Y6ULL eMMC Flash | myd_y6ull_14x14_emmc_defconfig
-MYD-Y6ULX NAND Flash | myd_y6ul_14x14_nand_defconfig
-MYD-Y6ULX eMMC Flash | myd_y6ul_14x14_emmc_defconfig
+MYD-Y6ULY2 NAND Flash | myd_y6ull_14x14_nand_defconfig
+MYD-Y6ULY2 eMMC Flash | myd_y6ull_14x14_emmc_defconfig
+MYD-Y6ULG2 NAND Flash | myd_y6ul_14x14_nand_defconfig
+MYD-Y6ULG2 eMMC Flash | myd_y6ul_14x14_emmc_defconfig
 
 U-Boot SD boot mode will search and execute a script file "boot.scr" when U-Boot booting up. It used to change boot type in temporary.Next is use TFTP to download zImage and dtb to boot system as example. Using mkimage tool through "myd-y6ull-boot-mmc0-tftp.txt" to generate the "boot.scr" file as example. The mkimage tool source code is locating in "U-Boot/tools" directory. It will be compiled after U-Boot compiled.
 

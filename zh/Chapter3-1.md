@@ -20,10 +20,10 @@ make
 
 启动模式 | 编译选项
 -------- | --------
-MYD-Y6ULL NAND Flash | myd_y6ull_14x14_nand_defconfig
-MYD-Y6ULL eMMC Flash | myd_y6ull_14x14_emmc_defconfig
-MYD-Y6UL NAND Flash | myd_y6ul_14x14_nand_defconfig
-MYD-Y6UL eMMC Flash | myd_y6ul_14x14_emmc_defconfig
+MYD-Y6ULY2 NAND Flash | myd_y6ull_14x14_nand_defconfig
+MYD-Y6ULY2 eMMC Flash | myd_y6ull_14x14_emmc_defconfig
+MYD-Y6ULG2 NAND Flash | myd_y6ul_14x14_nand_defconfig
+MYD-Y6ULG2 eMMC Flash | myd_y6ul_14x14_emmc_defconfig
 
 u-boot SD卡方式启动时默认会先检测"boot.scr"文件，这是u-boot上的脚本镜像文件，用于临时改变启动设备顺序。以下是从TFTP下载zImage和dtb文件并启动的脚本例子。使用mkimage工具"myd-y6ull-boot-mmc0-tftp.txt"文件制做成"boot.scr"文件，mkimage工具是在u-boot的tools目录下，u-boot编译完成后，mkimage也会被编译出来，直接使用即可。
 

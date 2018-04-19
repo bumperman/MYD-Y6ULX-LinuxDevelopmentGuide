@@ -20,10 +20,10 @@ When the compilation is done, the kernel image file zImage is generated in the '
 
 DTB File | Description
 ------- | ----
-myd-y6ull-14x14-gpmi-weim.dtb | MYD-Y6ULL NAND boot
-myd-y6ull-14x14-emmc.dtb | MYD-Y6ULL eMMC boot
-myd-y6ul-14x14-gpmi-weim.dtb | MYD-Y6UL NAND boot
-myd-y6ul-14x14-emmc.dtb | MYD-Y6UL eMMC boot
+myd-y6ull-14x14-gpmi-weim.dtb | MYD-Y6ULY2 NAND boot
+myd-y6ull-14x14-emmc.dtb | MYD-Y6ULY2 eMMC boot
+myd-y6ul-14x14-gpmi-weim.dtb | MYD-Y6ULG2 NAND boot
+myd-y6ul-14x14-emmc.dtb | MYD-Y6ULG2 eMMC boot
 
 The MYD-Y6ULX Micro SD slot is connected to mmc0 controller.So, all dtb files is enabled the mmc0 controller by default.
 
