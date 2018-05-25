@@ -55,7 +55,7 @@ There are two cross compile toolchains, one is support by Linaro.Another built b
 
 ```
 cd $DEV_ROOT/
-tar -xvjf 03-Tools/Toolchain/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf.tar.xz
+tar -xvf 03-Tools/Toolchain/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf.tar.xz
 export PATH=$PATH:$DEV_ROOT/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf/bin
 export CROSS_COMPILE=arm-linux-gnueabihf-
 export ARCH=arm
