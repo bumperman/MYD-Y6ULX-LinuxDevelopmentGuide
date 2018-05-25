@@ -31,7 +31,7 @@ MYD-Y6ULX系列开发板上的核心板有两种型号，MYC-Y6UL和MYC-6ULL。
 sudo apt-get install build-essential git-core libncurses5-dev \
 flex bison texinfo zip unzip zlib1g-dev gettext u-boot-tools \
 g++ xz-utils mtd-utils gawk diffstat gcc-multilib python git \
-make gcc g++ diffstat bzip2 gawk chrpath wget cpio texinfo
+make gcc g++ diffstat bzip2 gawk chrpath wget cpio texinfo lzop
 ```
 
 ## 建立工作目录

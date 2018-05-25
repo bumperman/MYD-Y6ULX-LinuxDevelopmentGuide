@@ -30,7 +30,7 @@ The core moudle of MYD-Y6ULX series boards has two models, MYC-Y6UL and MYC-Y6UL
 ```
 sudo apt-get install build-essential git-core libncurses5-dev flex bison \
 texinfo zip unzip zlib1g-dev gettext u-boot-tools g++ xz-utils mtd-utils \
-gawk diffstat gcc-multilib
+gawk diffstat gcc-multilib lzop
 ```
 
 ## Build work directory
