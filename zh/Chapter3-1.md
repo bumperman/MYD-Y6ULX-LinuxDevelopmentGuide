@@ -27,6 +27,8 @@ MYD-Y6ULG2 eMMC Flash | myd_y6ul_14x14_emmc_defconfig
 
 u-boot SD卡方式启动时默认会先检测"boot.scr"文件，这是u-boot上的脚本镜像文件，用于临时改变启动设备顺序。以下是从TFTP下载zImage和dtb文件并启动的脚本例子。使用mkimage工具"myd-y6ull-boot-mmc0-tftp.txt"文件制做成"boot.scr"文件，mkimage工具是在u-boot的tools目录下，u-boot编译完成后，mkimage也会被编译出来，直接使用即可。
 
+以下是创建的myd-y6ull-boot-mmc0-tftp.txt内容，并生成为启动脚本文件boot.scr。
+
 ```
 cat myd-y6ull-boot-mmc0-tftp.txt
 setenv mmcroot '/dev/mmcblk0p2 rootwait rw rootdelay=5 mem=256M'
