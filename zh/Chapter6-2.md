@@ -2,13 +2,13 @@
 
 MYD-Y6ULX开发板提供了一个使用SD卡更新系统镜像的文件，sdcard镜像文件。sdcard镜像文件需要使用特殊的磁盘操作工具才可以写入Micro SD卡内，Linux系统用户可以直接使用dd命令，Windows系统用户使用Win32ImageWriter工具。
 
-MYD-Y6ULX的开发资源包内已包含两个sdcard文件，位置为02-Images。
+MYD-Y6ULX开发板的开发资源包内已包含多个sdcard.gz文件，位置为02-Images。
 
 文件名 | 描述
 ------ | -----
-myd-y6ull-update-nand-base-20171026011019.rootfs.sdcard.gz | 用于MYD-Y6ULL更新core-image-base的sdcard压缩文件
-myd-y6ull-update-nand-qt5-20171026011028.rootfs.sdcard.gz | 用于MYD-Y6ULL更新fsl-image-qt5的sdcard压缩文件
-myd-y6ul-update-nand-base-20171026011019.rootfs.sdcard.gz | 用于MYD-Y6UL更新core-image-base的sdcard压缩文件
+myd-y6uly2-update-nand-base-20171026011019.rootfs.sdcard.gz | 用于MYD-Y6ULY2更新core-image-base的sdcard压缩文件
+myd-y6uly2-update-nand-qt5-20171026011028.rootfs.sdcard.gz | 用于MYD-Y6ULY2更新fsl-image-qt5的sdcard压缩文件
+myd-y6ulg2-update-nand-base-20171026011019.rootfs.sdcard.gz | 用于MYD-Y6ULG2更新core-image-base的sdcard压缩文件
 
 
 注意：rootfs.sdcard前面的时间为生成文件时的日期时间，请以实际文件为主。
@@ -39,15 +39,16 @@ sudo ./build-sdcard.sh -p myd-y6ull -n -d mfgimages-myd-y6ull-ddr256m-nand256m
 ```
 
 build-sdcard.sh提供了四种参数：
-* '-p' 表示平台，可用参数为"myd-y6ull"代表MYD-Y6ULL
+* '-p' 表示平台，可用参数为"myd-y6uly2"代表MYD-Y6ULY2开发板, "myd-y6ulg2"代表MYD-Y6ULXG2开发板。
 * '-n' 表示板上存储芯片是NAND
 * '-e' 表示板上存储芯片是eMMC
 * '-d' 表示更新文件的目录
 * '-t' 表示添加文件名标识
+* '-s' 表示DDR大小，可用参数为256或512
 
 注意：'-n'和'-e'不能同时使用，只能使用一种。
 
-运行结束后会生成一个sdcard.gz后缀的文件，如'myd-y6ull-update-nand-20170825150819.rootfs.sdcard.gz'。
+运行结束后会生成一个sdcard.gz后缀的文件，如'myd-y6uly2-update-nand-20170825150819.rootfs.sdcard.gz'。
 
 ## 制做可更新系统的SD卡
 
@@ -67,7 +68,7 @@ sudo dd if=myd-y6ull-update-nand-base-20170919090957.rootfs.sdcard of=/dev/sdb c
 
 sdcard.gz文件烧写：
 ```
-gzip -dc myd-y6ull-update-nand-base-20170919090957.rootfs.sdcard.gz | sudo dd of=/dev/sdb conv=fsync
+gzip -dc myd-y6uly2-update-nand-base-20170919090957.rootfs.sdcard.gz | sudo dd of=/dev/sdb conv=fsync
 ```
 
 写入的速度与USB和Micro SD卡的速率有关，如果对速度有要求，建议选用更高速度等级的Micro SD存储卡。

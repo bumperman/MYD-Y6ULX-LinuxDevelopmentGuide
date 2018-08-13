@@ -41,7 +41,7 @@ firmware是烧写系统的镜像文件，路径为"MYD-Y6ULX-mfgtools/Profiles/L
 
 files目录下的文件说明：
 
-MYD-Y6ULL文件列表
+MYD-Y6ULY2文件列表
 
 文件名 | 描述
 ---- | -----
@@ -53,7 +53,7 @@ zImage-myd-y6ull | MYD-Y6ULY2 的内核镜像
 zImage-myd-y6ull-14x14-gpmi-weim.dtb | MYD-Y6ULY2 支持NAND的设备树文件
 zImage-myd-y6ull-14x14-emmc.dtb | MYD-Y6ULY2 支持eMMC的设备树文件
 
-MYD-Y6UL文件列表
+MYD-Y6ULG2文件列表
 
 文件名 | 描述
 ---- | -----
