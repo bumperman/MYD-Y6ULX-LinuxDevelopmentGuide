@@ -9,6 +9,7 @@
     * [3.3 构建文件系统](Chapter3-3.md)
         * [3.3.1 Yocto构建Linux系统](Chapter3-3-1.md)
         * [3.3.2 Yocto构建SDK工具](Chapter3-3-2.md)
+        * [3.3.3 Yocto常见问题](Chapter3-3-3.md)
 * [4 Linux应用开发](Chapter4.md)
     * [4.1 LCD测试](Chapter4-1.md)
     * [4.2 触摸测试](Chapter4-2.md)

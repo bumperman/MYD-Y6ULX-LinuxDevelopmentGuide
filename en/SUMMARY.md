@@ -9,6 +9,7 @@
     * [3.3 Build Filesystem](Chapter3-3.md)
         * [3.3.1 Yocto build Linux system](Chapter3-3-1.md)
         * [3.3.2 Yocto build SDK package](Chapter3-3-2.md)
+        * [3.3.3 Yocto build FAQ](Chapter3-3-2.md)
 * [4 Linux Application Development](Chapter4.md)
     * [4.1 Test LCD](Chapter4-1.md)
     * [4.2 Test TouchPanel](Chapter4-2.md)
