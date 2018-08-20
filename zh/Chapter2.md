@@ -15,15 +15,20 @@
 * 停止位：1bit
 * 流控：Disable
 
+## 产品图片
 
-<img src="image/2-1.png" width="640" height="640" />
+核心板有两种型号，MYC-Y6ULY2和MYC-6ULG2。根据Flash和RAM差异，有三种配置：
+* MYC-Y6ULY2-256N256D
+* MYC-Y6ULY2-4E512D
+* MYC-Y6ULG2-256N256D
+
+<img src="image/2-1.png" width="30%" />
 
 图2-1 MYC-Y6ULX 正面图
 
-![](image/2-2.png)
-图2-2 MYD-Y6ULX 正面图
+<img src="image/2-2.png" width="80%" />
 
-MYD-Y6ULX系列开发板上的核心板有两种型号，MYC-Y6UL和MYC-6ULL。
+图2-2 MYD-Y6ULX 正面图
 
 ## 安装必备软件包
 

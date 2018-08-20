@@ -15,15 +15,19 @@ PC serial port configure parameters:
 * Stop bit: 1bit
 * Flow control: Disable
 
-![](image/2-1.png)
+## Product Pictures
 
+The core module has two model of chip, MYC-Y6ULY2 and MYC-6ULG2. According to the difference between Flash and RAM, we have three configuration model.
+
+* MYC-Y6ULY2-256N256D
+* MYC-Y6ULY2-4E512D
+* MYC-Y6ULG2-256N256D
+
+<img src="image/2-1.png" width="30%" />
 Figure2-1 MYC-Y6ULX top view
 
-![](image/2-2.png)
-
+<img src="image/2-2.png" width="80%" />
 Figure2-2 MYD-Y6ULX top view
-
-The core moudle of MYD-Y6ULX series boards has two models, MYC-Y6UL and MYC-Y6ULL.
 
 ## Install necessary software packages
 
