@@ -34,4 +34,18 @@ This problem same with previous one.The Linux kernel source updated while the Yo
 Below is the modify steps:
 
 1. Move into Linux source directory.And checkout the commit id use "git log" command.
-2. Modify the SRCREV variable value in "source/meta-myir-imx6ulx/recipes-kernel/linux/linux-mys6ulx_4.1.15.bb"  file under the Yocto source directory with the commit id .
+2. Modify the SRCREV variable value in "source/meta-myir-imx6ulx/recipes-kernel/linux/linux-mys6ulx_4.1.15.bb"  file under the Yocto source directory with the commit id.
+
+## Q3:How to reload exist build directory?
+
+The first time to build image need to initial a build directory. 
+
+```
+DISTRO=myir-imx-fb MACHINE=myd-y6ull14x14 source fsl-setup-release.sh -b build
+```
+
+You can use below command to reload configure of build directory when you interrupt or exit current shell environment.
+
+```
+source fsl-setup-release.sh build
+```

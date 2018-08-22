@@ -32,3 +32,17 @@ Summary: There were 2 ERROR messages shown, returning a non-zero exit code.
 
 1. 进入Linux源码目录，使用"git log"查看commit id并复制
 2. 修改Yocto源码目录下的"source/meta-myir-imx6ulx/recipes-kernel/linux/linux-mys6ulx_4.1.15.bb"文件中的SRCREV变量为commit id即可。
+
+## Q3:如何重新加载己存在的构建目录
+
+第一次构建时，使用以下命令来创建一个构建目录build，创建完成后会在build目录下。
+
+```
+DISTRO=myir-imx-fb MACHINE=myd-y6ull14x14 source fsl-setup-release.sh -b build
+```
+
+Yocto中途退出或中断后，可以重新打开新的shell终端，重新加载build构建目录，命令如下：
+
+```
+source fsl-setup-release.sh build
+```
